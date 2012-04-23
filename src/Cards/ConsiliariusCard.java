@@ -30,8 +30,9 @@ public class ConsiliariusCard implements Card {
 
     //Returns this cards Card Action
     public CardAction getCardAction(CardView in){
+        CardAction returnValue = new CardAction();
 
-        return new CardAction();
+        return returnValue;
     }
 
     //returns description of card

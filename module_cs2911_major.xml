@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_cs2911_major" default="compile.module.cs2911_major">
+  <dirname property="module.cs2911_major.basedir" file="${ant.file.module_cs2911_major}"/>
+  
+  <property name="module.jdk.home.cs2911_major" value="${jdk.home.1.6}"/>
+  <property name="module.jdk.bin.cs2911_major" value="${jdk.bin.1.6}"/>
+  <property name="module.jdk.classpath.cs2911_major" value="jdk.classpath.1.6"/>
+  
+  <property name="compiler.args.cs2911_major" value="${compiler.args}"/>
+  
+  <property name="cs2911_major.output.dir" value="${module.cs2911_major.basedir}/../../../../../../../../import/kamen/1/ates466/IdeaProjects/CS2911_Major/out/production/CS2911_Major"/>
+  <property name="cs2911_major.testoutput.dir" value="${module.cs2911_major.basedir}/../../../../../../../../import/kamen/1/ates466/IdeaProjects/CS2911_Major/out/test/CS2911_Major"/>
+  
+  <path id="cs2911_major.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="cs2911_major.module.production.classpath">
+    <path refid="${module.jdk.classpath.cs2911_major}"/>
+  </path>
+  
+  <path id="cs2911_major.runtime.production.module.classpath">
+    <pathelement location="${cs2911_major.output.dir}"/>
+  </path>
+  
+  <path id="cs2911_major.module.classpath">
+    <path refid="${module.jdk.classpath.cs2911_major}"/>
+    <pathelement location="${cs2911_major.output.dir}"/>
+  </path>
+  
+  <path id="cs2911_major.runtime.module.classpath">
+    <pathelement location="${cs2911_major.testoutput.dir}"/>
+    <pathelement location="${cs2911_major.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.cs2911_major">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.cs2911_major">
+    <patternset refid="excluded.from.module.cs2911_major"/>
+  </patternset>
+  
+  <path id="cs2911_major.module.sourcepath">
+    <dirset dir="${module.cs2911_major.basedir}/../../../../../../../../import/kamen/1/ates466/IdeaProjects/CS2911_Major">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.cs2911_major" depends="compile.module.cs2911_major.production,compile.module.cs2911_major.tests" description="Compile module CS2911_Major"/>
+  
+  <target name="compile.module.cs2911_major.production" depends="register.custom.compilers" description="Compile module CS2911_Major; production classes">
+    <mkdir dir="${cs2911_major.output.dir}"/>
+    <javac2 destdir="${cs2911_major.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.cs2911_major}/javac">
+      <compilerarg line="${compiler.args.cs2911_major}"/>
+      <bootclasspath refid="cs2911_major.module.bootclasspath"/>
+      <classpath refid="cs2911_major.module.production.classpath"/>
+      <src refid="cs2911_major.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.cs2911_major"/>
+    </javac2>
+    
+    <copy todir="${cs2911_major.output.dir}">
+      <fileset dir="${module.cs2911_major.basedir}/../../../../../../../../import/kamen/1/ates466/IdeaProjects/CS2911_Major/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.cs2911_major.tests" depends="register.custom.compilers,compile.module.cs2911_major.production" description="compile module CS2911_Major; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.cs2911_major" description="cleanup module">
+    <delete dir="${cs2911_major.output.dir}"/>
+    <delete dir="${cs2911_major.testoutput.dir}"/>
+  </target>
+</project>

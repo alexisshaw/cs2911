@@ -55,10 +55,9 @@ public class PlayerState {
     public int getVictoryPoints() {
         return victoryPoints;
     }
-    /*//set players victory points
     public void setVictoryPoints(int victoryPoints) {
         this.victoryPoints = victoryPoints;
-    }*/
+    }
 
 
 
@@ -121,6 +120,9 @@ public class PlayerState {
             newDice.add(new Die(randomness));
         }
         dice = newDice;
+    }
+    public void addDie(Die myDie){
+        dice.add(myDie);
     }
     public void removeDie(Die myDie){
         dice.remove(myDie);

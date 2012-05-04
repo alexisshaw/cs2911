@@ -32,13 +32,6 @@ public class PlayerView {
         this.playerId = id;
     }
 
-    /*//returns player Id
-    public int getPlayerId(){
-        return playerId;
-    }*/
-    /*public int getNoPlayers(){
-        return gameState.getNumPlayers();
-    }*/
     public String getPlayerName(int playerID){
         return gameState.getPlayer(playerID).getName();
     }
@@ -65,18 +58,11 @@ public class PlayerView {
         return gameState.getPlayerState(playerId).getField().clone();
     }
 
-    /*//returns amount of victory points player has
-    public int getVictoryPoints() {
-        return gameState.getPlayerState(playerId).getVictoryPoints();
-    }*/
     //returns amount of victory points that any player has
     public int getVictoryPoints(int playerNo) {
         return gameState.getPlayerState(playerNo).getVictoryPoints();
     }
-    
-    /*public int getMoney(){
-        return gameState.getPlayerState(playerId).getMoney();
-    }*/
+
     public int getMoney(int playerNo){
         return gameState.getPlayerState(playerNo).getMoney();
     }

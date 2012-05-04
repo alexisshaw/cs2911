@@ -2,6 +2,8 @@ package Cards;
 
 import Game.CardView;
 
+import static java.lang.Math.min;
+
 public class MercatorCard implements Card {
     //returns the name of the card
     public String toString(){
@@ -30,7 +32,27 @@ public class MercatorCard implements Card {
 
     //Returns this cards Card Action
     public CardAction getCardAction(CardView in){
-        return new CardAction();
+        CardAction returnValue = new CardAction();
+        int myMoney = in.getMyPlayerView().getMoney(in.getMyPlayerView().getPlayerId());
+        int noVictoryPointsToAdd = 0;
+        int[] noVictoryPointsToChange = new int[in.getMyPlayerView().getNoPlayers()];
+        for(int i = 0; i < in.getMyPlayerView().getNoPlayers(); i++){
+            if (i != in.getMyPlayerView().getPlayerId()){
+                int noVictoryPointsAvailable = in.getMyPlayerView().getVictoryPoints(i);
+                int internalVP = in.getPlayer().integerInteraction("Please Choose a number of victory points to buy from "
+                        +in.getMyPlayerView().getPlayerName(i),
+                        min(myMoney/3,noVictoryPointsAvailable),
+                        0);
+                noVictoryPointsToAdd += internalVP;
+                myMoney -= internalVP*3;
+                noVictoryPointsToChange[i] = -internalVP;
+            }
+        }
+        noVictoryPointsToChange[in.getMyPlayerView().getPlayerId()] = noVictoryPointsToAdd;
+        returnValue.setVictoryPointsChangeArray(noVictoryPointsToChange);
+        returnValue.setMoneyToPay(noVictoryPointsToAdd*3);
+                                                                                                
+        return returnValue ;
     }
 
     //returns description of card

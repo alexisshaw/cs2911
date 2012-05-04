@@ -44,14 +44,13 @@ public class SicariusCard  implements Card {
         Vector<Card> cardsToChooseFrom = new Vector<Card>();
         for (int i=0; i < in.getMyPlayerView().getNoPlayers(); i++){
             if(i != in.getMyPlayerView().getPlayerId()){
-                if(cardIndex != 0 && in.getMyPlayerView().getField(i)[cardIndex - 1] != null){
+                if(cardIndex != 0 && in.getMyPlayerView().getField(i)[cardIndex - 1] != null && !in.getMyPlayerView().getField(i)[cardIndex - 1].isBuilding()){
                     cardsToChooseFrom.add(in.getMyPlayerView().getField(i)[cardIndex - 1]);
-                    
                 }
-                if(in.getMyPlayerView().getField(i)[cardIndex] != null){
+                if(in.getMyPlayerView().getField(i)[cardIndex] != null && !in.getMyPlayerView().getField(i)[cardIndex].isBuilding()){
                     cardsToChooseFrom.add(in.getMyPlayerView().getField(i)[cardIndex]);
                 }
-                if(cardIndex == Die.getMaxDiceValue()-1 && in.getMyPlayerView().getField(i)[cardIndex + 1] != null){
+                if(cardIndex == Die.getMaxDiceValue()-1 && in.getMyPlayerView().getField(i)[cardIndex + 1] != null && !in.getMyPlayerView().getField(i)[cardIndex + 1].isBuilding()){
                     cardsToChooseFrom.add(in.getMyPlayerView().getField(i)[cardIndex+1]);
                 }
             }

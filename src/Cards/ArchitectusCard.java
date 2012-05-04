@@ -4,7 +4,6 @@ import Game.CardView;
 import Game.Die;
 
 import java.util.Arrays;
-import java.util.Scanner;
 import java.util.Vector;
 
 public class ArchitectusCard implements Card {
@@ -37,17 +36,19 @@ public class ArchitectusCard implements Card {
     public CardAction getCardAction(CardView input){
         Card[] location = new Card[Die.getMaxDiceValue()];
         Vector<Card> currentHand = new Vector<Card>(input.getMyPlayerView().getHand());
-        while(!currentHand.isEmpty() && input.getPlayer().conditionalInteraction("Do You Wish to lay a Card (Y/N)", "Y", "N", new Scanner(System.in))){
+        while(!currentHand.isEmpty() && input.getPlayer().conditionalInteraction("Do You Wish to lay a Card (Y/N)", "Y", "N")){
             Card[] chosenCard = input.getPlayer().cardChooser("Please Choose a card to place on the field",
                     "You cannot place a card",
                     1,
                     currentHand);
-            currentHand.removeAll(Arrays.asList(chosenCard));
-            Card[] tempLocation = input.getPlayer().cardPlacer(Arrays.asList(chosenCard),
-                    "","Please choose where you wish to place this card\n");
-            for(int i=0; i<location.length ; i++){
-                if(tempLocation[i] != null){
-                    location[i] = tempLocation[i];
+            if(chosenCard[0].isBuilding()){
+                currentHand.removeAll(Arrays.asList(chosenCard));
+                Card[] tempLocation = input.getPlayer().cardPlacer(Arrays.asList(chosenCard),
+                        "","Please choose where you wish to place this card\n");
+                for(int i=0; i<location.length ; i++){
+                    if(tempLocation[i] != null){
+                        location[i] = tempLocation[i];
+                    }
                 }
             }
         }

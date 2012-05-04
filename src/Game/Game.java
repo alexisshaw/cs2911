@@ -160,6 +160,7 @@ public class Game {
                 break;
             case Activate:
                 if(gameState.getPlayerState(playerID).hasDie(nextAction.getDice()[0])){
+                    gameState.getPlayerState(playerID).removeDie(nextAction.getDice()[0]);
                     if(gameState.getPlayerState(playerID).getField()[nextAction.getDice()[0].getDieValue() - 1] != null){
                         CardView view = new CardView(gameState,playerID);
                         CardAction ac = gameState.getPlayerState(playerID).getField()[nextAction.getDice()[0].getDieValue() - 1].getCardAction(view);

@@ -1,6 +1,7 @@
 import Game.Game;
 import Game.Player;
 import Game.Deck;
+import org.fusesource.jansi.AnsiConsole;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,6 +12,8 @@ import Game.Deck;
  */
 public class RunGame {
     static public void main(String[] args){
+        AnsiConsole.systemInstall();
+
         //create new players
         Player[] players = new Player[2];
         players[0] = new Player();

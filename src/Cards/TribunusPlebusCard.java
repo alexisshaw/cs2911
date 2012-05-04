@@ -38,7 +38,9 @@ public class TribunusPlebusCard implements Card {
 
     //Returns this cards Card Action
     public CardAction getCardAction(CardView in){
-        return new CardAction();
+        CardAction toReturn = new CardAction();
+        toReturn.setVictoryPointsToAdd(1);
+        return toReturn;
     }
 
     //returns description of card

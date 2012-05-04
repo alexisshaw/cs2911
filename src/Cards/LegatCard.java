@@ -1,6 +1,10 @@
 package Cards;
 
 import Game.CardView;
+import Game.Die;
+
+import java.util.Arrays;
+import java.util.Vector;
 
 public class LegatCard implements Card {
     //returns the name of the card
@@ -30,6 +34,19 @@ public class LegatCard implements Card {
 
     //Returns this cards Card Action
     public CardAction getCardAction(CardView in){
+        int newVictoryPoints = 0;
+        for (int i=0; i < in.getMyPlayerView().getNoPlayers(); i++){
+            if(i != in.getMyPlayerView().getPlayerId()){
+                Card[] playerField = in.getMyPlayerView().getField(i);
+                for (Card c : playerField){
+                    if (c == null){
+                        newVictoryPoints++;
+                    }
+                }                
+            }
+        }
+        CardAction returnValue = new CardAction();
+        returnValue.setVictoryPointsToAdd(newVictoryPoints);
         return new CardAction();
     }
 

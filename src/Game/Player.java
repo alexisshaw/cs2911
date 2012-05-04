@@ -25,7 +25,7 @@ public class Player {
 
     public Player() {
         System.out.println(CliPlayerPrinter.getBanner());
-        System.out.print("Player please enter your name: ");
+        System.out.println("Player please enter your name: ");
         this.sc = new Scanner(System.in);
         name = sc.nextLine();
         cliPlayerPrinter = new CliPlayerPrinter(this);
@@ -38,7 +38,6 @@ public class Player {
     public String getName() {
         return name;
     }
-    
     
     public PlayerAction getNextActionInteraction(){
         PlayerAction returnValue;
@@ -58,7 +57,7 @@ public class Player {
 
     }
 
-    public boolean conditionalInteraction(String question, String trueChar, String falseChar, Scanner sc){
+    public boolean conditionalInteraction(String question, String trueChar, String falseChar){
         System.out.println(question);
         String truthValue = sc.next();
         while (!(truthValue.contains(trueChar) || truthValue.contains(falseChar))){
@@ -66,6 +65,15 @@ public class Player {
             truthValue = sc.next();
         }
         return truthValue.contains(trueChar);
+    }
+    public int integerInteraction(String question, int maxVal, int minVal){
+        System.out.println(question);
+        int number = sc.nextInt();
+        while (!(number <= maxVal || number >= minVal)){
+            System.out.println("\""+number+"\"");
+            number = sc.nextInt();
+        }
+        return number;
     }
 
     public Card[] initialSwapCardsInteraction() {
@@ -115,7 +123,6 @@ public class Player {
         System.out.print('\n');
         return returnValue;
     }
-
 
     public Die diceChooser(String message) {
         System.out.println(message);

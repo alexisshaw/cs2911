@@ -1,6 +1,10 @@
 package Cards;
 
 import Game.CardView;
+import Game.Die;
+
+import java.util.Arrays;
+import java.util.Vector;
 
 public class GladiatorCard implements Card {
     //returns the name of the card
@@ -30,7 +34,36 @@ public class GladiatorCard implements Card {
 
     //Returns this cards Card Action
     public CardAction getCardAction(CardView in){
-        return new CardAction();
+        Card[] field = in.getMyPlayerView().getField(in.getMyPlayerView().getPlayerId());
+        Vector<Card> vectorField = new Vector<Card>(Arrays.asList(field));
+        int cardIndex = vectorField.indexOf(this);
+        Vector<Card> cardsToChooseFrom = new Vector<Card>();
+        for (int i=0; i < in.getMyPlayerView().getNoPlayers(); i++){
+            if(i != in.getMyPlayerView().getPlayerId()){
+                if(cardIndex != 0 &&
+                        in.getMyPlayerView().getField(i)[cardIndex - 1] != null &&
+                        !in.getMyPlayerView().getField(i)[cardIndex - 1].isBuilding()){
+                    cardsToChooseFrom.add(in.getMyPlayerView().getField(i)[cardIndex - 1]);
+                }
+                if(in.getMyPlayerView().getField(i)[cardIndex] != null &&
+                        !in.getMyPlayerView().getField(i)[cardIndex - 1].isBuilding()){
+                    cardsToChooseFrom.add(in.getMyPlayerView().getField(i)[cardIndex]);
+                }
+                if(cardIndex == Die.getMaxDiceValue()-1 &&
+                        in.getMyPlayerView().getField(i)[cardIndex + 1] != null &&
+                        !in.getMyPlayerView().getField(i)[cardIndex - 1].isBuilding()){
+                    cardsToChooseFrom.add(in.getMyPlayerView().getField(i)[cardIndex+1]);
+                }
+            }
+        }
+        Card[] chosenCard = in.getPlayer().cardChooser(
+                "Please choose one of the following opponents cards to return to their hand",
+                "You cannot return a characters card to their hand",
+                1,
+                cardsToChooseFrom);
+        CardAction returnValue = new CardAction();
+        returnValue.setAddToHand(chosenCard);
+        return returnValue;
     }
 
     //returns description of card

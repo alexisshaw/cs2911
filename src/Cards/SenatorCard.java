@@ -1,10 +1,10 @@
 package Cards;
 
 import Game.CardView;
-import Game.Die;
 
-import java.util.Arrays;
-import java.util.Vector;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,26 +31,17 @@ public class SenatorCard implements Card {
     }
 
     public CardAction getCardAction(CardView input) {
-        Card[] location = new Card[Die.getMaxDiceValue()];
-        Vector<Card> currentHand = new Vector<Card>(input.getMyPlayerView().getHand());
-        while(!currentHand.isEmpty() && input.getPlayer().conditionalInteraction("Do You Wish to lay a Card (Y/N)", "Y", "N")){
-            Card[] chosenCard = input.getPlayer().cardChooser("Please Choose a card to place on the field",
-                    "You cannot place a card",
-                    1,
-                    currentHand);
-            if(!chosenCard[0].isBuilding()){
-                currentHand.removeAll(Arrays.asList(chosenCard));
-                Card[] tempLocation = input.getPlayer().cardPlacer(Arrays.asList(chosenCard),
-                        "","Please choose where you wish to place this card\n");
-                for(int i=0; i<location.length ; i++){
-                    if(tempLocation[i] != null){
-                        location[i] = tempLocation[i];
-                    }
-                }
-            }
-        }
+        //Get the Building cards the player has in their hand
+        Set<Card> currentHand = new HashSet<Card>(input.getMyPlayerView().getHand());
+        Set<Card> characterCardsInHand = new HashSet<Card>();
+        for(Card c: currentHand) if(!c.isBuilding()) characterCardsInHand.add(c);
+        //The player chooses to place cards on the field and where
+        Map<Integer, Card> Location = input.getPlayer().cardMultiPlacer(characterCardsInHand, false);
+
+        //Create and populate the CardAction
         CardAction myAction = new CardAction();
-        myAction.setLayCards(location);
+        myAction.setDestroyCards(Location.values());
+        myAction.setLayCards(Location);
         return myAction;
     }
 

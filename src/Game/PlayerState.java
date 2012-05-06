@@ -17,7 +17,7 @@ public class PlayerState {
     private ArrayList<Die> dice;
     private int victoryPoints;
     private Vector<Card> hand;
-    private Vector<Card> field;
+    private Map<Integer,Card> field;
     private Random randomness;
     private int money;
 
@@ -35,8 +35,7 @@ public class PlayerState {
         //Create hand and field
         hand = new Vector<Card>();
         randomness = new Random();
-        field = new Vector<Card>();
-        field.setSize(Die.getMaxDiceValue());
+        field = new HashMap<Integer, Card>();
     }
 
 
@@ -73,16 +72,22 @@ public class PlayerState {
         }
         return returnValue;
     }
-    public Vector<Card> getFieldVector(){
+    public Map<Integer,Card> getFieldMap(){
         return field;
     }
 
     //set player's field
     public void setField(Card[] field) {
-        this.field = new Vector<Card>(Arrays.asList(field));
+        this.field = new HashMap<Integer, Card>();
+        for(int i=0;i<field.length;i++){
+            if(field[i] != null) this.field.put(new Integer(i),field[i]);
+        }
+    }
+    public void setField(Map<Integer,Card> field) {
+        this.field = field;
     }
     public void placeOnField(Card cardToPlace, int index){
-        field.set(index - 1,cardToPlace);
+        field.put(new Integer(index - 1), cardToPlace);
         this.removeFromHand(cardToPlace);
     }
     private int getNumEmptyFieldLocations() {
@@ -100,7 +105,7 @@ public class PlayerState {
         hand.add(newCard);
     }
     //return player's hand
-    public void removeFromHand(Cards.Card[] myCards){
+    public void removeFromHand(Collection<Card> myCards){
         //for each card to be removed, remove card
         for (Card myCard : myCards) {
             hand.removeElement(myCard);

@@ -2,6 +2,7 @@ package Cards;
 
 import Game.Die;
 
+import java.util.Collection;
 import java.util.Map;
 
 /**
@@ -12,10 +13,10 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class CardAction {
-    Card[] LayCards = null;
-    Card[] destroyCards = null;
-    Card[] placeCards = null;
-    Card[] addToHand = null;
+    Map<Integer, Card> LayCards = null;
+    Map<Integer, Card>  placeCards = null;
+    Collection<Card> destroyCards = null;
+    Collection<Card> addToHand = null;
     int victoryPointsToAdd = 0;
     int[] victoryPointsChangeArray = null;
     int moneyToPay;
@@ -45,32 +46,36 @@ public class CardAction {
         this.moneyToPay = moneyToPay;
     }
 
-    public Card[] getAddToHand() {
+    public Collection<Card> getAddToHand() {
         return addToHand;
     }
 
-    public void setAddToHand(Card[] addToHand) {
+    public void setAddToHand(Collection<Card> addToHand) {
         this.addToHand = addToHand;
     }
 
-    public Card[] getPlaceCards() {
+    public Map<Integer,Card> getPlaceCards() {
         return placeCards;
     }
 
-    public void setPlaceCards(Card[] placeCards) {
+    public void setPlaceCards(Map<Integer,Card> placeCards) {
         this.placeCards = placeCards;
     }
 
-    public Card[] getLayCards() {
+    public Map<Integer,Card> getLayCards() {
         return LayCards;
     }
 
-    public void setLayCards(Card[] layCards) {
+    public void setLayCards(Map<Integer,Card> layCards) {
         LayCards = layCards;
     }
 
-    public Card[] getDestroyCards() {
+    public Collection<Card> getDestroyCards() {
         return destroyCards;
+    }
+
+    public void setDestroyCards(Collection<Card> destroyCards) {
+        this.destroyCards = destroyCards;
     }
 
     public int getVictoryPointsToAdd() {
@@ -79,9 +84,5 @@ public class CardAction {
 
     public void setVictoryPointsToAdd(int victoryPointsToAdd) {
         this.victoryPointsToAdd = victoryPointsToAdd;
-    }
-
-    public void setDestroyCards(Card[] destroyCards) {
-        this.destroyCards = destroyCards;
     }
 }

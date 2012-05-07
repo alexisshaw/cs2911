@@ -2,6 +2,8 @@ package Cards;
 
 import Game.CardView;
 
+import java.util.*;
+
 public class HaruspexCard implements Card {
     //returns the name of the card
     public String toString(){
@@ -31,7 +33,12 @@ public class HaruspexCard implements Card {
     //Returns this cards Card Action
     public CardAction getCardAction(CardView in){
         CardAction returnValue = new CardAction();
-
+        Stack<Card> deck = in.getDeck();
+        List<Card> deckClone = new ArrayList(deck);
+        Collections.shuffle(deckClone);
+        Collection<Card> chosen = in.getPlayer().cardChooser("Please Choose one of the following to add to your hand","",1,deckClone);
+        returnValue.setAddToHand(chosen);
+        returnValue.setToRemoveFromDeck(chosen);
         return returnValue;
     }
 

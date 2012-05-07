@@ -23,6 +23,9 @@ public class Die {
         //Shift dice value up by 1
         value++; //to get between 1 and 6
     }
+    public Die(int value){
+        this.value = value;
+    }
     /*public Die(int value){
         this.value = value;
     }*/

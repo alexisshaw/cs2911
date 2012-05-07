@@ -3,6 +3,10 @@ package Game;
 import Cards.Card;
 import Cards.CardAction;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by IntelliJ IDEA.
  * User: ates466
@@ -40,25 +44,6 @@ public class GameState {
     public int getNumPlayers(){
         return playerStates.length;
     }
-
-    /*//Exchange victory points between players
-    public void exchangeVictoryPoints(int playerIdFrom, int playerIdTo, int qty){
-        int victoryPointsFrom = playerStates[playerIdFrom].getVictoryPoints();
-        int victoryPointsTo   = playerStates[playerIdTo].getVictoryPoints();
-        playerStates[playerIdFrom].setVictoryPoints(victoryPointsFrom - qty);
-        playerStates[playerIdTo].setVictoryPoints(victoryPointsTo + qty);
-    }
-    //test function
-    public static void testExchangeVictoryPoints(){
-        System.out.println("Testing Game.GameState.exchangeVictoryPoints()");
-        Player[] testPlayer = new Player[2];
-        testPlayer[0] = new Player();
-        testPlayer[1] = new Player();
-        GameState testState = new GameState(testPlayer);
-        testState.exchangeVictoryPoints(0,1,2);
-        assert (testState.getPlayerState(0).getVictoryPoints() == 8);
-        assert (testState.getPlayerState(1).getVictoryPoints() == 12);
-    } */
     
     //return the deck
     public Deck getDeck() {
@@ -66,9 +51,9 @@ public class GameState {
     }
 
     //Assign cards to the field
-    public void setField(Cards.Card[][] cardAssignments){
+    public void setField(List<Map<Integer, Card>> cardAssignments){
         for(int i=0; i < playerStates.length ; i++){
-            playerStates[i].setField(cardAssignments[i]);
+            playerStates[i].setField(cardAssignments.get(i));
         }
     }
 
@@ -78,23 +63,59 @@ public class GameState {
     public Player getPlayer(int playerID){
         return players[playerID];
     }
+    // applyAction will always destroy cards before placing other cards.
     public void applyAction(CardAction input, int playerId){
+        if(input.getDestroyCards() != null){
+            for(PlayerState p : playerStates){
+                p.getFieldMap().values().removeAll(input.getDestroyCards());
+            }
+        }
         if(input.getLayCards() != null){
-            Card[] toLay = input.getLayCards();
-            for(int i= 0; i<toLay.length; i++) {
-                if(toLay[i] != null && playerStates[playerId].getHand().contains(toLay[i])){
-                    playerStates[playerId].getHand().removeElement(toLay[i]);
-                    playerStates[playerId].getFieldVector().set(i,toLay[i]);
+            playerStates[playerId].getHand().removeAll(input.getLayCards().values());
+            playerStates[playerId].getFieldMap().putAll(input.getLayCards());
+        }
+        if(input.getReLayCards() != null){
+            playerStates[playerId].getFieldMap().values().removeAll(input.getReLayCards().values());
+            playerStates[playerId].getFieldMap().putAll(input.getReLayCards());
+        }
+        if(input.getPlaceCards() != null){
+            playerStates[playerId].getFieldMap().putAll(input.getPlaceCards());
+        }
+        if(input.getAddToHand() != null){
+            Collection<Card> toAddToHand = input.getAddToHand();
+            for(Card c : toAddToHand) {
+                for(PlayerState p : playerStates){
+                    if(c != null && p.getFieldMap().values().contains(c)){
+                        p.getFieldMap().values().remove(c);
+                        p.addToHand(c);
+                    }
                 }
             }
         }
-        if(input.getDestroyCards() != null){
-            Card[] toDestroy = input.getDestroyCards();
-            for(int i= 0; i<toDestroy.length; i++) {
-                if(toDestroy[i] != null && playerStates[playerId].getHand().contains(toDestroy[i])){
-                    playerStates[playerId].getFieldVector().removeElement(toDestroy[i]);
+        if(input.getVictoryPointsChangeArray() != null){
+            int[] victoryPointsToChange = input.getVictoryPointsChangeArray();
+            for(int i=0; i< victoryPointsToChange.length; i++){
+                playerStates[i].setVictoryPoints(playerStates[i].getVictoryPoints() + victoryPointsToChange[i]);
+            }
+        }
+        if(input.getDiceModifications() != null){
+            for(Map.Entry<Die, Integer> d : input.getDiceModifications().entrySet()){
+                for(PlayerState p : playerStates){
+                    if(p.hasDie(d.getKey())){
+                        p.removeDie(d.getKey());
+                        p.addDie(new Die(d.getValue().intValue() + d.getKey().getDieValue()));
+                    }
                 }
             }
+        }
+        if(input.getMoneyToPay() != 0){
+            playerStates[playerId].addMoney(-input.getMoneyToPay());
+        }
+        if(input.getVictoryPointsToAdd() != 0){
+            playerStates[playerId].setVictoryPoints(playerStates[playerId].getVictoryPoints() + input.getVictoryPointsToAdd());
+        }
+        if(input.getToRemoveFromDeck() != null){
+            ourDeck.getDeck().removeAll(input.getToRemoveFromDeck());
         }
 
     }

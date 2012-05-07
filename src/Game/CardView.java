@@ -3,6 +3,10 @@ package Game;
 //import Cards.Card;
 
 
+import Cards.Card;
+
+import java.util.*;
+
 public class CardView {
     private GameState state;
     private int playerId;
@@ -11,18 +15,34 @@ public class CardView {
         this.state=state;
         this.playerId=playerNo;
     }
+    public int getCardIndex(Card me){
+        Map<Integer, Card> field = getMyPlayerView().getField(getMyPlayerView().getPlayerId());
+        for(Map.Entry<Integer,Card> e: field.entrySet()) if(e.getValue().equals(me)) return e.getKey();
+        return 0;
+    }
 
-    /*public Card[][] getOpposingFields(){
-        Card[][] returnValue = new Card[state.getNumPlayers() - 1][];
-        int j=0;
-        for(int i=0; i<state.getNumPlayers();i++){
-            if(i!=playerId){
-                returnValue[j] = state.getPlayerState(i).getField().clone();
-                j++;
+    public Collection<Card> getOpposingCards(Card me){
+        Map<Integer, Card> field = getMyPlayerView().getField(getMyPlayerView().getPlayerId());
+        int cardIndex = getCardIndex(me);
+        Set<Card> cardsToChooseFrom = new HashSet<Card>();
+        for (int i=0; i < getMyPlayerView().getNoPlayers(); i++){
+            if(i != getMyPlayerView().getPlayerId()){
+                if(getMyPlayerView().getField(i).get(cardIndex - 1) != null){
+                    cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex - 1));
+                }
+                if(getMyPlayerView().getField(i).get(cardIndex) != null){
+                    cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex));
+                }
+                if(getMyPlayerView().getField(i).get(cardIndex + 1) != null){
+                    cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex + 1));
+                }
             }
         }
-        return returnValue;
-    }*/
+        return cardsToChooseFrom;
+    }
+    public Stack<Card> getDeck(){
+        return state.getDeck().getDeck();
+    }
     public PlayerView getMyPlayerView(){
         return new PlayerView(state,playerId);
     }

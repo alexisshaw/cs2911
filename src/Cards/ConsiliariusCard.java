@@ -2,6 +2,10 @@ package Cards;
 
 import Game.CardView;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Map;
+
 public class ConsiliariusCard implements Card {
     //returns the name of the card
     public String toString(){
@@ -30,9 +34,12 @@ public class ConsiliariusCard implements Card {
 
     //Returns this cards Card Action
     public CardAction getCardAction(CardView in){
+        Collection<Card> cardsOnField = in.getMyPlayerView().getField(in.getMyPlayerView().getPlayerId()).values();
+        Collection<Card> characterCardsOnField = new HashSet<Card>();
+        for(Card c:cardsOnField) if(!c.isBuilding()) characterCardsOnField.add(c);
         CardAction returnValue = new CardAction();
-
-        return returnValue;
+        returnValue.setReLayCards(in.getPlayer().cardMultiPlacer(characterCardsOnField,true));
+        return null;
     }
 
     //returns description of card

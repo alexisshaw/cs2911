@@ -1,6 +1,11 @@
 package Cards;
 
 import Game.CardView;
+import Game.Die;
+
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Vector;
 
 public class LegatCard implements Card {
     //returns the name of the card
@@ -30,6 +35,19 @@ public class LegatCard implements Card {
 
     //Returns this cards Card Action
     public CardAction getCardAction(CardView in){
+        int newVictoryPoints = 0;
+        for (int i=0; i < in.getMyPlayerView().getNoPlayers(); i++){
+            if(i != in.getMyPlayerView().getPlayerId()){
+                Map<Integer,Card> playerField = in.getMyPlayerView().getField(i);
+                for (Integer c : in.getMyPlayerView().getDiceDisks()){
+                    if (!playerField.containsKey(c)){
+                        newVictoryPoints++;
+                    }
+                }                
+            }
+        }
+        CardAction returnValue = new CardAction();
+        returnValue.setVictoryPointsToAdd(newVictoryPoints);
         return new CardAction();
     }
 

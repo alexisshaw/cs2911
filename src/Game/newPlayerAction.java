@@ -2,9 +2,7 @@ package Game;
 
 import Cards.Card;
 
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.Vector;
+import java.util.*;
 
 public class newPlayerAction {
     private final Player player;
@@ -49,18 +47,14 @@ public class newPlayerAction {
         player.printGameState();
         System.out.println("You have chosen to place a card");
         int locationId = 0;
-        Card[] chosenCard = player.cardChooser("Please choose a card to place", "Sorry, you have no card to place on the field", 1, player.getMyView().getHand());
-        if (chosenCard != null && chosenCard[0] != null) {
-            Card[] CardLocation = player.cardPlacer(new Vector<Card>(Arrays.asList(chosenCard)),
+        Collection<Card> chosenCard = player.cardChooser("Please choose a card to place", "Sorry, you have no card to place on the field", 1, player.getMyView().getHand());
+        if (chosenCard != null && !chosenCard.isEmpty()) {
+            Map<Integer,Card> CardLocation =  player.cardPlacer(chosenCard,
                     "Please choose where you wish to place your card \n", "");
-            for (int i = 0; i < CardLocation.length; i++) {
-                if (CardLocation[i] != null) {
-                    locationId = i;
-                }
-            }
+            Map.Entry<Integer,Card> entry = CardLocation.entrySet().iterator().next();
             System.out.println(locationId);
             System.out.print('\n');
-            return new PlayerAction(PlayerAction.CardType.Place, chosenCard[0], locationId + 1);
+            return new PlayerAction(PlayerAction.CardType.Place, entry.getValue(), entry.getKey() + 1);
         } else {
             return new PlayerAction();
         }

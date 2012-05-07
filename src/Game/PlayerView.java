@@ -2,7 +2,7 @@ package Game;
 
 import Cards.Card;
 
-import java.util.Vector;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,6 +19,13 @@ public class PlayerView {
     public int getPlayerId() {
         return playerId;
     }
+    public Collection<Integer> getDiceDisks(){
+        Collection<Integer> DiceDisks = new HashSet<Integer>();
+        for(int i=0; i< Die.getMaxDiceValue();i++){
+            DiceDisks.add(i);
+        }
+        return DiceDisks;
+    }
 
     //Stores player's ID
     private int playerId;
@@ -32,24 +39,17 @@ public class PlayerView {
         this.playerId = id;
     }
 
-    /*//returns player Id
-    public int getPlayerId(){
-        return playerId;
-    }*/
-    /*public int getNoPlayers(){
-        return gameState.getNumPlayers();
-    }*/
     public String getPlayerName(int playerID){
         return gameState.getPlayer(playerID).getName();
     }
 
     //returns the dice for making a turn
-    public Die[] getDice(){
-        return gameState.getPlayerState(playerId).getDice().clone();
+    public List<Die> getDice(){
+        return new ArrayList<Die>(gameState.getPlayerState(playerId).getDice());
     }
     //returns a specific dice
     public Die getDice(int index){
-        return gameState.getPlayerState(playerId).getDice()[index];
+        return gameState.getPlayerState(playerId).getDice().get(index);
     }
     
     public int getNoPlayers(){
@@ -61,22 +61,15 @@ public class PlayerView {
         return new Vector<Card>(gameState.getPlayerState(playerId).getHand());
     }
 
-    public Card[] getField(int playerId){
-        return gameState.getPlayerState(playerId).getField().clone();
+    public Map<Integer,Card> getField(int playerId){
+        return new HashMap<Integer,Card>(gameState.getPlayerState(playerId).getField());
     }
 
-    /*//returns amount of victory points player has
-    public int getVictoryPoints() {
-        return gameState.getPlayerState(playerId).getVictoryPoints();
-    }*/
     //returns amount of victory points that any player has
     public int getVictoryPoints(int playerNo) {
         return gameState.getPlayerState(playerNo).getVictoryPoints();
     }
-    
-    /*public int getMoney(){
-        return gameState.getPlayerState(playerId).getMoney();
-    }*/
+
     public int getMoney(int playerNo){
         return gameState.getPlayerState(playerNo).getMoney();
     }

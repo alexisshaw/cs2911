@@ -17,7 +17,7 @@ public class PlayerState {
     private ArrayList<Die> dice;
     private int victoryPoints;
     private Vector<Card> hand;
-    private Vector<Card> field;
+    private Map<Integer,Card> field;
     private Random randomness;
     private int money;
 
@@ -35,8 +35,7 @@ public class PlayerState {
         //Create hand and field
         hand = new Vector<Card>();
         randomness = new Random();
-        field = new Vector<Card>();
-        field.setSize(Die.getMaxDiceValue());
+        field = new HashMap<Integer, Card>();
     }
 
 
@@ -55,41 +54,31 @@ public class PlayerState {
     public int getVictoryPoints() {
         return victoryPoints;
     }
-    /*//set players victory points
     public void setVictoryPoints(int victoryPoints) {
         this.victoryPoints = victoryPoints;
-    }*/
+    }
 
 
 
     //return player's field
-    public Card[] getField() {
-        Card[] returnValue = new Card[Die.getMaxDiceValue()];
-        for(int i=0; i< returnValue.length;i++){
-            try{
-                returnValue[i] = field.get(i);
-            } catch (IndexOutOfBoundsException e){
-                returnValue[i] = null;
-            }
-        }
-        return returnValue;
+    public Map<Integer,Card> getField() {
+        return field;
     }
-    public Vector<Card> getFieldVector(){
+    public Map<Integer,Card> getFieldMap(){
         return field;
     }
 
-    //set player's field
-    public void setField(Card[] field) {
-        this.field = new Vector<Card>(Arrays.asList(field));
+    public void setField(Map<Integer,Card> field) {
+        this.field = field;
     }
     public void placeOnField(Card cardToPlace, int index){
-        field.set(index - 1,cardToPlace);
+        field.put(new Integer(index - 1), cardToPlace);
         this.removeFromHand(cardToPlace);
     }
     private int getNumEmptyFieldLocations() {
         int emptySpots = 0;
         for (int i = 0; i < Die.getMaxDiceValue(); i++) {
-            if (this.getField()[i] == null){
+            if (!field.containsKey(i)){
                 emptySpots++;
             }
         }
@@ -101,7 +90,7 @@ public class PlayerState {
         hand.add(newCard);
     }
     //return player's hand
-    public void removeFromHand(Cards.Card[] myCards){
+    public void removeFromHand(Collection<Card> myCards){
         //for each card to be removed, remove card
         for (Card myCard : myCards) {
             hand.removeElement(myCard);
@@ -122,6 +111,9 @@ public class PlayerState {
         }
         dice = newDice;
     }
+    public void addDie(Die myDie){
+        dice.add(myDie);
+    }
     public void removeDie(Die myDie){
         dice.remove(myDie);
     }
@@ -129,7 +121,7 @@ public class PlayerState {
         return dice.contains(myDie);
     }
     //return dice array
-    public Die[] getDice(){
-        return dice.toArray(new Die[dice.size()]);
+    public List<Die> getDice(){
+        return dice;
     }
 }

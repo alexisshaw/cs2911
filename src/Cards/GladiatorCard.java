@@ -2,6 +2,9 @@ package Cards;
 
 import Game.CardView;
 
+import java.util.Collection;
+import java.util.HashSet;
+
 public class GladiatorCard implements Card {
     //returns the name of the card
     public String toString(){
@@ -30,7 +33,18 @@ public class GladiatorCard implements Card {
 
     //Returns this cards Card Action
     public CardAction getCardAction(CardView in){
-        return new CardAction();
+        Collection<Card> opposingCards = in.getOpposingCards(this);
+        Collection<Card> cardsToChooseFrom = new HashSet<Card>();
+        for(Card c:opposingCards) if(!c.isBuilding()) cardsToChooseFrom.add(c);
+        Collection<Card> chosenCard = in.getPlayer().cardChooser(
+                "Please choose one of the following opponents cards to return to their hand",
+                "You cannot return a characters card to their hand",
+                1,
+                cardsToChooseFrom);
+
+        CardAction returnValue = new CardAction();
+        returnValue.setAddToHand(chosenCard);
+        return returnValue;
     }
 
     //returns description of card

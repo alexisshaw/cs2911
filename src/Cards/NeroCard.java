@@ -1,10 +1,9 @@
 package Cards;
 
 import Game.CardView;
-import Game.Die;
 
-import java.util.Arrays;
-import java.util.Vector;
+import java.util.Collection;
+import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,29 +30,18 @@ public class NeroCard implements Card{
     }
 
     public CardAction getCardAction(CardView in) {
-        Card[] field = in.getMyPlayerView().getField(in.getMyPlayerView().getPlayerId());
-        Vector<Card> vectorField = new Vector<Card>(Arrays.asList(field));
-        int cardIndex = vectorField.indexOf(this);
-        Vector<Card> cardsToChooseFrom = new Vector<Card>();
-        for (int i=0; i < in.getMyPlayerView().getNoPlayers(); i++){
-            if(i != in.getMyPlayerView().getPlayerId()){
-                if(cardIndex != 0 && in.getMyPlayerView().getField(i)[cardIndex - 1] != null && in.getMyPlayerView().getField(i)[cardIndex - 1].isBuilding()){
-                    cardsToChooseFrom.add(in.getMyPlayerView().getField(i)[cardIndex - 1]);
-                }
-                if(in.getMyPlayerView().getField(i)[cardIndex] != null && in.getMyPlayerView().getField(i)[cardIndex].isBuilding()){
-                    cardsToChooseFrom.add(in.getMyPlayerView().getField(i)[cardIndex]);
-                }
-                if(cardIndex == Die.getMaxDiceValue()-1 && in.getMyPlayerView().getField(i)[cardIndex + 1] != null && in.getMyPlayerView().getField(i)[cardIndex + 1].isBuilding()){
-                    cardsToChooseFrom.add(in.getMyPlayerView().getField(i)[cardIndex+1]);
-                }
-            }
-        }
-        Card[] chosenCard = in.getPlayer().cardChooser("Please choose one of the following opponents cards to destroy",
+        Collection<Card> opposingCards = in.getOpposingCards(this);
+        Collection<Card> cardsToChooseFrom = new HashSet<Card>();
+        for(Card c:opposingCards) if(c.isBuilding()) cardsToChooseFrom.add(c);
+
+        Collection<Card> toDestroy = in.getPlayer().cardChooser(
+                "Please choose one of the following opponents cards to destroy",
                 "You cannot destroy a card",
                 1,
                 cardsToChooseFrom);
+        toDestroy.add(this);
         CardAction returnValue = new CardAction();
-        returnValue.setDestroyCards(new Card[]{this, chosenCard[0]});
+        returnValue.setDestroyCards(toDestroy);
         return returnValue;
     }
 

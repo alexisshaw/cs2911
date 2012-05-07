@@ -2,10 +2,6 @@ package Cards;
 
 import Game.CardView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Vector;
-
 public class ConsiliariusCard implements Card {
     //returns the name of the card
     public String toString(){
@@ -34,31 +30,7 @@ public class ConsiliariusCard implements Card {
 
     //Returns this cards Card Action
     public CardAction getCardAction(CardView in){
-        Card[] field = in.getMyPlayerView().getField(in.getMyPlayerView().getPlayerId());
-        Vector<Card> playerCardsOnField = new Vector<Card>();
-        for (Card c: field){
-            if(c!= null && !c.isBuilding()){
-                playerCardsOnField.add(c);
-            }
-        }
-        CardAction returnValue = new CardAction();
-        returnValue.setDestroyCards(playerCardsOnField.toArray(field));
-        Card[] location = new Card[field.length];
-        for (Card c: field){
-            if(c != null){
-                ArrayList<Card> cardToPlace = new ArrayList<Card>(1);
-                cardToPlace.add(c);
-                Card[] tempLocation = in.getPlayer().cardPlacer(cardToPlace,
-                        "","Please choose where you wish to place "+c.toString()+"\n");
-                for(int i=0; i<location.length ; i++){
-                    if(tempLocation[i] != null){
-                        location[i] = tempLocation[i];
-                    }
-                }
-            }
-        }
-        returnValue.setPlaceCards(location);
-        return returnValue;
+        return null;
     }
 
     //returns description of card

@@ -3,6 +3,8 @@ package Game;
 import Cards.Card;
 import Cards.CardAction;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -49,9 +51,9 @@ public class GameState {
     }
 
     //Assign cards to the field
-    public void setField(Cards.Card[][] cardAssignments){
+    public void setField(List<Map<Integer, Card>> cardAssignments){
         for(int i=0; i < playerStates.length ; i++){
-            playerStates[i].setField(cardAssignments[i]);
+            playerStates[i].setField(cardAssignments.get(i));
         }
     }
 
@@ -64,41 +66,24 @@ public class GameState {
     // applyAction will always destroy cards before placing other cards.
     public void applyAction(CardAction input, int playerId){
         if(input.getDestroyCards() != null){
-            Card[] toDestroy = input.getDestroyCards();
-            for(int i= 0; i<toDestroy.length; i++) {
-                for(PlayerState p : playerStates){
-                    if(toDestroy[i] != null && p.getFieldVector().contains(toDestroy[i])){
-                        int index = p.getFieldVector().indexOf(toDestroy[i]);
-                        p.getFieldVector().set(index, null);
-                    }
-                }
+            for(PlayerState p : playerStates){
+                p.getFieldMap().values().removeAll(input.getDestroyCards());
             }
         }
         if(input.getLayCards() != null){
-            Card[] toLay = input.getLayCards();
-            for(int i= 0; i<toLay.length; i++) {
-                if(toLay[i] != null && playerStates[playerId].getHand().contains(toLay[i])){
-                    playerStates[playerId].getHand().removeElement(toLay[i]);
-                    playerStates[playerId].getFieldVector().set(i,toLay[i]);
-                }
-            }
+            playerStates[playerId].getHand().removeAll(input.getLayCards().values());
+            playerStates[playerId].getFieldMap().putAll(input.getLayCards());
         }
         if(input.getPlaceCards() != null){
-            Card[] toPlace = input.getPlaceCards();
-            for(int i= 0; i<toPlace.length; i++) {
-                if(toPlace[i] != null){
-                    playerStates[playerId].getFieldVector().set(i,toPlace[i]);
-                }
-            }
+            playerStates[playerId].getFieldMap().putAll(input.getPlaceCards());
         }
         if(input.getAddToHand() != null){
-            Card[] toAddToHand = input.getPlaceCards();
-            for(int i= 0; i<toAddToHand.length; i++) {
+            Collection<Card> toAddToHand = input.getAddToHand();
+            for(Card c : toAddToHand) {
                 for(PlayerState p : playerStates){
-                    if(toAddToHand[i] != null && p.getFieldVector().contains(toAddToHand[i])){
-                        int index = p.getFieldVector().indexOf(toAddToHand[i]);
-                        p.getFieldVector().set(index, null);
-                        p.addToHand(toAddToHand[i]);
+                    if(c != null && p.getFieldMap().values().contains(c)){
+                        p.getFieldMap().values().remove(c);
+                        p.addToHand(c);
                     }
                 }
             }

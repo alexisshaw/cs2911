@@ -3,6 +3,8 @@ package Game;
 import Cards.Card;
 import Cards.CardAction;
 
+import java.util.*;
+
 /**
  * Created by IntelliJ IDEA.
  * User: ates466
@@ -46,19 +48,19 @@ public class Game {
 
     private void playersPlaceCardsOnField() {
         boolean assignmentsValid = false;
-        Card[][] cardAssignments = new Card[2][Die.getMaxDiceValue()];
+        List<Map<Integer, Card>> cardAssignments = new ArrayList<Map<Integer, Card>>();
         while(!assignmentsValid){
             //Have each player choose where to put their cards
             for(int i=0; i< players.length; i++){
-                cardAssignments[i] = players[i].initialCardPlacementInteraction();
+                cardAssignments.set(i, players[i].initialCardPlacementInteraction());
             }
             assignmentsValid = this.verifyCardAssignments(cardAssignments);
         }
 
         //put cards on field.
         gameState.setField(cardAssignments);
-        for(int i=0; i < cardAssignments.length; i++){
-            gameState.getPlayerState(i).removeFromHand(cardAssignments[i]);
+        for(int i=0; i < cardAssignments.size(); i++){
+            gameState.getPlayerState(i).removeFromHand(cardAssignments.get(i).values());
         }
     }
 
@@ -66,12 +68,12 @@ public class Game {
         //Have each player choose 2 cards to give to opponent
         Card[][] chosenCards = new Card[players.length][2];
         for(int i=0; i< players.length; i++){
-            chosenCards[i] = players[i].initialSwapCardsInteraction();
+            chosenCards[i] = players[i].initialSwapCardsInteraction().toArray(new Card[1]);
         }
         for(int i=0; i< players.length; i++){
             //Give 2 cards to opponent.
             //Remove cards from hand
-            gameState.getPlayerState(i).removeFromHand(chosenCards[i]);
+            gameState.getPlayerState(i).removeFromHand(Arrays.asList(chosenCards[i]));
             for (int j = 0; j < 2; j++) {
                 gameState.getPlayerState(i).addToHand(chosenCards[(i + 1) % 2][j]);
             }
@@ -141,7 +143,7 @@ public class Game {
                 if(gameState.getPlayerState(playerID).hasDie(nextAction.getDice()[0])){
                     try {
                         Card[] newCards = gameState.getDeck().drawCard(nextAction.getDice()[0].getDieValue());
-                        gameState.getPlayerState(playerID).addToHand(players[playerID].newCardChoiceInteraction(newCards));
+                        gameState.getPlayerState(playerID).addToHand(players[playerID].newCardChoiceInteraction(Arrays.asList(newCards)));
                         gameState.getPlayerState(playerID).removeDie(nextAction.getDice()[0]);
                     } catch (Deck.DeckEmptyException e){
                         System.exit(1);
@@ -182,29 +184,21 @@ public class Game {
     }
     
     //Checks that cards chosen by players in start phase matches the cards in their hand
-    public boolean verifyCardAssignments(Card[][] cardAssignments){
+    public boolean verifyCardAssignments(List<Map<Integer, Card>> cardAssignments){
         
         //initialize returnValue
         boolean returnValue = true;
 
         //For each player
-        for (int i=0; i< cardAssignments.length; i++){
+        for (Map<Integer, Card> m : cardAssignments){
             int count = 0;
 
             //For each of their chosen cards
-            for (int j=0; j< cardAssignments[i].length; j++){
-
-                //if they have chosen cards
-                if (cardAssignments[i][j] != null){
-                    count++;
-                }
-
-                //If their hand does not contain chosen card, return false
-                if (cardAssignments[i][j] != null){
-                    if (!gameState.getPlayerState(i).getHand().contains(cardAssignments[i][j])){
-                        returnValue = false;
-                        System.out.println(cardAssignments[i][j].toString());
-                    }
+            for (Map.Entry<Integer,Card> e:m.entrySet()){
+                count++;
+                if (!gameState.getPlayerState(e.getKey().intValue()).getHand().contains(e.getValue())){
+                    returnValue = false;
+                    System.out.println(e.getValue().toString());
                 }
                 //to check that the player has not submitted multiple copies of the same card
             }

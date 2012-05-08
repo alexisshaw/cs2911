@@ -61,28 +61,13 @@ public class PlayerState {
 
 
     //return player's field
-    public Card[] getField() {
-        Card[] returnValue = new Card[Die.getMaxDiceValue()];
-        for(int i=0; i< returnValue.length;i++){
-            try{
-                returnValue[i] = field.get(i);
-            } catch (IndexOutOfBoundsException e){
-                returnValue[i] = null;
-            }
-        }
-        return returnValue;
+    public Map<Integer,Card> getField() {
+        return field;
     }
     public Map<Integer,Card> getFieldMap(){
         return field;
     }
 
-    //set player's field
-    public void setField(Card[] field) {
-        this.field = new HashMap<Integer, Card>();
-        for(int i=0;i<field.length;i++){
-            if(field[i] != null) this.field.put(new Integer(i),field[i]);
-        }
-    }
     public void setField(Map<Integer,Card> field) {
         this.field = field;
     }
@@ -93,7 +78,7 @@ public class PlayerState {
     private int getNumEmptyFieldLocations() {
         int emptySpots = 0;
         for (int i = 0; i < Die.getMaxDiceValue(); i++) {
-            if (this.getField()[i] == null){
+            if (!field.containsKey(i)){
                 emptySpots++;
             }
         }
@@ -136,7 +121,7 @@ public class PlayerState {
         return dice.contains(myDie);
     }
     //return dice array
-    public Die[] getDice(){
-        return dice.toArray(new Die[dice.size()]);
+    public List<Die> getDice(){
+        return dice;
     }
 }

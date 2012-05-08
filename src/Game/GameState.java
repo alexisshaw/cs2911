@@ -74,6 +74,10 @@ public class GameState {
             playerStates[playerId].getHand().removeAll(input.getLayCards().values());
             playerStates[playerId].getFieldMap().putAll(input.getLayCards());
         }
+        if(input.getReLayCards() != null){
+            playerStates[playerId].getFieldMap().values().removeAll(input.getReLayCards().values());
+            playerStates[playerId].getFieldMap().putAll(input.getReLayCards());
+        }
         if(input.getPlaceCards() != null){
             playerStates[playerId].getFieldMap().putAll(input.getPlaceCards());
         }
@@ -109,6 +113,9 @@ public class GameState {
         }
         if(input.getVictoryPointsToAdd() != 0){
             playerStates[playerId].setVictoryPoints(playerStates[playerId].getVictoryPoints() + input.getVictoryPointsToAdd());
+        }
+        if(input.getToRemoveFromDeck() != null){
+            ourDeck.getDeck().removeAll(input.getToRemoveFromDeck());
         }
 
     }

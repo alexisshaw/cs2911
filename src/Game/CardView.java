@@ -15,38 +15,34 @@ public class CardView {
         this.state=state;
         this.playerId=playerNo;
     }
+    public int getCardIndex(Card me){
+        Map<Integer, Card> field = getMyPlayerView().getField(getMyPlayerView().getPlayerId());
+        for(Map.Entry<Integer,Card> e: field.entrySet()) if(e.getValue().equals(me)) return e.getKey();
+        return 0;
+    }
 
     public Collection<Card> getOpposingCards(Card me){
-        Card[] field = getMyPlayerView().getField(getMyPlayerView().getPlayerId());
-        Vector<Card> vectorField = new Vector<Card>(Arrays.asList(field));
-        int cardIndex = vectorField.indexOf(me);
+        Map<Integer, Card> field = getMyPlayerView().getField(getMyPlayerView().getPlayerId());
+        int cardIndex = getCardIndex(me);
         Set<Card> cardsToChooseFrom = new HashSet<Card>();
         for (int i=0; i < getMyPlayerView().getNoPlayers(); i++){
             if(i != getMyPlayerView().getPlayerId()){
-                if(cardIndex != 0 && getMyPlayerView().getField(i)[cardIndex - 1] != null){
-                    cardsToChooseFrom.add(getMyPlayerView().getField(i)[cardIndex - 1]);
+                if(getMyPlayerView().getField(i).get(cardIndex - 1) != null){
+                    cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex - 1));
                 }
-                if(getMyPlayerView().getField(i)[cardIndex] != null){
-                    cardsToChooseFrom.add(getMyPlayerView().getField(i)[cardIndex]);
+                if(getMyPlayerView().getField(i).get(cardIndex) != null){
+                    cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex));
                 }
-                if(cardIndex == Die.getMaxDiceValue()-1 && getMyPlayerView().getField(i)[cardIndex + 1] != null){
-                    cardsToChooseFrom.add(getMyPlayerView().getField(i)[cardIndex+1]);
+                if(getMyPlayerView().getField(i).get(cardIndex + 1) != null){
+                    cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex + 1));
                 }
             }
         }
         return cardsToChooseFrom;
     }
-    /*public Card[][] getOpposingFields(){
-        Card[][] returnValue = new Card[state.getNumPlayers() - 1][];
-        int j=0;
-        for(int i=0; i<state.getNumPlayers();i++){
-            if(i!=playerId){
-                returnValue[j] = state.getPlayerState(i).getField().clone();
-                j++;
-            }
-        }
-        return returnValue;
-    }*/
+    public Stack<Card> getDeck(){
+        return state.getDeck().getDeck();
+    }
     public PlayerView getMyPlayerView(){
         return new PlayerView(state,playerId);
     }

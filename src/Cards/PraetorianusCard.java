@@ -2,14 +2,10 @@ package Cards;
 
 import Game.CardView;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-
-public class ConsiliariusCard implements Card {
+public class PraetorianusCard implements Card {
     //returns the name of the card
     public String toString(){
-        return "Consiliarius";
+        return "Praetorianus";
     }
 
     //returns if the card is a building or not
@@ -34,16 +30,13 @@ public class ConsiliariusCard implements Card {
 
     //Returns this cards Card Action
     public CardAction getCardAction(CardView in){
-        Collection<Card> cardsOnField = in.getMyPlayerView().getField(in.getMyPlayerView().getPlayerId()).values();
-        Collection<Card> characterCardsOnField = new HashSet<Card>();
-        for(Card c:cardsOnField) if(!c.isBuilding()) characterCardsOnField.add(c);
         CardAction returnValue = new CardAction();
-        returnValue.setReLayCards(in.getPlayer().cardMultiPlacer(characterCardsOnField,true));
-        return null;
+
+        return returnValue;
     }
 
     //returns description of card
     public String getCardOracle(){
-        return "The player picks up their character cards and can then lay them again on any dice disc. Buildings can be covered";
+        return "Any of the opponent's dice disc can be blocked for one go.";
     }
 }

@@ -48,6 +48,6 @@ public class SicariusCard  implements Card {
 
     //returns description of card
     public String getCardOracle(){
-        return "Eliminates and opposing face up character card. The opposing card and Sicarius are both discarded";
+        return "Eliminates an opposing face up character card. The opposing card and Sicarius are both discarded";
     }
 }

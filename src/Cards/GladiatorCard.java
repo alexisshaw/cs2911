@@ -35,7 +35,7 @@ public class GladiatorCard implements Card {
     public CardAction getCardAction(CardView in){
         Collection<Card> opposingCards = in.getOpposingCards(this);
         Collection<Card> cardsToChooseFrom = new HashSet<Card>();
-        for(Card c:opposingCards) if(c.isBuilding()) cardsToChooseFrom.add(c);
+        for(Card c:opposingCards) if(!c.isBuilding()) cardsToChooseFrom.add(c);
         Collection<Card> chosenCard = in.getPlayer().cardChooser(
                 "Please choose one of the following opponents cards to return to their hand",
                 "You cannot return a characters card to their hand",

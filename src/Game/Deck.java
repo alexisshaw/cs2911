@@ -1,5 +1,7 @@
 package Game;
 
+import Cards.Card;
+
 import java.util.Collections;
 import java.util.Stack;
 
@@ -24,7 +26,7 @@ public class Deck {
     public Deck(){
 
         //create new stack
-        deck = new Stack<Cards.Card>();
+        deck = new Stack<Card>();
 
         //push all of the cards onto the stack/deck
         for (int i = 0; i < 5; i++) {
@@ -84,18 +86,7 @@ public class Deck {
         return deck.empty();
     }
 
-    /*//Test function for deck object
-    public static void test(){
-        Deck testDeck = new Deck();
-        int count = 0;
-        while(!testDeck.empty()){
-            try{
-                testDeck.drawCard();
-            } catch (Exception e){
-
-            }
-            count++;
-        }
-        assert (count == 52);
-    }*/
+    public Stack<Card> getDeck(){
+        return this.deck;
+    }
 }

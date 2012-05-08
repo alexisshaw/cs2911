@@ -125,7 +125,7 @@ public class Player {
     public Die diceChooser(String message) {
         System.out.println(message);
         int diceId = 0;
-        while (!(diceId > 0 && diceId <= myView.getDice().length)){
+        while (!(diceId > 0 && diceId <= myView.getDice().size())){
             diceId = this.sc.nextInt();
         }
         return myView.getDice(diceId-1);

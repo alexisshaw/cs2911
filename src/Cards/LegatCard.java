@@ -4,6 +4,7 @@ import Game.CardView;
 import Game.Die;
 
 import java.util.Arrays;
+import java.util.Map;
 import java.util.Vector;
 
 public class LegatCard implements Card {
@@ -37,9 +38,9 @@ public class LegatCard implements Card {
         int newVictoryPoints = 0;
         for (int i=0; i < in.getMyPlayerView().getNoPlayers(); i++){
             if(i != in.getMyPlayerView().getPlayerId()){
-                Card[] playerField = in.getMyPlayerView().getField(i);
-                for (Card c : playerField){
-                    if (c == null){
+                Map<Integer,Card> playerField = in.getMyPlayerView().getField(i);
+                for (Integer c : in.getMyPlayerView().getDiceDisks()){
+                    if (!playerField.containsKey(c)){
                         newVictoryPoints++;
                     }
                 }                

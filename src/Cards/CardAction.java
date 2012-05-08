@@ -15,12 +15,30 @@ import java.util.Map;
 public class CardAction {
     Map<Integer, Card> LayCards = null;
     Map<Integer, Card>  placeCards = null;
+    Map<Integer, Card> reLayCards = null;
     Collection<Card> destroyCards = null;
     Collection<Card> addToHand = null;
     int victoryPointsToAdd = 0;
     int[] victoryPointsChangeArray = null;
     int moneyToPay;
     Map<Die, Integer> diceModifications = null;
+    Collection<Card> toRemoveFromDeck = null;
+
+    public Map<Integer, Card> getReLayCards() {
+        return reLayCards;
+    }
+
+    public void setReLayCards(Map<Integer, Card> reLayCards) {
+        this.reLayCards = reLayCards;
+    }
+
+    public Collection<Card> getToRemoveFromDeck() {
+        return toRemoveFromDeck;
+    }
+
+    public void setToRemoveFromDeck(Collection<Card> toRemoveFromDeck) {
+        this.toRemoveFromDeck = toRemoveFromDeck;
+    }
 
     public Map<Die, Integer> getDiceModifications() {
         return diceModifications;

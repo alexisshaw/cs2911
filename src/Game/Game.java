@@ -48,7 +48,8 @@ public class Game {
 
     private void playersPlaceCardsOnField() {
         boolean assignmentsValid = false;
-        List<Map<Integer, Card>> cardAssignments = new ArrayList<Map<Integer, Card>>();
+        Vector<Map<Integer, Card>> cardAssignments = new Vector<Map<Integer, Card>>();
+        cardAssignments.setSize(players.length);
         while(!assignmentsValid){
             //Have each player choose where to put their cards
             for(int i=0; i< players.length; i++){
@@ -163,9 +164,9 @@ public class Game {
             case Activate:
                 if(gameState.getPlayerState(playerID).hasDie(nextAction.getDice()[0])){
                     gameState.getPlayerState(playerID).removeDie(nextAction.getDice()[0]);
-                    if(gameState.getPlayerState(playerID).getField()[nextAction.getDice()[0].getDieValue() - 1] != null){
+                    if(gameState.getPlayerState(playerID).getField().get(nextAction.getDice()[0].getDieValue() - 1) != null){
                         CardView view = new CardView(gameState,playerID);
-                        CardAction ac = gameState.getPlayerState(playerID).getField()[nextAction.getDice()[0].getDieValue() - 1].getCardAction(view);
+                        CardAction ac = gameState.getPlayerState(playerID).getField().get(nextAction.getDice()[0].getDieValue() - 1).getCardAction(view);
                         if(ac!= null){
                             gameState.applyAction(ac, playerID);
                         }
@@ -196,7 +197,7 @@ public class Game {
             //For each of their chosen cards
             for (Map.Entry<Integer,Card> e:m.entrySet()){
                 count++;
-                if (!gameState.getPlayerState(e.getKey().intValue()).getHand().contains(e.getValue())){
+                if (!gameState.getPlayerState(cardAssignments.indexOf(m)).getHand().contains(e.getValue())){
                     returnValue = false;
                     System.out.println(e.getValue().toString());
                 }

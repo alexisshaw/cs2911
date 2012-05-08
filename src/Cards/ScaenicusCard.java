@@ -2,14 +2,10 @@ package Cards;
 
 import Game.CardView;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-
-public class ConsiliariusCard implements Card {
+public class ScaenicusCard implements Card {
     //returns the name of the card
     public String toString(){
-        return "Consiliarius";
+        return "Scaenicus";
     }
 
     //returns if the card is a building or not
@@ -24,26 +20,23 @@ public class ConsiliariusCard implements Card {
 
     //returns dollar value of placing card
     public int getPrice(){
-        return 4;
+        return 8;
     }
 
     //returns defence value of the card
     public int getDefence(){
-        return 4;
+        return 3;
     }
 
     //Returns this cards Card Action
     public CardAction getCardAction(CardView in){
-        Collection<Card> cardsOnField = in.getMyPlayerView().getField(in.getMyPlayerView().getPlayerId()).values();
-        Collection<Card> characterCardsOnField = new HashSet<Card>();
-        for(Card c:cardsOnField) if(!c.isBuilding()) characterCardsOnField.add(c);
         CardAction returnValue = new CardAction();
-        returnValue.setReLayCards(in.getPlayer().cardMultiPlacer(characterCardsOnField,true));
-        return null;
+
+        return returnValue;
     }
 
     //returns description of card
     public String getCardOracle(){
-        return "The player picks up their character cards and can then lay them again on any dice disc. Buildings can be covered";
+        return "He performs no action of his own but can copy the action of any of the player's face-up character cards, and the next time round that of another.";
     }
 }

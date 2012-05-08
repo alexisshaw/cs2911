@@ -2,7 +2,7 @@ package Game;
 
 import Cards.Card;
 
-import java.util.Vector;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,6 +18,13 @@ public class PlayerView {
 
     public int getPlayerId() {
         return playerId;
+    }
+    public Collection<Integer> getDiceDisks(){
+        Collection<Integer> DiceDisks = new HashSet<Integer>();
+        for(int i=0; i< Die.getMaxDiceValue();i++){
+            DiceDisks.add(i);
+        }
+        return DiceDisks;
     }
 
     //Stores player's ID
@@ -37,12 +44,12 @@ public class PlayerView {
     }
 
     //returns the dice for making a turn
-    public Die[] getDice(){
-        return gameState.getPlayerState(playerId).getDice().clone();
+    public List<Die> getDice(){
+        return new ArrayList<Die>(gameState.getPlayerState(playerId).getDice());
     }
     //returns a specific dice
     public Die getDice(int index){
-        return gameState.getPlayerState(playerId).getDice()[index];
+        return gameState.getPlayerState(playerId).getDice().get(index);
     }
     
     public int getNoPlayers(){
@@ -54,8 +61,8 @@ public class PlayerView {
         return new Vector<Card>(gameState.getPlayerState(playerId).getHand());
     }
 
-    public Card[] getField(int playerId){
-        return gameState.getPlayerState(playerId).getField().clone();
+    public Map<Integer,Card> getField(int playerId){
+        return new HashMap<Integer,Card>(gameState.getPlayerState(playerId).getField());
     }
 
     //returns amount of victory points that any player has

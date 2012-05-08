@@ -13,7 +13,7 @@ public class CliPlayerPrinter {
 
     void printDice() {
         System.out.println("You have the following dice:");
-        for (int i = 1; i <= player.getMyView().getDice().length; i++) {
+        for (int i = 1; i <= player.getMyView().getDice().size(); i++) {
             System.out.printf((char) 27 + "[1m" + "   %d:" + (char) 27 + "[0m" + " %d", i, player.getMyView().getDice(i - 1).getDieValue());
         }
         System.out.print("\n\n");
@@ -36,9 +36,9 @@ public class CliPlayerPrinter {
         System.out.printf("  %-18s", player.getMyView().getPlayerName(1));
         System.out.print("\n");
         for (int i = 0; i < Die.getMaxDiceValue(); i++) {
-            System.out.printf("%18s  ", emptyIfNull(player.getMyView().getField(0)[i]));
+            System.out.printf("%18s  ", emptyIfNull(player.getMyView().getField(0).get(i)));
             System.out.printf((char) 27 + "[1m" + "  %2d  " + (char) 27 + "[0m", i + 1);
-            System.out.printf("  %-18s", emptyIfNull(player.getMyView().getField(1)[i]));
+            System.out.printf("  %-18s", emptyIfNull(player.getMyView().getField(1).get(i)));
             System.out.print("\n");
         }
         System.out.print('\n');

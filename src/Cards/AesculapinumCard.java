@@ -23,7 +23,7 @@ public class AesculapinumCard implements Card {
     }
 
     @Override public int getNumberOfDiceRequired() {
-        return 0;
+        return 1;
     }
 
     @Override public int getPrice() {

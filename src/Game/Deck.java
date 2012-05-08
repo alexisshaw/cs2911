@@ -1,7 +1,8 @@
 package Game;
 
-import Cards.Card;
+import Cards.*;
 
+import javax.sql.rowset.CachedRowSet;
 import java.util.Collections;
 import java.util.Stack;
 
@@ -29,9 +30,7 @@ public class Deck {
         deck = new Stack<Card>();
 
         //push all of the cards onto the stack/deck
-        for (int i = 0; i < 5; i++) {
-            FillDeckWithStandardCards();
-        }
+        FillDeckWithStandardCards();
 
         //shuffle the deck
         this.shuffle();
@@ -48,8 +47,48 @@ public class Deck {
         deck.push(new Cards.GladiatorCard());
         deck.push(new Cards.GladiatorCard());
         deck.push(new Cards.MercatorCard());
+        deck.push(new Cards.ConsulCard());
+        deck.push(new Cards.ConsulCard());
+        deck.push(new Cards.LegionariusCard());
+        deck.push(new Cards.LegionariusCard());
+        deck.push(new Cards.LegionariusCard());
+        deck.push(new Cards.NeroCard());
+        deck.push(new Cards.PraetorianusCard());
+        deck.push(new Cards.PraetorianusCard());
+        deck.push(new Cards.ScaenicusCard());
+        deck.push(new Cards.ScaenicusCard());
+        deck.push(new Cards.HaruspexCard());
+        deck.push(new Cards.HaruspexCard());
+        deck.push(new Cards.SenatorCard());
+        deck.push(new Cards.SenatorCard());
+        deck.push(new Cards.VelitesCard());
+        deck.push(new Cards.VelitesCard());
+        deck.push(new EssedumCard());
+        deck.push(new EssedumCard());
         deck.push(new Cards.TribunusPlebusCard());
         deck.push(new Cards.TribunusPlebusCard());
+        deck.push(new CenturioCard());
+        deck.push(new CenturioCard());
+        deck.push(new AesculapinumCard());
+        deck.push(new AesculapinumCard());
+        deck.push(new BasilicaCard());
+        deck.push(new BasilicaCard());
+        deck.push(new MachinaCard());
+        deck.push(new MachinaCard());
+        deck.push(new ForumCard());
+        deck.push(new ForumCard());
+        deck.push(new ForumCard());
+        deck.push(new ForumCard());
+        deck.push(new ForumCard());
+        deck.push(new ForumCard());
+        deck.push(new MercatusCard());
+        deck.push(new MercatusCard());
+        deck.push(new OnagerCard());
+        deck.push(new OnagerCard());
+        deck.push(new TempulmCard());
+        deck.push(new TempulmCard());
+        deck.push(new TurrisCard());
+        deck.push(new TurrisCard());
     }
 
     /*public Deck(Stack<Cards.Card> deck){

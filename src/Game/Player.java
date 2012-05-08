@@ -105,7 +105,6 @@ public class Player {
         }
         return returnValue;
     }
-
     public Map<Integer, Card> cardPlacer(Collection<Card> cards, String titleMessage, String perCardMessage){
         System.out.printf(titleMessage, cards.size());
         Map<Integer, Card> returnValue = new HashMap<Integer, Card>();
@@ -115,7 +114,7 @@ public class Player {
             while (!(location > 0 && location <= Die.getMaxDiceValue())){
                 location = this.sc.nextInt();
                 if(location > 0 && location <= Die.getMaxDiceValue())
-                    returnValue.put(new Integer(location - 1), card);
+                    returnValue.put(location - 1, card);
             }
         }
         System.out.print('\n');

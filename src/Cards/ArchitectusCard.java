@@ -37,6 +37,7 @@ public class ArchitectusCard implements Card {
         //Get the Building cards the player has in their hand
         Set<Card> currentHand = new HashSet<Card>(input.getMyPlayerView().getHand());
         Set<Card> buildingCardsInHand = new HashSet<Card>();
+
         for(Card c: currentHand) if(c.isBuilding()) buildingCardsInHand.add(c);
         //The player chooses to place cards on the field and where
         Map<Integer, Card> Location = input.getPlayer().cardMultiPlacer(buildingCardsInHand, false);

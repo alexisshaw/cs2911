@@ -20,9 +20,18 @@ public class CardAction {
     Collection<Card> addToHand = null;
     int victoryPointsToAdd = 0;
     int[] victoryPointsChangeArray = null;
-    int moneyToPay;
+    int moneyToPay = 0;
     Map<Die, Integer> diceModifications = null;
+    Collection<Die>   diceUsed = null;
     Collection<Card> toRemoveFromDeck = null;
+
+    public Collection<Die> getDiceUsed() {
+        return diceUsed;
+    }
+
+    public void setDiceUsed(Collection<Die> diceUsed) {
+        this.diceUsed = diceUsed;
+    }
 
     public Map<Integer, Card> getReLayCards() {
         return reLayCards;

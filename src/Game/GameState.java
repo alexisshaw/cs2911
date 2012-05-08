@@ -103,7 +103,7 @@ public class GameState {
                 for(PlayerState p : playerStates){
                     if(p.hasDie(d.getKey())){
                         p.removeDie(d.getKey());
-                        p.addDie(new Die(d.getValue().intValue() + d.getKey().getDieValue()));
+                        p.addDie(new Die(d.getValue() + d.getKey().getDieValue()));
                     }
                 }
             }
@@ -116,6 +116,9 @@ public class GameState {
         }
         if(input.getToRemoveFromDeck() != null){
             ourDeck.getDeck().removeAll(input.getToRemoveFromDeck());
+        }
+        if(input.getDiceUsed()!=null){
+            playerStates[playerId].getDice().removeAll(input.getDiceUsed());
         }
 
     }

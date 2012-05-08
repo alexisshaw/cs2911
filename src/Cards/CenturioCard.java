@@ -11,28 +11,29 @@ import java.util.Set;
 /**
  * Created by IntelliJ IDEA.
  * User: ates466
- * Date: 5/4/12
- * Time: 10:38 AM
+ * Date: 5/8/12
+ * Time: 11:33 AM
  * To change this template use File | Settings | File Templates.
  */
-public class VelitesCard implements Card{
-    public String toString(){
-        return "Velites";
+public class CenturioCard implements Card{
+    public String toString() {
+        return "Centurio";
     }
+
     public boolean isBuilding() {
         return false;
     }
 
     public int getNumberOfDiceRequired() {
-        return 1;
+        return 0;
     }
 
     public int getPrice() {
-        return 5;
+        return 9;
     }
 
     public int getDefence() {
-        return 3;
+        return 5;
     }
 
     public CardAction getCardAction(CardView input) {
@@ -45,10 +46,20 @@ public class VelitesCard implements Card{
                 "You cannot attack a card",
                 1,
                 toAttackCollection);
+        boolean useAnotherDie = !input.getMyPlayerView().getDice().isEmpty() && input.getPlayer().conditionalInteraction(
+                "The battle die is a " + Integer.toString(BattleDie.getDieValue()) + "Would you like to add one fo your action die",
+                "y",
+                "n");
         CardAction returnValue = new CardAction();
+        Die toAdd = new Die(0);
+        if(useAnotherDie){
+            toAdd = input.getPlayer().diceChooser("Please Select the die you wish to add");
+            Collection<Die> toAddSet = new HashSet<Die>();
+            returnValue.setDiceUsed(toAddSet);
+        }
         if(!toAttackSet.isEmpty()) {
             Card toAttack = toAttackSet.iterator().next();
-            if(toAttack.getDefence() <= BattleDie.getDieValue()){
+            if(toAttack.getDefence() <= (BattleDie.getDieValue() + toAdd.getDieValue())){
                 Set<Card> killedSet = new HashSet<Card>();
                 killedSet.add(toAttack);
                 returnValue.setDestroyCards(killedSet);
@@ -58,6 +69,10 @@ public class VelitesCard implements Card{
     }
 
     public String getCardOracle() {
-        return "attacks any opposing character card (does not have to be directly opposite). The battle die is thrown once.";
+        return "attacks the card directly opposite, whether it is a " +
+                "character or building card. " +
+                "The value of an unused action die can be added to the " +
+                "value of the battle die (the action die is then counted as used). " +
+                "This is decided after the battle die has been thrown.";
     }
 }

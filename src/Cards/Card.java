@@ -10,6 +10,7 @@ import Game.CardView;
  * Cards.Card interface to control all of the card objects
  */
 public interface Card {
+    @Override
     //returns the name of the card
     public String toString();
 

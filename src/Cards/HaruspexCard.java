@@ -34,7 +34,7 @@ public class HaruspexCard implements Card {
     public CardAction getCardAction(CardView in){
         CardAction returnValue = new CardAction();
         Stack<Card> deck = in.getDeck();
-        List<Card> deckClone = new ArrayList(deck);
+        List<Card> deckClone = new ArrayList<Card>(deck);
         Collections.shuffle(deckClone);
         Collection<Card> chosen = in.getPlayer().cardChooser("Please Choose one of the following to add to your hand","",1,deckClone);
         returnValue.setAddToHand(chosen);

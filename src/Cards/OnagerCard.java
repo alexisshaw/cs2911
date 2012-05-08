@@ -1,6 +1,12 @@
 package Cards;
 
 import Game.CardView;
+import Game.Die;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,8 +37,25 @@ public class OnagerCard implements Card{
     }
 
     public CardAction getCardAction(CardView input) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
+        Collection<Card> opposingCards = input.getOpposingCards(this);
+        Collection<Card> toAttackCollection = new HashSet<Card>();
+        for(Card c: opposingCards) if(c.isBuilding()) toAttackCollection.add(c);
+        Die BattleDie = new Die(new Random());
+        Collection<Card> toAttackSet = input.getPlayer().cardChooser(
+                "Please Choose one of these cards to attack",
+                "You cannot attack a card",
+                1,
+                toAttackCollection);
+        CardAction returnValue = new CardAction();
+        if(!toAttackSet.isEmpty()) {
+            Card toAttack = toAttackSet.iterator().next();
+            if(toAttack.getDefence() <= BattleDie.getDieValue()){
+                Set<Card> killedSet = new HashSet<Card>();
+                killedSet.add(toAttack);
+                returnValue.setDestroyCards(killedSet);
+            }
+        }
+        return returnValue;    }
 
     public String getCardOracle() {
         return "This Roman catapult attacks any opposing building. The battle die is thrown once.";

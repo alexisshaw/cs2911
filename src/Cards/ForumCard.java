@@ -1,6 +1,11 @@
 package Cards;
 
 import Game.CardView;
+import Game.Die;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,16 +36,29 @@ public class ForumCard implements Card {
     }
 
     public CardAction getCardAction(CardView input) {
-        return null;
+        Die secondDie = input.getPlayer().diceChooser("Please Choose a second die to activate "+ this.toString() +":\n");
+        Collection<Die> dieSet = new HashSet<Die>(); 
+        dieSet.add(secondDie);
+        CardAction returnValue = new CardAction();
+        returnValue.setVictoryPointsToAdd(secondDie.getDieValue());
+        for(Card c: input.getCardsNextTo(this)){
+            if (c.getClass() == BasilicaCard.class) returnValue.setVictoryPointsToAdd(returnValue.getVictoryPointsToAdd()+2);
+            if (c.getClass() == TempulmCard.class){
+                if(input.getPlayer().conditionalInteraction("Would you like to activate " + c.toString()+ "?" ,"y","n")){
+                    Die thirdDie = input.getPlayer().diceChooser("Please Choose a second die to activate "+ this.toString() +":\n");
+                    dieSet.add(thirdDie);
+                    returnValue.setVictoryPointsToAdd(returnValue.getVictoryPointsToAdd() +thirdDie.getDieValue());
+                }
+            }
+        }
+        returnValue.setDiceUsed(dieSet);
+        
+        return returnValue;
     }
 
     public String getCardOracle() {
-        return "requires 2 action\n" +
-                "dice: one to activate\n" +
-                "the Forum and the\n" +
-                "other to determine\n" +
-                "how many victory\n" +
-                "points the player\n" +
-                "receives.";
+        return "requires 2 action dice: one to activate " +
+                "the Forum and the other to determine " +
+                "how many victory points the player receives.";
     }
 }

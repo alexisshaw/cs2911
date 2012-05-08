@@ -22,7 +22,6 @@ public class CardView {
     }
 
     public Collection<Card> getOpposingCards(Card me){
-        Map<Integer, Card> field = getMyPlayerView().getField(getMyPlayerView().getPlayerId());
         int cardIndex = getCardIndex(me);
         Set<Card> cardsToChooseFrom = new HashSet<Card>();
         for (int i=0; i < getMyPlayerView().getNoPlayers(); i++){
@@ -40,6 +39,22 @@ public class CardView {
         }
         return cardsToChooseFrom;
     }
+    public Collection<Card> getCardsNextTo(Card me){
+        int cardIndex = getCardIndex(me);
+        int i = playerId;
+        Set<Card> cardsToChooseFrom = new HashSet<Card>();
+        if(getMyPlayerView().getField(i).get(cardIndex - 1) != null){
+            cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex - 1));
+        }
+        if(getMyPlayerView().getField(i).get(cardIndex) != null){
+            cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex));
+        }
+        if(getMyPlayerView().getField(i).get(cardIndex + 1) != null){
+            cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex + 1));
+        }
+        return cardsToChooseFrom;
+    }
+
     public Stack<Card> getDeck(){
         return state.getDeck().getDeck();
     }

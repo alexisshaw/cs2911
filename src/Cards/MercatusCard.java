@@ -2,6 +2,8 @@ package Cards;
 
 import Game.CardView;
 
+import java.util.Map;
+
 /**
  * Created by IntelliJ IDEA.
  * User: ates466
@@ -30,15 +32,25 @@ public class MercatusCard implements Card {
         return 3;
     }
 
-    public CardAction getCardAction(CardView input) {
-        return null;
+    public CardAction getCardAction(CardView in) {
+        int newVictoryPoints = 0;
+        for (int i=0; i < in.getMyPlayerView().getNoPlayers(); i++){
+            if(i != in.getMyPlayerView().getPlayerId()){
+                Map<Integer,Card> playerField = in.getMyPlayerView().getField(i);
+                for (Card c : playerField.values()){
+                    if(c.getClass() == ForumCard.class){
+                        newVictoryPoints ++;
+                    }
+                }
+            }
+        }
+        CardAction returnValue = new CardAction();
+        returnValue.setVictoryPointsToAdd(newVictoryPoints);
+        return new CardAction();
     }
 
     public String getCardOracle() {
-        return "The player gets\n" +
-                "1 victory point for\n" +
-                "every face-up Forum\n" +
-                "that the opponent\n" +
-                "has.";
+        return "The player gets 1 victory point for every face-up Forum " +
+                "that the opponent has.";
     }
 }

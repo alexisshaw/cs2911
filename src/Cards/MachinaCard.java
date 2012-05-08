@@ -2,6 +2,9 @@ package Cards;
 
 import Game.CardView;
 
+import java.util.Collection;
+import java.util.HashSet;
+
 /**
  * Created by IntelliJ IDEA.
  * User: ates466
@@ -30,7 +33,12 @@ public class MachinaCard implements Card{
         return 4;
     }
 
-    public CardAction getCardAction(CardView input) {
+    public CardAction getCardAction(CardView view) {
+        Collection<Card> cardsOnField = view.getMyPlayerView().getField(view.getMyPlayerView().getPlayerId()).values();
+        Collection<Card> characterCardsOnField = new HashSet<Card>();
+        for(Card c:cardsOnField) if(c.isBuilding()) characterCardsOnField.add(c);
+        CardAction returnValue = new CardAction();
+        returnValue.setReLayCards(view.getPlayer().cardMultiPlacer(characterCardsOnField,true));
         return null;
     }
 

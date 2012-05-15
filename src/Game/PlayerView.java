@@ -1,5 +1,6 @@
 package Game;
 
+import Game.GameState.GameState;
 import card.Card;
 
 import java.util.*;

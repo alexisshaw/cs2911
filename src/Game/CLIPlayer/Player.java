@@ -26,11 +26,15 @@ public class Player {
     }
 
     public Player() {
+        name = "Player";
+        cliPlayerPrinter = new CliPlayerPrinter(this);
+    }
+    public void setPlayerName(){
         System.out.println(CliPlayerPrinter.getBanner());
         System.out.println("Player please enter your name: ");
         this.sc = new Scanner(System.in);
         name = sc.nextLine();
-        cliPlayerPrinter = new CliPlayerPrinter(this);
+        System.out.println("");
     }
 
     public void setPlayerView(PlayerView newView) {

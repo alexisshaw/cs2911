@@ -1,5 +1,8 @@
-package Game;
+package Game.GameState;
 
+import Game.Deck;
+import Game.Die;
+import Game.Disk;
 import card.Card;
 import card.CardAction;
 import Game.CLIPlayer.Player;

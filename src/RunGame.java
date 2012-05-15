@@ -18,11 +18,10 @@ public class RunGame {
         Player[] players = new Player[2];
         players[0] = new Player();
         players[1] = new Player();
-        System.out.println("");
-        System.out.println("");
         //Create a new game
         Game myGame = new Game(players);
-
+        //Get the Players Names
+        myGame.getNames();
         //Set up the game
         try{
          myGame.prepare();

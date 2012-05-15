@@ -42,8 +42,8 @@ public class AesculapinumCard implements Card {
     @Override public CardAction getCardAction(CardView input) {
         Collection<Card> discardPile = new LinkedList<Card>(input.getDiscard());
         Collection<Card> toAddToHand = input.getPlayer().cardChooser(
-                "Please Choose a card to resuract",
-                "You Cannot resurect a card",
+                "Please Choose a card to resurrect",
+                "You Cannot resurrect a card",
                 1,
                 discardPile);
         CardAction action = new CardAction();

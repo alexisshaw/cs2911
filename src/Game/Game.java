@@ -1,5 +1,6 @@
 package Game;
 
+import Game.GameState.GameState;
 import card.Card;
 import card.CardAction;
 import Game.CLIPlayer.Player;
@@ -15,7 +16,7 @@ import java.util.*;
  */
 public class Game {
     
-    //Declarations for Game.CLIPlayer.Player, Game.GameState classes
+    //Declarations for Game.CLIPlayer.Player, Game.GameState.GameState classes
     private Player[] players;
     private GameState gameState;
     
@@ -210,5 +211,11 @@ public class Game {
             }
         }
         return returnValue;
+    }
+
+    public void getNames() {
+        for(Player p: players){
+            p.setPlayerName();
+        }
     }
 }

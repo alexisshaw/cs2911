@@ -1,5 +1,7 @@
-package Game;
+package Game.GameState;
 
+import Game.Die;
+import Game.Disk;
 import card.Card;
 import Game.field.Field;
 

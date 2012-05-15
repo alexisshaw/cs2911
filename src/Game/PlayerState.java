@@ -1,6 +1,7 @@
 package Game;
 
-import Cards.Card;
+import card.Card;
+import Game.field.Field;
 
 import java.util.*;
 
@@ -17,12 +18,12 @@ public class PlayerState {
     private ArrayList<Die> dice;
     private int victoryPoints;
     private Vector<Card> hand;
-    private Map<Integer,Card> field;
+    private Field field;
     private Random randomness;
     private int money;
 
     //Constructor for creating player state
-    public PlayerState(){
+    public PlayerState(Collection<Card> discard){
         //create empty array of dice
         dice = new ArrayList<Die>();
 
@@ -35,7 +36,7 @@ public class PlayerState {
         //Create hand and field
         hand = new Vector<Card>();
         randomness = new Random();
-        field = new HashMap<Integer, Card>();
+        field = new Field(discard);
     }
 
 
@@ -61,24 +62,25 @@ public class PlayerState {
 
 
     //return player's field
-    public Map<Integer,Card> getField() {
+    public Field getField() {
         return field;
     }
-    public Map<Integer,Card> getFieldMap(){
+    public Map<Disk,Card> getFieldMap(){
         return field;
     }
 
-    public void setField(Map<Integer,Card> field) {
-        this.field = field;
+    public void setField(Map<Disk,Card> field) {
+        this.field.clear();
+        this.field.putAll(field);
     }
-    public void placeOnField(Card cardToPlace, int index){
-        field.put(new Integer(index - 1), cardToPlace);
+    public void placeOnField(Card cardToPlace, Disk key){
+        field.put(key, cardToPlace);
         this.removeFromHand(cardToPlace);
     }
     private int getNumEmptyFieldLocations() {
         int emptySpots = 0;
-        for (int i = 0; i < Die.getMaxDiceValue(); i++) {
-            if (!field.containsKey(i)){
+        for (Disk d: Disk.diskSet()) {
+            if (!field.containsKey(d)){
                 emptySpots++;
             }
         }
@@ -86,7 +88,7 @@ public class PlayerState {
     }
 
     //add new card to players hand
-    public void addToHand(Cards.Card newCard) {
+    public void addToHand(card.Card newCard) {
         hand.add(newCard);
     }
     //return player's hand
@@ -96,7 +98,7 @@ public class PlayerState {
             hand.removeElement(myCard);
         }
     }
-    public void removeFromHand(Cards.Card myCard){
+    public void removeFromHand(card.Card myCard){
         hand.removeElement(myCard);
     }
 

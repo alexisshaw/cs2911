@@ -1,8 +1,9 @@
 package Game;
 
-import Cards.*;
+import card.*;
+import card.Buildings.*;
+import card.Character.*;
 
-import javax.sql.rowset.CachedRowSet;
 import java.util.Collections;
 import java.util.Stack;
 
@@ -21,7 +22,7 @@ public class Deck {
     }
 
     //Stack to hold all of cards that are in the deck
-    private Stack<Cards.Card> deck;
+    private Stack<card.Card> deck;
 
     //Constructor function to create the deck and fill with game cards
     public Deck(){
@@ -37,36 +38,36 @@ public class Deck {
     }
 
     private void FillDeckWithStandardCards() {
-        deck.push(new Cards.SicariusCard());
-        deck.push(new Cards.ArchitectusCard());
-        deck.push(new Cards.ArchitectusCard());
-        deck.push(new Cards.ConsiliariusCard());
-        deck.push(new Cards.ConsiliariusCard());
-        deck.push(new Cards.LegatCard());
-        deck.push(new Cards.LegatCard());
-        deck.push(new Cards.GladiatorCard());
-        deck.push(new Cards.GladiatorCard());
-        deck.push(new Cards.MercatorCard());
-        deck.push(new Cards.ConsulCard());
-        deck.push(new Cards.ConsulCard());
-        deck.push(new Cards.LegionariusCard());
-        deck.push(new Cards.LegionariusCard());
-        deck.push(new Cards.LegionariusCard());
-        deck.push(new Cards.NeroCard());
-        deck.push(new Cards.PraetorianusCard());
-        deck.push(new Cards.PraetorianusCard());
-        deck.push(new Cards.ScaenicusCard());
-        deck.push(new Cards.ScaenicusCard());
-        deck.push(new Cards.HaruspexCard());
-        deck.push(new Cards.HaruspexCard());
-        deck.push(new Cards.SenatorCard());
-        deck.push(new Cards.SenatorCard());
-        deck.push(new Cards.VelitesCard());
-        deck.push(new Cards.VelitesCard());
+        deck.push(new SicariusCard());
+        deck.push(new ArchitectusCard());
+        deck.push(new ArchitectusCard());
+        deck.push(new ConsiliariusCard());
+        deck.push(new ConsiliariusCard());
+        deck.push(new LegatCard());
+        deck.push(new LegatCard());
+        deck.push(new GladiatorCard());
+        deck.push(new GladiatorCard());
+        deck.push(new MercatorCard());
+        deck.push(new ConsulCard());
+        deck.push(new ConsulCard());
+        deck.push(new LegionariusCard());
+        deck.push(new LegionariusCard());
+        deck.push(new LegionariusCard());
+        deck.push(new NeroCard());
+        deck.push(new PraetorianusCard());
+        deck.push(new PraetorianusCard());
+        deck.push(new ScaenicusCard());
+        deck.push(new ScaenicusCard());
+        deck.push(new HaruspexCard());
+        deck.push(new HaruspexCard());
+        deck.push(new SenatorCard());
+        deck.push(new SenatorCard());
+        deck.push(new VelitesCard());
+        deck.push(new VelitesCard());
         deck.push(new EssedumCard());
         deck.push(new EssedumCard());
-        deck.push(new Cards.TribunusPlebusCard());
-        deck.push(new Cards.TribunusPlebusCard());
+        deck.push(new TribunusPlebusCard());
+        deck.push(new TribunusPlebusCard());
         deck.push(new CenturioCard());
         deck.push(new CenturioCard());
         deck.push(new AesculapinumCard());
@@ -91,20 +92,20 @@ public class Deck {
         deck.push(new TurrisCard());
     }
 
-    /*public Deck(Stack<Cards.Card> deck){
+    /*public Deck(Stack<card.Card> deck){
         this.deck = deck;
     } */
 
     //Returns top card from deck and removes it from deck
-    public Cards.Card drawCard() throws DeckEmptyException{
+    public card.Card drawCard() throws DeckEmptyException{
         if(deck.empty()){
             throw new Deck.DeckEmptyException();
         }
         return deck.pop();
     }
 
-    public Cards.Card[] drawCard(int count) throws DeckEmptyException{
-        Cards.Card[] cardsDrawn = new Cards.Card[count];
+    public card.Card[] drawCard(int count) throws DeckEmptyException{
+        card.Card[] cardsDrawn = new card.Card[count];
         int i;
         for (i=0; (i< count) && !deck.empty(); i++){
             cardsDrawn[i] = deck.pop();

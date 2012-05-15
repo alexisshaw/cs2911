@@ -1,6 +1,6 @@
 package Game;
 
-import Cards.Card;
+import card.Card;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,13 +26,13 @@ public class PlayerAction {
         Activate {
             @Override
             public String toString() {
-                return "Activate Cards.Card";
+                return "Activate card.Card";
             }
         },
         Draw {
             @Override
             public String toString() {
-                return "Draw a Cards.Card";
+                return "Draw a card.Card";
             }
         },
         Place{
@@ -53,7 +53,7 @@ public class PlayerAction {
 
     private Die[] dice = null;
     private Card cardToLay= null;
-    private int location = 0;
+    private Disk location = null;
 
     //Constructor, currently sets action to pass
     public PlayerAction() {
@@ -67,13 +67,13 @@ public class PlayerAction {
         dice = new Die[1];
         dice[0] = dieToUse;
     }
-    public PlayerAction(CardType type, Card myCard, int location){
+    public PlayerAction(CardType type, Card myCard, Disk location){
         actionType = type;
         cardToLay = myCard;
         this.location  = location;
     }
 
-    public int getLocation() {
+    public Disk getLocation() {
         return location;
     }
 

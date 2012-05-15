@@ -1,5 +1,5 @@
 import Game.Game;
-import Game.Player;
+import Game.CLIPlayer.Player;
 import Game.Deck;
 import org.fusesource.jansi.AnsiConsole;
 

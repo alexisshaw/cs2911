@@ -1,9 +1,10 @@
 package Game;
 
-//import Cards.Card;
+//import card.Card;
 
 
-import Cards.Card;
+import card.Card;
+import Game.CLIPlayer.Player;
 
 import java.util.*;
 
@@ -15,44 +16,42 @@ public class CardView {
         this.state=state;
         this.playerId=playerNo;
     }
-    public int getCardIndex(Card me){
-        Map<Integer, Card> field = getMyPlayerView().getField(getMyPlayerView().getPlayerId());
-        for(Map.Entry<Integer,Card> e: field.entrySet()) if(e.getValue().equals(me)) return e.getKey();
-        return 0;
+    public Disk getCardKey(Card me) throws NoSuchElementException{
+        Map<Disk, Card> field = getMyPlayerView().getField(getMyPlayerView().getPlayerId());
+        for(Map.Entry<Disk,Card> e: field.entrySet()) if(e.getValue().equals(me)) return e.getKey();
+        throw new NoSuchElementException();
     }
 
     public Collection<Card> getOpposingCards(Card me){
-        int cardIndex = getCardIndex(me);
+        Disk cardIndex = getCardKey(me);
         Set<Card> cardsToChooseFrom = new HashSet<Card>();
         for (int i=0; i < getMyPlayerView().getNoPlayers(); i++){
             if(i != getMyPlayerView().getPlayerId()){
-                if(getMyPlayerView().getField(i).get(cardIndex - 1) != null){
-                    cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex - 1));
+                for(Disk d: cardIndex.getBeside()){
+                    if(getMyPlayerView().getField(i).get(d) != null){
+                        cardsToChooseFrom.add(getMyPlayerView().getField(i).get(d));
+                    }
                 }
                 if(getMyPlayerView().getField(i).get(cardIndex) != null){
                     cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex));
-                }
-                if(getMyPlayerView().getField(i).get(cardIndex + 1) != null){
-                    cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex + 1));
                 }
             }
         }
         return cardsToChooseFrom;
     }
     public Collection<Card> getCardsNextTo(Card me){
-        int cardIndex = getCardIndex(me);
+        Disk cardIndex = getCardKey(me);
         int i = playerId;
         Set<Card> cardsToChooseFrom = new HashSet<Card>();
-        if(getMyPlayerView().getField(i).get(cardIndex - 1) != null){
-            cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex - 1));
-        }
-        if(getMyPlayerView().getField(i).get(cardIndex) != null){
-            cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex));
-        }
-        if(getMyPlayerView().getField(i).get(cardIndex + 1) != null){
-            cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex + 1));
+        for(Disk d: cardIndex.getBeside()){
+            if(getMyPlayerView().getField(i).get(d) != null){
+                cardsToChooseFrom.add(getMyPlayerView().getField(i).get(d));
+            }
         }
         return cardsToChooseFrom;
+    }
+    public Collection<Card> getDiscard(){
+        return state.getDiscardPile();
     }
 
     public Stack<Card> getDeck(){

@@ -1,6 +1,6 @@
 package Game;
 
-import Cards.Card;
+import card.Card;
 
 import java.util.*;
 
@@ -61,8 +61,8 @@ public class PlayerView {
         return new Vector<Card>(gameState.getPlayerState(playerId).getHand());
     }
 
-    public Map<Integer,Card> getField(int playerId){
-        return new HashMap<Integer,Card>(gameState.getPlayerState(playerId).getField());
+    public Map<Disk,Card> getField(int playerId){
+        return new HashMap<Disk,Card>(gameState.getPlayerState(playerId).getField());
     }
 
     //returns amount of victory points that any player has

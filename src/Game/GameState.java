@@ -1,11 +1,10 @@
 package Game;
 
-import Cards.Card;
-import Cards.CardAction;
+import card.Card;
+import card.CardAction;
+import Game.CLIPlayer.Player;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,21 +24,33 @@ public class GameState {
 
     //declare the deck
     private Deck ourDeck;
+    private Collection<Card> discardPile;
+    private Set<Disk> blockedDisks;
 
     private Player[] players;
-    
+
+    public Set<Disk> getBlockedDisks() {
+        return blockedDisks;
+    }
+
+    public Collection<Card> getDiscardPile() {
+        return discardPile;
+    }
+
     //Constructor to create the object
     public GameState(Player[] players){
         //create a new array of player states
         this.playerStates = new PlayerState[players.length];
+        discardPile = new LinkedList<Card>();
         for (int i=0; i<players.length;i++){
-            playerStates[i] = new PlayerState();
+            playerStates[i] = new PlayerState(discardPile);
         }
         this.players = players;
         
         //creates the deck
         ourDeck = new Deck();
-
+        
+        blockedDisks = new HashSet<Disk>();
     }
     public int getNumPlayers(){
         return playerStates.length;
@@ -51,7 +62,7 @@ public class GameState {
     }
 
     //Assign cards to the field
-    public void setField(List<Map<Integer, Card>> cardAssignments){
+    public void setField(List<Map<Disk,Card>> cardAssignments){
         for(int i=0; i < playerStates.length ; i++){
             playerStates[i].setField(cardAssignments.get(i));
         }
@@ -75,8 +86,8 @@ public class GameState {
             playerStates[playerId].getFieldMap().putAll(input.getLayCards());
         }
         if(input.getReLayCards() != null){
-            playerStates[playerId].getFieldMap().values().removeAll(input.getReLayCards().values());
-            playerStates[playerId].getFieldMap().putAll(input.getReLayCards());
+            playerStates[playerId].getField().values().removeAll(input.getReLayCards().values(), false);
+            playerStates[playerId].getField().putAll(input.getReLayCards());
         }
         if(input.getPlaceCards() != null){
             playerStates[playerId].getFieldMap().putAll(input.getPlaceCards());
@@ -86,9 +97,17 @@ public class GameState {
             for(Card c : toAddToHand) {
                 for(PlayerState p : playerStates){
                     if(c != null && p.getFieldMap().values().contains(c)){
-                        p.getFieldMap().values().remove(c);
+                        p.getField().values().remove(c, false);
                         p.addToHand(c);
                     }
+                }
+            }
+        }
+        if(input.getToAddToHandFromDiscard() != null){
+            for(Card c: input.getToAddToHandFromDiscard()){
+                if(c!=null && discardPile.contains(c)){
+                    discardPile.remove(c);
+                    playerStates[playerId].addToHand(c);
                 }
             }
         }
@@ -120,6 +139,9 @@ public class GameState {
         if(input.getDiceUsed()!=null){
             playerStates[playerId].getDice().removeAll(input.getDiceUsed());
         }
+        /*if(input.getToBlock() != null){
+            gameState.blocked
+        }*/
 
     }
 }

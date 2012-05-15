@@ -1,7 +1,8 @@
 package Game;
 
-import Cards.Card;
-import Cards.CardAction;
+import card.Card;
+import card.CardAction;
+import Game.CLIPlayer.Player;
 
 import java.util.*;
 
@@ -14,7 +15,7 @@ import java.util.*;
  */
 public class Game {
     
-    //Declarations for Game.Player, Game.GameState classes
+    //Declarations for Game.CLIPlayer.Player, Game.GameState classes
     private Player[] players;
     private GameState gameState;
     
@@ -48,7 +49,7 @@ public class Game {
 
     private void playersPlaceCardsOnField() {
         boolean assignmentsValid = false;
-        Vector<Map<Integer, Card>> cardAssignments = new Vector<Map<Integer, Card>>();
+        Vector<Map<Disk, Card>> cardAssignments = new Vector<Map<Disk, Card>>();
         cardAssignments.setSize(players.length);
         while(!assignmentsValid){
             //Have each player choose where to put their cards
@@ -162,11 +163,11 @@ public class Game {
                 }
                 break;
             case Activate:
-                if(gameState.getPlayerState(playerID).hasDie(nextAction.getDice()[0])){
+                if(gameState.getPlayerState(playerID).hasDie(nextAction.getDice()[0]) && !gameState.getBlockedDisks().contains(new Disk(nextAction.getDice()[0].getDieValue()))){
                     gameState.getPlayerState(playerID).removeDie(nextAction.getDice()[0]);
-                    if(gameState.getPlayerState(playerID).getField().get(nextAction.getDice()[0].getDieValue() - 1) != null){
+                    if(gameState.getPlayerState(playerID).getField().get(new Disk(nextAction.getDice()[0].getDieValue())) != null){
                         CardView view = new CardView(gameState,playerID);
-                        CardAction ac = gameState.getPlayerState(playerID).getField().get(nextAction.getDice()[0].getDieValue() - 1).getCardAction(view);
+                        CardAction ac = gameState.getPlayerState(playerID).getField().get(new Disk(nextAction.getDice()[0].getDieValue())).getCardAction(view);
                         if(ac!= null){
                             gameState.applyAction(ac, playerID);
                         }
@@ -185,17 +186,17 @@ public class Game {
     }
     
     //Checks that cards chosen by players in start phase matches the cards in their hand
-    public boolean verifyCardAssignments(List<Map<Integer, Card>> cardAssignments){
+    public boolean verifyCardAssignments(List<Map<Disk, Card>> cardAssignments){
         
         //initialize returnValue
         boolean returnValue = true;
 
         //For each player
-        for (Map<Integer, Card> m : cardAssignments){
+        for (Map<Disk, Card> m : cardAssignments){
             int count = 0;
 
             //For each of their chosen cards
-            for (Map.Entry<Integer,Card> e:m.entrySet()){
+            for (Map.Entry<Disk,Card> e:m.entrySet()){
                 count++;
                 if (!gameState.getPlayerState(cardAssignments.indexOf(m)).getHand().contains(e.getValue())){
                     returnValue = false;

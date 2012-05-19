@@ -6,6 +6,7 @@ package Game;
 import Game.GameState.GameState;
 import card.Card;
 import Game.CLIPlayer.Player;
+import card.DefenseModificationActor;
 
 import java.util.*;
 
@@ -16,6 +17,9 @@ public class CardView {
     public CardView(GameState state, int playerNo){
         this.state=state;
         this.playerId=playerNo;
+    }
+    public int getCurrentPlayerID(){
+        return state.getCurrentPlayerID();
     }
     public Disk getCardKey(Card me) throws NoSuchElementException{
         Map<Disk, Card> field = getMyPlayerView().getField(getMyPlayerView().getPlayerId());
@@ -51,6 +55,10 @@ public class CardView {
         }
         return cardsToChooseFrom;
     }
+    public int getTurnNumber(){
+        return state.getTurnNumber();
+    }
+
     public Collection<Card> getDiscard(){
         return state.getDiscardPile();
     }
@@ -63,5 +71,14 @@ public class CardView {
     }
     public Player getPlayer(){
         return state.getPlayer(playerId);
+    }
+    public int getDefenseDelta(Card c){
+        int defenseDelta = 0;
+        for(DefenseModificationActor a: state.getDefenseModificationActors()){
+            if(a.doesModify(c)){
+                defenseDelta += a.getDefenseDelta(c);
+            }
+        }
+        return defenseDelta;
     }
 }

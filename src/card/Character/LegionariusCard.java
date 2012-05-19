@@ -5,6 +5,7 @@ import card.CardAction;
 import Game.CardView;
 import Game.Die;
 import Game.Disk;
+import card.CardHelper;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -53,16 +54,7 @@ public class LegionariusCard implements Card {
                 "You cannot attack a card",
                 1,
                 toAttackCollection);
-        CardAction returnValue = new CardAction();
-        if(!toAttackSet.isEmpty()) {
-            Card toAttack = toAttackSet.iterator().next();
-            if(toAttack.getDefence() <= BattleDie.getDieValue()){
-                Set<Card> killedSet = new HashSet<Card>();
-                killedSet.add(toAttack);
-                returnValue.setDestroyCards(killedSet);
-            }
-        }
-        return returnValue;
+        return CardHelper.attack(input, BattleDie.getDieValue(), toAttackSet.isEmpty() ? null : toAttackSet.iterator().next());
     }
 
     //returns description of card

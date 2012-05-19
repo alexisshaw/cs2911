@@ -1,11 +1,16 @@
 package card.Character;
 
+import Game.DiscardView;
 import card.Card;
 import card.CardAction;
 import Game.CardView;
 import Game.Disk;
+import card.DiscardActor;
+import card.PlayerTurnChangeActor;
 
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.LinkedList;
 
 public class PraetorianusCard implements Card {
     //returns the name of the card
@@ -38,7 +43,35 @@ public class PraetorianusCard implements Card {
         CardAction returnValue = new CardAction();
         Collection<Disk> toBlock = in.getPlayer().diskChooser("Please Choose a disk to Block", "", 1, Disk.diskSet());
         returnValue.setToBlock(toBlock);
+        returnValue.setPlayerTurnChangeActorToAdd(new nextTurnUnblock(toBlock, in));
         return returnValue;
+    }
+    private class nextTurnUnblock implements PlayerTurnChangeActor{
+        private int oldTurn;
+        private int playerID;
+        private Collection<Disk> diskToUnblock;
+        private CardView in;
+        
+        nextTurnUnblock(Collection<Disk> diskToUnblock, CardView in){
+            this.oldTurn = in.getTurnNumber();
+            this.playerID = in.getMyPlayerView().getPlayerId();
+            this.diskToUnblock = diskToUnblock;
+            this.in = in;
+        }
+        @Override
+        public CardAction getAction() {
+            CardAction returnValue = new CardAction();
+            if(in.getTurnNumber() > oldTurn && in.getCurrentPlayerID() == playerID){
+                returnValue.setToUnblock(diskToUnblock);
+            }
+            return returnValue;
+        }
+        public Card getCard(){
+            return PraetorianusCard.this;
+        }
+        public int getOwnerPlayerID() {
+            return playerID;
+        }
     }
 
     //returns description of card

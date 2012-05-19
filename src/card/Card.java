@@ -1,6 +1,11 @@
 package card;
 
 import Game.CardView;
+import Game.Die;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.

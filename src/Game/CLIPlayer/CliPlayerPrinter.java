@@ -33,7 +33,7 @@ public class CliPlayerPrinter {
     void printField() {
         System.out.printf("Current State of the Field:\n");
         System.out.printf("%18s  ", player.getMyView().getPlayerName(0));
-        System.out.printf((char) 27 + "[1m" + " Dice " + (char) 27 + "[0m");
+        System.out.printf((char) 27 + "[1m" + "  Dice  " + (char) 27 + "[0m");
         System.out.printf("  %-18s", player.getMyView().getPlayerName(1));
         System.out.print("\n");
         for (Disk d: Disk.diskList()) {

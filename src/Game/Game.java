@@ -19,6 +19,7 @@ public class Game {
     //Declarations for Game.CLIPlayer.Player, Game.GameState.GameState classes
     private Player[] players;
     private GameState gameState;
+    public static final int VPPool = 36;
     
     //bool for controlling when to end game
     private boolean gameOver;
@@ -94,42 +95,61 @@ public class Game {
 
     public void runGame(){
         //Runs the main stage of the game;
+        try{
         while(!gameOver){
             getNextRound();
         }
+        } catch (GameOverException e){
+            notifyOfGameEnd(findWinner());
+            System.exit(0);
+        }
+    }
+    private Player findWinner(){
+        int mostVP = 0;
+        for(int i=0; i< players.length;i++){
+            if(gameState.getPlayerState(i).getVictoryPoints() > gameState.getPlayerState(mostVP).getVictoryPoints() ){
+                mostVP = i;
+            }
+        }
+        return players[mostVP];
+    }
+    private void notifyOfGameEnd(Player winner){
+        for(Player p: players){
+            if(p == winner) p.notifyOfWin();
+            else p.notifyOfLoss(winner.getName());
+        }
     }
 
-    private void getNextRound() {
+    private void getNextRound(){
         int CurrentPlayer;
+        gameState.incrementTurnNumber();
 
         //While the game is not over, each player has its turn
         for(CurrentPlayer=0; (CurrentPlayer< players.length) && !gameOver; CurrentPlayer++){
-            getPlayersNextTurn(CurrentPlayer);
+            gameState.setCurrentPlayerID(CurrentPlayer);
+            getPlayersNextTurn();
         }
+        gameState.setTurnNumber(gameState.getTurnNumber() + 1);
     }
 
-    private void getPlayersNextTurn(int playerID) {
+    private void getPlayersNextTurn(){
         //player rolls their dice
-        gameState.getPlayerState(playerID).rollDice();
-        gameState.getPlayerState(playerID).removeVictoryPointsForEmpty();
+        gameState.getPlayerState(gameState.getCurrentPlayerID()).rollDice();
+
+        gameState.getPlayerState(gameState.getCurrentPlayerID()).removeVictoryPointsForEmpty();
 
         //bool for tracking whether the player has finished their turn
         boolean finished = false;
-
-        //Finishes the game if a player runs out of victory points
-        if(gameState.getPlayerState(playerID).getVictoryPoints() <=0){
-            finished = true;
-            gameOver=true;
-            System.out.printf("%s wins\n", players[(playerID +1)%players.length].getName());
-        }
+        gameState.activateTurnChangeActors();
 
         //Run players turn until pass
         while(!finished){
-            finished = getPlayersNextAction(playerID, finished);
+            finished = getPlayersNextAction( finished);
         }
     }
 
-    private boolean getPlayersNextAction(int playerID, boolean finished) {
+    private boolean getPlayersNextAction(boolean finished) {
+        int playerID = gameState.getCurrentPlayerID();
         PlayerAction nextAction;
         nextAction = players[playerID].getNextActionInteraction();
         switch(nextAction.getActionType()){
@@ -164,13 +184,15 @@ public class Game {
                 }
                 break;
             case Activate:
-                if(gameState.getPlayerState(playerID).hasDie(nextAction.getDice()[0]) && !gameState.getBlockedDisks().contains(new Disk(nextAction.getDice()[0].getDieValue()))){
+                Die d = nextAction.getDice()[0];
+                if(gameState.getPlayerState(playerID).hasDie(d) && !gameState.getBlockedDisks().contains(new Disk(d.getDieValue()))){
                     gameState.getPlayerState(playerID).removeDie(nextAction.getDice()[0]);
                     if(gameState.getPlayerState(playerID).getField().get(new Disk(nextAction.getDice()[0].getDieValue())) != null){
                         CardView view = new CardView(gameState,playerID);
-                        CardAction ac = gameState.getPlayerState(playerID).getField().get(new Disk(nextAction.getDice()[0].getDieValue())).getCardAction(view);
+                        Card c = gameState.getPlayerState(playerID).getField().get(new Disk(nextAction.getDice()[0].getDieValue()));
+                        CardAction ac = c.getCardAction(view);
                         if(ac!= null){
-                            gameState.applyAction(ac, playerID);
+                            gameState.applyAction(ac, playerID,c);
                         }
                     }
                 }

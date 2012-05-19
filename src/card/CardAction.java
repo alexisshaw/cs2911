@@ -26,6 +26,71 @@ public class CardAction {
     Collection<Die>   diceUsed = null;
     Collection<Card> toRemoveFromDeck = null;
     Collection<Card> toAddToHandFromDiscard = null;
+    PlayerTurnChangeActor playerTurnChangeActorToAdd = null;
+    PlayerTurnChangeActor playerTurnChangeActorToRemove = null;
+    DiscardActor discardActorToAdd = null;
+    DiscardActor discardActorToRemove = null;
+    Collection<Disk> toBlock = null;
+    Collection<Disk> toUnblock = null;
+    DefenseModificationActor defenseModificationActorToAdd = null;
+    DefenseModificationActor defenseModificationActorToRemove = null;
+
+
+    public DefenseModificationActor getDefenseModificationActorToAdd() {
+        return defenseModificationActorToAdd;
+    }
+
+    public void setDefenseModificationActorToAdd(DefenseModificationActor defenseModificationActorToAdd) {
+        this.defenseModificationActorToAdd = defenseModificationActorToAdd;
+    }
+
+    public DefenseModificationActor getDefenseModificationActorToRemove() {
+        return defenseModificationActorToRemove;
+    }
+
+    public void setDefenseModificationActorToRemove(DefenseModificationActor defenseModificationActorToRemove) {
+        this.defenseModificationActorToRemove = defenseModificationActorToRemove;
+    }
+
+    public Collection<Disk> getToUnblock() {
+        return toUnblock;
+    }
+
+    public void setToUnblock(Collection<Disk> toUnblock) {
+        this.toUnblock = toUnblock;
+    }
+
+    public PlayerTurnChangeActor getPlayerTurnChangeActorToAdd() {
+        return playerTurnChangeActorToAdd;
+    }
+
+    public void setPlayerTurnChangeActorToAdd(PlayerTurnChangeActor playerTurnChangeActorToAdd) {
+        this.playerTurnChangeActorToAdd = playerTurnChangeActorToAdd;
+    }
+
+    public PlayerTurnChangeActor getPlayerTurnChangeActorToRemove() {
+        return playerTurnChangeActorToRemove;
+    }
+
+    public void setPlayerTurnChangeActorToRemove(PlayerTurnChangeActor playerTurnChangeActorToRemove) {
+        this.playerTurnChangeActorToRemove = playerTurnChangeActorToRemove;
+    }
+
+    public DiscardActor getDiscardActorToAdd() {
+        return discardActorToAdd;
+    }
+
+    public void setDiscardActorToAdd(DiscardActor discardActorToAdd) {
+        this.discardActorToAdd = discardActorToAdd;
+    }
+
+    public DiscardActor getDiscardActorToRemove() {
+        return discardActorToRemove;
+    }
+
+    public void setDiscardActorToRemove(DiscardActor discardActorToRemove) {
+        this.discardActorToRemove = discardActorToRemove;
+    }
 
     public Collection<Card> getToAddToHandFromDiscard() {
         return toAddToHandFromDiscard;
@@ -42,8 +107,6 @@ public class CardAction {
     public void setToBlock(Collection<Disk> toBlock) {
         this.toBlock = toBlock;
     }
-
-    Collection<Disk> toBlock = null;
 
     public Collection<Die> getDiceUsed() {
         return diceUsed;

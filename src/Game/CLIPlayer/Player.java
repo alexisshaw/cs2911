@@ -44,6 +44,16 @@ public class Player {
     public String getName() {
         return name;
     }
+    public void notifyOfLoss(String winner){
+        System.out.println(CliPlayerPrinter.getBanner());
+        System.out.println();
+        System.out.println("The game is over, sorry but " + winner + "won.");
+    }
+    public void notifyOfWin(){
+        System.out.println(CliPlayerPrinter.getBanner());
+        System.out.println();
+        System.out.println("The game is over, you win.");
+    }
     
     public PlayerAction getNextActionInteraction(){
         PlayerAction returnValue;

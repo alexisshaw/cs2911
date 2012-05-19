@@ -4,11 +4,9 @@ import card.Card;
 import card.CardAction;
 import Game.CardView;
 import Game.Die;
+import card.CardHelper;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -48,24 +46,26 @@ public class CenturioCard implements Card {
                 "You cannot attack a card",
                 1,
                 toAttackCollection);
+
         boolean useAnotherDie = !input.getMyPlayerView().getDice().isEmpty() && input.getPlayer().conditionalInteraction(
                 "The battle die is a " + Integer.toString(BattleDie.getDieValue()) + "Would you like to add one fo your action die",
                 "y",
                 "n");
-        CardAction returnValue = new CardAction();
+
         Die toAdd = new Die(0);
+
         if(useAnotherDie){
             toAdd = input.getPlayer().diceChooser("Please Select the die you wish to add");
-            Collection<Die> toAddSet = new HashSet<Die>();
-            returnValue.setDiceUsed(toAddSet);
         }
-        if(!toAttackSet.isEmpty()) {
-            Card toAttack = toAttackSet.iterator().next();
-            if(toAttack.getDefence() <= (BattleDie.getDieValue() + toAdd.getDieValue())){
-                Set<Card> killedSet = new HashSet<Card>();
-                killedSet.add(toAttack);
-                returnValue.setDestroyCards(killedSet);
-            }
+        CardAction returnValue = CardHelper.attack(
+                input,
+                BattleDie.getDieValue() + toAdd.getDieValue(),
+                toAttackSet.isEmpty() ? null : toAttackSet.iterator().next());
+
+        if(useAnotherDie){
+            Collection<Die> toAddSet = new HashSet<Die>();
+            toAddSet.add(toAdd);
+            returnValue.setDiceUsed(toAddSet);
         }
         return returnValue;
     }

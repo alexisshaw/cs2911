@@ -9,7 +9,6 @@ import card.CardHelper;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -38,7 +37,11 @@ public class VelitesCard implements Card {
         return 3;
     }
 
-    public CardAction getCardAction(CardView input) {
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
+    public CardAction getCardActivationAction(CardView input) {
         Collection<Card> opposingCards = input.getOpposingCards(this);
         Collection<Card> toAttackCollection = new HashSet<Card>();
         for(Card c: opposingCards) if(!c.isBuilding()) toAttackCollection.add(c);

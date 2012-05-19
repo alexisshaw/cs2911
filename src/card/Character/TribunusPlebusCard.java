@@ -38,8 +38,12 @@ public class TribunusPlebusCard implements Card {
         return 5;
     }
 
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
     //Returns this cards Card Action
-    public CardAction getCardAction(CardView in){
+    public CardAction getCardActivationAction(CardView in){
         System.out.println(this.toString());
         CardAction toReturn = new CardAction();
         int[] victoryChange = new int [in.getMyPlayerView().getNoPlayers()];

@@ -13,6 +13,11 @@ public class GladiatorCard implements Card {
         return "Gladiator";
     }
 
+    @Override
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
     //returns if the card is a building or not
     public boolean isBuilding(){
         return false;
@@ -34,7 +39,7 @@ public class GladiatorCard implements Card {
     }
 
     //Returns this cards Card Action
-    public CardAction getCardAction(CardView in){
+    public CardAction getCardActivationAction(CardView in){
         Collection<Card> opposingCards = in.getOpposingCards(this);
         Collection<Card> cardsToChooseFrom = new HashSet<Card>();
         for(Card c:opposingCards) if(!c.isBuilding()) cardsToChooseFrom.add(c);

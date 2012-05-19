@@ -36,7 +36,11 @@ public class ForumCard implements Card {
         return 6;
     }
 
-    public CardAction getCardAction(CardView input) {
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
+    public CardAction getCardActivationAction(CardView input) {
         Die secondDie = input.getPlayer().diceChooser("Please Choose a second die to activate "+ this.toString() +":\n", "You cannot choose a die");
         Collection<Die> dieSet = new HashSet<Die>();
         dieSet.add(secondDie);

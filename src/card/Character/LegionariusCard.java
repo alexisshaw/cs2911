@@ -10,7 +10,6 @@ import card.CardHelper;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 
 
 public class LegionariusCard implements Card {
@@ -39,8 +38,12 @@ public class LegionariusCard implements Card {
         return 5;
     }
 
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
     //Returns this cards Card Action
-    public CardAction getCardAction(CardView input){
+    public CardAction getCardActivationAction(CardView input){
         Disk myIndex = input.getCardKey(this);
         Collection<Card> toAttackCollection = new HashSet<Card>();
         for(int i=0 ; i< input.getMyPlayerView().getNoPlayers();i++){

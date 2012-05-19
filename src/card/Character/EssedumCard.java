@@ -22,6 +22,11 @@ public class EssedumCard implements Card {
         return false;
     }
 
+    @Override
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
     public int getNumberOfDiceRequired() {
         return 1;
     }
@@ -34,7 +39,7 @@ public class EssedumCard implements Card {
         return 3;
     }
 
-    public CardAction getCardAction(CardView input) {
+    public CardAction getCardActivationAction(CardView input) {
         DefenseModificationActor dma = new decreaseOppositionCardsBy2(input);
         CardAction returnValue = new CardAction();
 

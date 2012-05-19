@@ -33,8 +33,12 @@ public class SicariusCard  implements Card {
         return 2;
     }
 
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
     //Returns this cards Card Action
-    public CardAction getCardAction(CardView in){
+    public CardAction getCardActivationAction(CardView in){
         Collection<Card> opposingCards = in.getOpposingCards(this);
         Collection<Card> cardsToChooseFrom = new HashSet<Card>();
         for(Card c:opposingCards) if(!c.isBuilding()) cardsToChooseFrom.add(c);

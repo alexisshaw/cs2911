@@ -39,7 +39,11 @@ public class AesculapinumCard implements Card {
         return 2;
     }
 
-    @Override public CardAction getCardAction(CardView input) {
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
+    @Override public CardAction getCardActivationAction(CardView input) {
         Collection<Card> discardPile = new LinkedList<Card>(input.getDiscard());
         Collection<Card> toAddToHand = input.getPlayer().cardChooser(
                 "Please Choose a card to resurrect",

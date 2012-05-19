@@ -92,6 +92,9 @@ public class Deck {
         deck.push(new TempulmCard());
         deck.push(new TurrisCard());
         deck.push(new TurrisCard());
+        deck.push(new Kat());
+        deck.push(new Kat());
+        deck.push(new GrimReaper());
     }
 
     /*public Deck(Stack<card.Card> deck){
@@ -112,9 +115,9 @@ public class Deck {
         for (i=0; (i< count) && !deck.empty(); i++){
             cardsDrawn[i] = deck.pop();
         }
-        //if(!(i == count)){
-        //    throw new DeckEmptyException();
-        //}
+        if(!(i == count)){
+            throw new DeckEmptyException();
+        }
         return cardsDrawn;
     }
 

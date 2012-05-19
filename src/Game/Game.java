@@ -191,7 +191,7 @@ public class Game {
                     gameState.getPlayerState(playerID).removeDie(nextAction.getDice()[0]);
                     CardView view = new CardView(gameState,playerID);
                     Card c = gameState.getPlayerState(playerID).getField().get(new Disk(nextAction.getDice()[0].getDieValue()));
-                    CardAction ac = c.getCardAction(view);
+                    CardAction ac = c.getCardActivationAction(view);
                     if(ac!= null){
                         gameState.applyAction(ac, playerID,c);
                     }

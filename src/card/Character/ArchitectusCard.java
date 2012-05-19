@@ -35,8 +35,12 @@ public class ArchitectusCard implements Card {
         return 4;
     }
 
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
     //Returns this cards Card Action
-    public CardAction getCardAction(CardView input){
+    public CardAction getCardActivationAction(CardView input){
         //Get the Building cards the player has in their hand
         Set<Card> currentHand = new HashSet<Card>(input.getMyPlayerView().getHand());
         Set<Card> buildingCardsInHand = new HashSet<Card>();

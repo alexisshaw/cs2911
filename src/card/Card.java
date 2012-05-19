@@ -1,11 +1,6 @@
 package card;
 
 import Game.CardView;
-import Game.Die;
-
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,8 +26,10 @@ public interface Card {
     //returns defence value of the card
     public int getDefence();
 
+    public CardAction getCardPlacementAction(CardView input);
+
     //returns if the card can be activated in this turn
-    public CardAction getCardAction(CardView input);
+    public CardAction getCardActivationAction(CardView input);
 
     //returns description of card
     public String getCardOracle();

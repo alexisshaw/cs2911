@@ -15,13 +15,13 @@ import java.util.*;
  * Class to store the game state
  */
 public class GameState {
-    
+
     //set the number of action dice each player gets each turn
     public final static int numActionDice = 3;
-    
+
     //declare the player states
     private PlayerState[] playerStates;
-    
+
 
     //declare the deck
     private Deck ourDeck;
@@ -76,15 +76,16 @@ public class GameState {
         discardPile = new LinkedList<Card>();
         discardActors = new HashSet<DiscardActor>();
         playerTurnChangeActors = new HashSet<PlayerTurnChangeActor>();
+        defenseModificationActors = new HashSet<DefenseModificationActor>();
+        blockedDisks = new HashMap<Disk, Set<Card>>();
         for (int i=0; i<players.length;i++){
-            playerStates[i] = new PlayerState(discardPile, discardActors, new gameDiscardActivator(i,this)) ;
+            playerStates[i] = new PlayerState(discardPile, discardActors, new gameDiscardActivator(i,this), blockedDisks.keySet()) ;
         }
         this.players = players;
-        
+
         //creates the deck
         ourDeck = new Deck();
-        
-        blockedDisks = new HashMap<Disk, Set<Card>>();
+
     }
     public int getNumPlayers(){
         return playerStates.length;
@@ -102,11 +103,11 @@ public class GameState {
         }
 
         @Override
-        public DiscardView getDiscardView(Card responsible, Card toDiscard, DiscardView.DiscardManor manor) {
-            return new DiscardView(toDiscard,manor);
+        public DiscardView getDiscardView(Card responsible, Card toDiscard, DiscardView.DiscardManor manor, Disk location) {
+            return new DiscardView(toDiscard,manor, location);
         }
     }
-    
+
     //return the deck
     public Deck getDeck() {
         return ourDeck;
@@ -197,10 +198,10 @@ public class GameState {
             removeBlocks(input.getToUnblock(), card);
         }
         if(input.getDiscardActorToAdd() != null){
-            discardActors.add(input.getDiscardActorToAdd());            
+            discardActors.add(input.getDiscardActorToAdd());
         }
         if(input.getDiscardActorToRemove() != null){
-            discardActors.remove(this);
+            discardActors.remove(input.getDiscardActorToRemove());
         }
         if(input.getPlayerTurnChangeActorToAdd()!= null){
             playerTurnChangeActors.add(input.getPlayerTurnChangeActorToAdd());
@@ -232,8 +233,8 @@ public class GameState {
             if(blockedDisks.get(d).isEmpty()){
                 blockedDisks.remove(d);
             }
-        
-        }                
+
+        }
     }
     public int getCurrentVPPool(){
         int currentVPsInPlay = 0;

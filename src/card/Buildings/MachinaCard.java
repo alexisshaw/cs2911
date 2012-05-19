@@ -35,7 +35,11 @@ public class MachinaCard implements Card {
         return 4;
     }
 
-    public CardAction getCardAction(CardView view) {
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
+    public CardAction getCardActivationAction(CardView view) {
         Collection<Card> cardsOnField = view.getMyPlayerView().getField(view.getMyPlayerView().getPlayerId()).values();
         Collection<Card> characterCardsOnField = new HashSet<Card>();
         for(Card c:cardsOnField) if(c.isBuilding()) characterCardsOnField.add(c);

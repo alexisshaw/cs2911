@@ -1,16 +1,12 @@
 package card.Character;
 
-import Game.DiscardView;
 import card.Card;
 import card.CardAction;
 import Game.CardView;
 import Game.Disk;
-import card.DiscardActor;
 import card.PlayerTurnChangeActor;
 
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.LinkedList;
 
 public class PraetorianusCard implements Card {
     //returns the name of the card
@@ -38,8 +34,12 @@ public class PraetorianusCard implements Card {
         return 4;
     }
 
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
     //Returns this cards Card Action
-    public CardAction getCardAction(CardView in){
+    public CardAction getCardActivationAction(CardView in){
         CardAction returnValue = new CardAction();
         Collection<Disk> toBlock = in.getPlayer().diskChooser("Please Choose a disk to Block", "", 1, Disk.diskSet());
         returnValue.setToBlock(toBlock);
@@ -51,7 +51,7 @@ public class PraetorianusCard implements Card {
         private int playerID;
         private Collection<Disk> diskToUnblock;
         private CardView in;
-        
+
         nextTurnUnblock(Collection<Disk> diskToUnblock, CardView in){
             this.oldTurn = in.getTurnNumber();
             this.playerID = in.getMyPlayerView().getPlayerId();

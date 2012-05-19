@@ -18,6 +18,11 @@ public class ConsiliariusCard implements Card {
         return false;
     }
 
+    @Override
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
     //returns the amount of dice required to activate card
     public int getNumberOfDiceRequired(){
         return 1;
@@ -34,7 +39,7 @@ public class ConsiliariusCard implements Card {
     }
 
     //Returns this cards Card Action
-    public CardAction getCardAction(CardView in){
+    public CardAction getCardActivationAction(CardView in){
         Collection<Card> cardsOnField = in.getMyPlayerView().getField(in.getMyPlayerView().getPlayerId()).values();
         Collection<Card> characterCardsOnField = new HashSet<Card>();
         for(Card c:cardsOnField) if(!c.isBuilding()) characterCardsOnField.add(c);

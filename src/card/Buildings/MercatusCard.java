@@ -34,8 +34,11 @@ public class MercatusCard implements Card {
     public int getDefence() {
         return 3;
     }
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
 
-    public CardAction getCardAction(CardView in) {
+    public CardAction getCardActivationAction(CardView in) {
         int newVictoryPoints = 0;
         for (int i=0; i < in.getMyPlayerView().getNoPlayers(); i++){
             if(i != in.getMyPlayerView().getPlayerId()){

@@ -24,6 +24,11 @@ public class ConsulCard implements Card {
         return false;
     }
 
+    @Override
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
     public int getNumberOfDiceRequired() {
         return 1;
     }
@@ -36,16 +41,23 @@ public class ConsulCard implements Card {
         return 3;
     }
 
-    public CardAction getCardAction(CardView input) {
+    public CardAction getCardActivationAction(CardView input) {
         Die toChange = input.getPlayer().diceChooser("Choose A Dice To Modify", "You cannot choose a die");
-        boolean positive = input.getPlayer().conditionalInteraction(
-                "Do you want to increase or decrease the value by 1 (I/d)",
-                "i",
-                "d"
-        );
-        int toChangeBy = positive? 1 : -1;
+        int toChangeBy;
+        if(toChange.getDieValue() == Die.getMaxDiceValue()){
+            toChangeBy = -1;
+        } else if(toChange.getDieValue() == 1){
+            toChangeBy = 1;
+        } else {
+            boolean positive = input.getPlayer().conditionalInteraction(
+                    "Do you want to increase or decrease the value by 1 (I/d)",
+                    "i",
+                    "d"
+            );
+            toChangeBy = positive? 1 : -1;
+        }
         Map<Die, Integer> dieChange = new HashMap<Die, Integer>();
-        dieChange.put(toChange, new Integer(toChangeBy));
+        dieChange.put(toChange, toChangeBy);
         CardAction toReturn = new CardAction();
         toReturn.setDiceModifications(dieChange);
         return toReturn;

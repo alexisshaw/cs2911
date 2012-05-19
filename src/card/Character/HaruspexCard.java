@@ -17,6 +17,11 @@ public class HaruspexCard implements Card {
         return false;
     }
 
+    @Override
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
     //returns the amount of dice required to activate card
     public int getNumberOfDiceRequired(){
         return 1;
@@ -33,7 +38,7 @@ public class HaruspexCard implements Card {
     }
 
     //Returns this cards Card Action
-    public CardAction getCardAction(CardView in){
+    public CardAction getCardActivationAction(CardView in){
         CardAction returnValue = new CardAction();
         Stack<Card> deck = in.getDeck();
         List<Card> deckClone = new ArrayList<Card>(deck);

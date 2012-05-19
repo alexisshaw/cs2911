@@ -20,6 +20,11 @@ public class CenturioCard implements Card {
         return "Centurio";
     }
 
+    @Override
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
     public boolean isBuilding() {
         return false;
     }
@@ -36,7 +41,7 @@ public class CenturioCard implements Card {
         return 5;
     }
 
-    public CardAction getCardAction(CardView input) {
+    public CardAction getCardActivationAction(CardView input) {
         Collection<Card> opposingCards = input.getOpposingCards(this);
         Collection<Card> toAttackCollection = new HashSet<Card>();
         for(Card c: opposingCards) if(!c.isBuilding()) toAttackCollection.add(c);

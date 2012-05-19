@@ -1,6 +1,5 @@
 package Game;
 
-import Game.GameState.GameState;
 import card.Card;
 
 /**
@@ -16,15 +15,20 @@ public class DiscardView {
     }
     private Card discarding;
     DiscardManor manorOfDiscard;
+    Disk originalLocation;
 
-    public DiscardView(Card beingDiscarded, DiscardManor manor){
+    public DiscardView(Card beingDiscarded, DiscardManor manor, Disk originalLocation){
         manorOfDiscard = manor;
         discarding = beingDiscarded;
+        this.originalLocation = originalLocation;
     }
     public Card getCardBeingDiscarded(){
         return discarding;
     }
     public DiscardManor getManorOfDiscard(){
         return manorOfDiscard;
+    }
+    public Disk getOriginalLocation(){
+        return originalLocation;
     }
 }

@@ -5,7 +5,6 @@ import Game.Disk;
 import Game.GameOverException;
 import card.Card;
 import Game.field.Field;
-import card.CardAction;
 import card.DiscardActor;
 import Game.Game;
 
@@ -27,9 +26,14 @@ public class PlayerState {
     private Field field;
     private Random randomness;
     private int money;
+    Set<Disk> blockedDisks;
 
     //Constructor for creating player state
-    public PlayerState(Collection<Card> discard, Collection<DiscardActor> discardActors, Field.DiscardActivator discardActivator){
+    public PlayerState(Collection<Card> discard,
+                       Collection<DiscardActor> discardActors,
+                       Field.DiscardActivator discardActivator,
+                       Set<Disk> blockedDisks
+    ){
         //create empty array of dice
         dice = new ArrayList<Die>();
 
@@ -38,6 +42,7 @@ public class PlayerState {
 
         //Set initial money to 0
         money = 0;
+        this.blockedDisks = blockedDisks;
 
         //Create hand and field
         hand = new Vector<Card>();
@@ -46,13 +51,19 @@ public class PlayerState {
     }
     public boolean canActivateDisk(Disk disk, Die bribeDie){
         if(disk == Disk.BRIBE_DISK){
-            return dice.contains(bribeDie) && (money >= bribeDie.getDieValue()) && field.containsKey(disk);
+            return dice.contains(bribeDie) &&
+                    (money >= bribeDie.getDieValue()) &&
+                    field.containsKey(disk) &&
+                    !blockedDisks.contains(disk);
         } else {
             boolean haveCorrectDie = false;
             for (Die die:dice){
                 if(die.getDieValue() == disk.intValue()) haveCorrectDie = true;
             }
-            return field.containsKey(disk) && haveCorrectDie && field.containsKey(disk);
+            return field.containsKey(disk) &&
+                    haveCorrectDie &&
+                    field.containsKey(disk) &&
+                    !blockedDisks.contains(disk);
         }
     }
 

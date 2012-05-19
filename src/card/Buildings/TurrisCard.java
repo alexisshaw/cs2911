@@ -32,7 +32,7 @@ public class TurrisCard implements Card {
         return 6;
     }
 
-    public CardAction getCardAction(CardView input) {
+    public CardAction getCardPlacementAction(CardView input) {
         DefenseModificationActor dma = new decreaseOppositionCardsBy2(input);
         CardAction returnValue = new CardAction();
 
@@ -40,6 +40,10 @@ public class TurrisCard implements Card {
         returnValue.setDiscardActorToAdd(new whenDiscardedDefenseModificationActor(dma));
 
         return returnValue;
+    }
+
+    public CardAction getCardActivationAction(CardView input) {
+        return null;
     }
     private class decreaseOppositionCardsBy2 implements DefenseModificationActor{
         CardView cardView;
@@ -52,7 +56,7 @@ public class TurrisCard implements Card {
             for(Card c :cardView.getMyPlayerView().getField(cardView.getMyPlayerView().getPlayerId()).values()){
                 if(c == shouldModifyP){
                     returnValue = true;
-                }            
+                }
             }
             return returnValue;
         }

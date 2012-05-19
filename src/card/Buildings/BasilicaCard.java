@@ -32,7 +32,11 @@ public class BasilicaCard implements Card {
         return 6;
     }
 
-    public CardAction getCardAction(CardView input) {
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
+    public CardAction getCardActivationAction(CardView input) {
         return null;
     }
 

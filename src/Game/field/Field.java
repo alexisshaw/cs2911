@@ -1,6 +1,5 @@
 package Game.field;
 
-import Game.CardView;
 import Game.DiscardView;
 import Game.GameOverException;
 import card.Card;
@@ -23,9 +22,9 @@ public class Field extends HashMap<Disk, Card> {
     private DiscardActivator discardActivator;
     public interface DiscardActivator{
         public void applyAction(CardAction c, Card card) throws GameOverException;
-        public DiscardView getDiscardView(Card responsible, Card toDiscard,DiscardView.DiscardManor manor);
+        public DiscardView getDiscardView(Card responsible, Card toDiscard,DiscardView.DiscardManor manor, Disk location);
     }
-    
+
     public Field(Collection<Card> discard, Collection<DiscardActor> discardActors, DiscardActivator discardActivator){
         this.discard = discard;
         this.discardActors = discardActors;
@@ -37,7 +36,7 @@ public class Field extends HashMap<Disk, Card> {
         this.discard = field.discard;
         this.discardActors = field.discardActors;
         this.discardActivator = field.discardActivator;
-    }    
+    }
     @Override
     public Card remove(Object o){
         return remove(o,true);
@@ -46,13 +45,13 @@ public class Field extends HashMap<Disk, Card> {
         Card previous = super.remove(o);
         if(toDiscard && previous != null){
             discard.add(previous);
-            activateAllDiscardActivator(previous, DiscardView.DiscardManor.NORMAL);
-        }                         
+            activateAllDiscardActivator(previous, DiscardView.DiscardManor.NORMAL, (Disk)o);
+        }
         return previous;
     }
-    private void activateAllDiscardActivator(Card previous, DiscardView.DiscardManor manor) throws GameOverException{
+    private void activateAllDiscardActivator(Card previous, DiscardView.DiscardManor manor,Disk location) throws GameOverException{
         for(DiscardActor a:discardActors){
-            discardActivator.applyAction(a.getAction(discardActivator.getDiscardView(a.getCard(), previous, manor)), a.getCard());
+            discardActivator.applyAction(a.getAction(discardActivator.getDiscardView(a.getCard(), previous, manor, location)), a.getCard());
         }
     }
 
@@ -61,7 +60,7 @@ public class Field extends HashMap<Disk, Card> {
         return new ValueKeySet(super.values(), this);
     }
 
-    
+
     @Override
     public FieldKeySet keySet() {
         return new FieldKeySet(super.keySet(),this);
@@ -83,7 +82,7 @@ public class Field extends HashMap<Disk, Card> {
         Card previous = super.put(disk, card);
         if(previous!= null){
             discard.add(previous);
-            activateAllDiscardActivator(previous, DiscardView.DiscardManor.COVER);
+            activateAllDiscardActivator(previous, DiscardView.DiscardManor.COVER, disk);
         }
         return previous;
     }
@@ -91,7 +90,7 @@ public class Field extends HashMap<Disk, Card> {
     @Override
     public void putAll(Map<? extends Disk, ? extends Card> map) {
         for (Map.Entry<? extends Disk, ? extends Card> e:map.entrySet()){
-            this.put(e.getKey(),e.getValue());            
+            this.put(e.getKey(),e.getValue());
         }
     }
 }

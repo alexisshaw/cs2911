@@ -32,15 +32,19 @@ public class MercatorCard implements Card {
         return 2;
     }
 
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
     //Returns this cards Card Action
-    public CardAction getCardAction(CardView in){
+    public CardAction getCardActivationAction(CardView in){
         CardAction returnValue = new CardAction();
         int myMoney = in.getMyPlayerView().getMoney(in.getMyPlayerView().getPlayerId());
         int noVictoryPointsToAdd = 0;
         int[] noVictoryPointsToChange = new int[in.getMyPlayerView().getNoPlayers()];
         for(int i = 0; i < in.getMyPlayerView().getNoPlayers(); i++){
             if (i != in.getMyPlayerView().getPlayerId()){
-                int noVictoryPointsAvailable = in.getMyPlayerView().getVictoryPoints(i);
+                int noVictoryPointsAvailable = min(in.getMyPlayerView().getVictoryPoints(i), 3 - noVictoryPointsToAdd);
                 int internalVP = in.getPlayer().integerInteraction("Please Choose a number of victory points to buy from "
                         +in.getMyPlayerView().getPlayerName(i),
                         min(myMoney/3,noVictoryPointsAvailable),
@@ -53,7 +57,7 @@ public class MercatorCard implements Card {
         noVictoryPointsToChange[in.getMyPlayerView().getPlayerId()] = noVictoryPointsToAdd;
         returnValue.setVictoryPointsChangeArray(noVictoryPointsToChange);
         returnValue.setMoneyToPay(noVictoryPointsToAdd*3);
-                                                                                                
+
         return returnValue ;
     }
 

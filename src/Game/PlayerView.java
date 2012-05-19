@@ -20,13 +20,6 @@ public class PlayerView {
     public int getPlayerId() {
         return playerId;
     }
-    public Collection<Integer> getDiceDisks(){
-        Collection<Integer> DiceDisks = new HashSet<Integer>();
-        for(int i=0; i< Die.getMaxDiceValue();i++){
-            DiceDisks.add(i);
-        }
-        return DiceDisks;
-    }
 
     //Stores player's ID
     private int playerId;
@@ -48,11 +41,7 @@ public class PlayerView {
     public List<Die> getDice(){
         return new ArrayList<Die>(gameState.getPlayerState(playerId).getDice());
     }
-    //returns a specific dice
-    public Die getDice(int index){
-        return gameState.getPlayerState(playerId).getDice().get(index);
-    }
-    
+
     public int getNoPlayers(){
         return gameState.getNumPlayers();
     }

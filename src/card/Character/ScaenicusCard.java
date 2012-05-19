@@ -40,8 +40,12 @@ public class ScaenicusCard implements Card {
         return 3;
     }
 
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
     //Returns this cards Card Action
-    public CardAction getCardAction(CardView in){
+    public CardAction getCardActivationAction(CardView in){
 
         Set<Card> cardSet = new HashSet<Card>();
         for(int i=0;i<in.getMyPlayerView().getNoPlayers();i++){
@@ -49,7 +53,7 @@ public class ScaenicusCard implements Card {
         }
         Collection<Card> toClone = in.getPlayer().cardChooser("Please Choose a card whose action you wish to copy", "You cannot copy a card", 1, cardSet );
         cloning = toClone.iterator().next();
-        CardAction returnValue = cloning.getCardAction(in);
+        CardAction returnValue = cloning.getCardActivationAction(in);
         cloning = null;
         return returnValue;
     }

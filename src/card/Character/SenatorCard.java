@@ -36,7 +36,11 @@ public class SenatorCard implements Card {
         return 1;
     }
 
-    public CardAction getCardAction(CardView input) {
+    public CardAction getCardPlacementAction(CardView input) {
+        return null;
+    }
+
+    public CardAction getCardActivationAction(CardView input) {
         //Get the Building cards the player has in their hand
         Set<Card> currentHand = new HashSet<Card>(input.getMyPlayerView().getHand());
         Set<Card> characterCardsInHand = new HashSet<Card>();

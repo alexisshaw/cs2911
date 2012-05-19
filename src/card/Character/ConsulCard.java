@@ -37,7 +37,7 @@ public class ConsulCard implements Card {
     }
 
     public CardAction getCardAction(CardView input) {
-        Die toChange = input.getPlayer().diceChooser("Choose A Dice To Modify");
+        Die toChange = input.getPlayer().diceChooser("Choose A Dice To Modify", "You cannot choose a die");
         boolean positive = input.getPlayer().conditionalInteraction(
                 "Do you want to increase or decrease the value by 1 (I/d)",
                 "i",

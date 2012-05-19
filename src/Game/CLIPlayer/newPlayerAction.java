@@ -1,5 +1,6 @@
 package Game.CLIPlayer;
 
+import Game.Die;
 import card.Card;
 import Game.Disk;
 import Game.PlayerAction;
@@ -66,20 +67,52 @@ public class newPlayerAction {
         player.printGameState();
         System.out.println("You have chosen to draw a card");
         return new PlayerAction(PlayerAction.CardType.Draw, player.diceChooser(
-                "Please select the number of the dice you wish to use:"));
+                "Please select the number of the dice you wish to use:", "You cannot choose a die"));
     }
 
     PlayerAction collectMoneyActionInteraction() {
         player.printGameState();
         System.out.println("You have chosen to Collect come money");
         return new PlayerAction(PlayerAction.CardType.Money, player.diceChooser(
-                "Please select the number of the dice you wish to use:"));
+                "Please select the number of the dice you wish to use:", "You cannot choose a die"));
     }
 
     PlayerAction activateCardActionInteraction() {
         player.printGameState();
         System.out.println("You have chosen to Activate a card");
-        return new PlayerAction(PlayerAction.CardType.Activate, player.diceChooser(
-                "Please select the number of the dice disk beside the card you wish to activate:"));
+        Disk disk = player.diskChooser(
+                "Please select the number of the dice disk beside the card you wish to activate:",
+                "You cannot activate a card",
+                1,
+                getActionableDisks()
+        ).iterator().next();
+        Die activationDie;
+        if (disk.equals(Disk.BRIBE_DISK)){
+            activationDie = player.diceChooser("Please Choose a die to use for Bribing", "",getBribeDice());
+        } else {
+            activationDie = new Die(disk.intValue());
+        }
+        return new PlayerAction(PlayerAction.CardType.Activate, disk,activationDie);
+    }
+    List<Disk> getActionableDisks(){
+        List<Die> dice = player.getMyView().getDice();
+        List<Disk> disks = new LinkedList<Disk>();
+        for(Die d:dice){
+            disks.add(new Disk(d.getDieValue()));
+        }
+        List<Die> bribeDice = getBribeDice();
+        if(!bribeDice.isEmpty()) disks.add(Disk.BRIBE_DISK);
+        return disks;
+    }
+    List<Die> getBribeDice(){
+        int money = player.getMyView().getMoney(player.getMyView().getPlayerId());
+        List<Die> dice = player.getMyView().getDice();
+        List<Die> bribeDice = new LinkedList<Die>();
+        for(Die d:dice){
+            if(d.getDieValue() <= money){
+                bribeDice.add(d);
+            }
+        }
+        return bribeDice;
     }
 }

@@ -26,13 +26,13 @@ public class PlayerAction {
         Activate {
             @Override
             public String toString() {
-                return "Activate card.Card";
+                return "Activate card";
             }
         },
         Draw {
             @Override
             public String toString() {
-                return "Draw a card.Card";
+                return "Draw a card";
             }
         },
         Place{
@@ -70,6 +70,11 @@ public class PlayerAction {
     public PlayerAction(CardType type, Card myCard, Disk location){
         actionType = type;
         cardToLay = myCard;
+        this.location  = location;
+    }
+    public PlayerAction(CardType type, Disk location, Die dieToUse){
+        actionType = type;
+        dice[0] = dieToUse;
         this.location  = location;
     }
 

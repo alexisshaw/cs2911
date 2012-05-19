@@ -20,7 +20,7 @@ public class Player {
     private Scanner sc;
     private final CliPlayerPrinter cliPlayerPrinter;
     private PlayerView myView;
-    
+
     public PlayerView getMyView() {
         return myView;
     }
@@ -54,7 +54,7 @@ public class Player {
         System.out.println();
         System.out.println("The game is over, you win.");
     }
-    
+
     public PlayerAction getNextActionInteraction(){
         PlayerAction returnValue;
         newPlayerAction playerAction = new newPlayerAction(this);
@@ -140,7 +140,7 @@ public class Player {
         }
         return returnValue;
     }
-    
+
     public Map<Disk, Card> cardPlacer(Collection<Card> cards, String titleMessage, String perCardMessage){
         System.out.printf(titleMessage, cards.size());
         Map<Disk, Card> returnValue = new HashMap<Disk, Card>();
@@ -157,13 +157,16 @@ public class Player {
         return returnValue;
     }
 
-    public Die diceChooser(String message) {
+    public Die diceChooser(String message, String emptyMessage) {
+        return diceChooser(message, emptyMessage, myView.getDice());
+    }
+    public Die diceChooser(String message, String emptyMessage, List<Die> d) {
         System.out.println(message);
         int diceId = 0;
-        while (!(diceId > 0 && diceId <= myView.getDice().size())){
+        while (!(diceId > 0 && diceId <= d.size())){
             diceId = this.sc.nextInt();
         }
-        return myView.getDice(diceId-1);
+        return d.get(diceId - 1);
     }
 
     public void printGameState(){

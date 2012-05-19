@@ -44,7 +44,17 @@ public class PlayerState {
         randomness = new Random();
         field = new Field(discard, discardActors, discardActivator);
     }
-
+    public boolean canActivateDisk(Disk disk, Die bribeDie){
+        if(disk == Disk.BRIBE_DISK){
+            return dice.contains(bribeDie) && (money >= bribeDie.getDieValue()) && field.containsKey(disk);
+        } else {
+            boolean haveCorrectDie = false;
+            for (Die die:dice){
+                if(die.getDieValue() == disk.intValue()) haveCorrectDie = true;
+            }
+            return field.containsKey(disk) && haveCorrectDie && field.containsKey(disk);
+        }
+    }
 
 
     public int getMoney(){

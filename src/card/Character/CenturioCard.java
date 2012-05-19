@@ -55,7 +55,7 @@ public class CenturioCard implements Card {
         Die toAdd = new Die(0);
 
         if(useAnotherDie){
-            toAdd = input.getPlayer().diceChooser("Please Select the die you wish to add");
+            toAdd = input.getPlayer().diceChooser("Please Select the die you wish to add", "You cannot choose a die");
         }
         CardAction returnValue = CardHelper.attack(
                 input,

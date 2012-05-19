@@ -37,8 +37,8 @@ public class ForumCard implements Card {
     }
 
     public CardAction getCardAction(CardView input) {
-        Die secondDie = input.getPlayer().diceChooser("Please Choose a second die to activate "+ this.toString() +":\n");
-        Collection<Die> dieSet = new HashSet<Die>(); 
+        Die secondDie = input.getPlayer().diceChooser("Please Choose a second die to activate "+ this.toString() +":\n", "You cannot choose a die");
+        Collection<Die> dieSet = new HashSet<Die>();
         dieSet.add(secondDie);
         CardAction returnValue = new CardAction();
         returnValue.setVictoryPointsToAdd(secondDie.getDieValue());
@@ -46,14 +46,14 @@ public class ForumCard implements Card {
             if (c.getClass() == BasilicaCard.class) returnValue.setVictoryPointsToAdd(returnValue.getVictoryPointsToAdd()+2);
             if (c.getClass() == TempulmCard.class){
                 if(input.getPlayer().conditionalInteraction("Would you like to activate " + c.toString()+ "?" ,"y","n")){
-                    Die thirdDie = input.getPlayer().diceChooser("Please Choose a second die to activate "+ this.toString() +":\n");
+                    Die thirdDie = input.getPlayer().diceChooser("Please Choose a second die to activate "+ this.toString() +":\n", "You cannot choose a die");
                     dieSet.add(thirdDie);
                     returnValue.setVictoryPointsToAdd(returnValue.getVictoryPointsToAdd() +thirdDie.getDieValue());
                 }
             }
         }
         returnValue.setDiceUsed(dieSet);
-        
+
         return returnValue;
     }
 

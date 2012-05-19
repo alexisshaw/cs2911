@@ -15,29 +15,29 @@ import java.util.*;
  * Class for main running of a game.
  */
 public class Game {
-    
+
     //Declarations for Game.CLIPlayer.Player, Game.GameState.GameState classes
     private Player[] players;
     private GameState gameState;
     public static final int VPPool = 36;
-    
+
     //bool for controlling when to end game
     private boolean gameOver;
 
-    //Constructor for game class    
+    //Constructor for game class
     public Game(Player[] playerArg){
-        
+
         //Store players withing the Game.Game class
         this.players = playerArg;
-        
+
         //Creates the new game board
         this.gameState = new GameState(this.players);
-        
+
         //Create Game.PlayerView class for each player
         for (int i=0; i< players.length ; i++){
             players[i].setPlayerView(this.getView(i));
         }
-        
+
         //Initialise gameOver to false
         gameOver = false;
     }
@@ -184,16 +184,16 @@ public class Game {
                 }
                 break;
             case Activate:
-                Die d = nextAction.getDice()[0];
-                if(gameState.getPlayerState(playerID).hasDie(d) && !gameState.getBlockedDisks().contains(new Disk(d.getDieValue()))){
+                if(gameState.getPlayerState(playerID).canActivateDisk(nextAction.getLocation(), nextAction.getDice()[0])){
+                    if(nextAction.getLocation().equals(Disk.BRIBE_DISK)){
+                        gameState.getPlayerState(playerID).addMoney(nextAction.getDice()[0].getDieValue());
+                    }
                     gameState.getPlayerState(playerID).removeDie(nextAction.getDice()[0]);
-                    if(gameState.getPlayerState(playerID).getField().get(new Disk(nextAction.getDice()[0].getDieValue())) != null){
-                        CardView view = new CardView(gameState,playerID);
-                        Card c = gameState.getPlayerState(playerID).getField().get(new Disk(nextAction.getDice()[0].getDieValue()));
-                        CardAction ac = c.getCardAction(view);
-                        if(ac!= null){
-                            gameState.applyAction(ac, playerID,c);
-                        }
+                    CardView view = new CardView(gameState,playerID);
+                    Card c = gameState.getPlayerState(playerID).getField().get(new Disk(nextAction.getDice()[0].getDieValue()));
+                    CardAction ac = c.getCardAction(view);
+                    if(ac!= null){
+                        gameState.applyAction(ac, playerID,c);
                     }
                 }
                 break;
@@ -207,10 +207,10 @@ public class Game {
     private PlayerView getView(int playerId) {
         return new PlayerView(gameState, playerId);
     }
-    
+
     //Checks that cards chosen by players in start phase matches the cards in their hand
     public boolean verifyCardAssignments(List<Map<Disk, Card>> cardAssignments){
-        
+
         //initialize returnValue
         boolean returnValue = true;
 

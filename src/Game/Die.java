@@ -39,6 +39,7 @@ public class Die {
         return maxDiceValue;
     }
 
+
     /*//Test function for die class
     public static void test(){
         System.out.println("testing Die");

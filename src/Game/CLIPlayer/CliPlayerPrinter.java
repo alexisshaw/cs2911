@@ -1,5 +1,6 @@
 package Game.CLIPlayer;
 
+import Game.Die;
 import card.Card;
 import Game.Disk;
 
@@ -13,11 +14,7 @@ public class CliPlayerPrinter {
     }
 
     void printDice() {
-        System.out.println("You have the following dice:");
-        for (int i = 1; i <= player.getMyView().getDice().size(); i++) {
-            System.out.printf((char) 27 + "[1m" + "   %d:" + (char) 27 + "[0m" + " %d", i, player.getMyView().getDice(i - 1).getDieValue());
-        }
-        System.out.print("\n\n");
+        printDice(player.getMyView().getDice(),"You have the following dice:", "You have no dice." );
     }
 
     void printPlayerStatistics() {
@@ -114,6 +111,20 @@ public class CliPlayerPrinter {
             for (Disk card : disks) {
                 System.out.printf((char) 27 + "[1m" + "   %d: " + (char) 27 + "[0m" + "%-18s :" + (char) 27 +"[0m\n",
                         i + 1, card.toString());
+                i++;
+            }
+        }
+        System.out.print("\n");
+    }
+    public void printDice(List<Die> dice, String Message, String emptyMessage) {
+        if (dice.size() == 0) {
+            System.out.println(emptyMessage);
+        } else {
+            System.out.println(Message);
+            int i = 0;
+            for (Die die : dice) {
+                System.out.printf((char) 27 + "[1m" + "   %d: " + (char) 27 + "[0m" + "%-18d :" + (char) 27 + "[0m\n",
+                        i + 1, die.getDieValue());
                 i++;
             }
         }

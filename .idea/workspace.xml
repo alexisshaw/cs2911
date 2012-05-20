@@ -2,32 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" name="Default" comment="More work on Activators">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/ActivatorFactory.java" />
-      <change type="DELETED" beforePath="C:\Users\Alexis Shaw\Desktop\cs2911\src\Game\testadapter\Activators\ActivatorWithCreate.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alexis Shaw\Desktop\cs2911\src\Game\testadapter\RegisteredActionPlayer.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/ArchitectusActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ArchitectusActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/CenturioActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/CenturioActivator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsiliariusActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsiliariusActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsulActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsulActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/EssedumActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/EssedumActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/ForumActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ForumActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/GladiatorActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/GladiatorActivator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/HaruspexActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/HaruspexActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/LegatActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/LegatActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/LegionariusActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/LegionariusActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/MachinaActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/MachinaActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/MercatorActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/MercatorActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/MercatusActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/MercatusActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/NeroActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/NeroActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/OnagerActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/OnagerActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/PraetorianusActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/PraetorianusActivator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/ScaenicusActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ScaenicusActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/SenatorActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/SenatorActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/SicariusActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/SicariusActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/TribunusPlebisActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/TribunusPlebisActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/VelitesActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/VelitesActivator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/GameController.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/GameController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java" />
     </list>
@@ -93,48 +72,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ScaenicusActivator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/ScaenicusActivator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="15" selection-start="1767" selection-end="1767" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AssetTranslator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/AssetTranslator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="28" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DelegatedPlayer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/DelegatedPlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AcceptanceInterface.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/AcceptanceInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="51" selection-start="506" selection-end="506" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GameController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/testadapter/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="5" selection-start="999" selection-end="999" vertical-scroll-proportion="0.0">
+            <state line="51" column="44" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,28 +83,97 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerAction.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/PlayerAction.java">
+      <file leaf-file-name="MoveMaker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
+            <state line="19" column="27" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#3902#3913#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConsiliariusActivator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/ConsiliariusActivator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="55" selection-start="2108" selection-end="2108" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2497#2514#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MachinaActivator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/MachinaActivator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="53" selection-start="1064" selection-end="1064" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#636#648#0" expanded="true" />
+                <element signature="e#2372#2389#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScaenicusActivator.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/ScaenicusActivator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="51" selection-start="1903" selection-end="1903" vertical-scroll-proportion="0.33333334">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScaenicusCard.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/card/Character/ScaenicusCard.java">
+      <file leaf-file-name="LegatActivator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/LegatActivator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="13" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0">
+            <state line="27" column="51" selection-start="836" selection-end="836" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EssedumActivator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/EssedumActivator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="53" selection-start="842" selection-end="842" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivatorFactory.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HaruspexActivator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/HaruspexActivator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="0" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AesculapinumActivator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="0" selection-start="2511" selection-end="2511" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivatorFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/testadapter/ActivatorFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="7" selection-start="317" selection-end="317" vertical-scroll-proportion="0.57349396">
+            <state line="14" column="7" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#createActivator#0;class#ActivatorFactory#0" expanded="false" />
@@ -194,9 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/MercatorActivator.java" />
-        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/MachinaActivator.java" />
-        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/MercatusActivator.java" />
         <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/NeroActivator.java" />
         <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/OnagerActivator.java" />
         <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/PraetorianusActivator.java" />
@@ -205,11 +212,14 @@
         <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/TribunusPlebisActivator.java" />
         <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/VelitesActivator.java" />
         <option value="$PROJECT_DIR$/src/card/Character/ScaenicusCard.java" />
-        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/ScaenicusActivator.java" />
         <option value="$PROJECT_DIR$/src/Game/testadapter/RegisteredActionPlayer.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/ActivatorFactory.java" />
         <option value="$PROJECT_DIR$/src/Game/testadapter/GameController.java" />
         <option value="$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java" />
-        <option value="$PROJECT_DIR$/src/Game/testadapter/ActivatorFactory.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/HaruspexActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsiliariusActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/ScaenicusActivator.java" />
       </list>
     </option>
   </component>
@@ -621,7 +631,11 @@
       <created>1337532905327</created>
       <updated>1337532905327</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="More work on Activators">
+      <created>1337536907798</created>
+      <updated>1337536907798</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -724,48 +738,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/TribunusPlebisActivator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="17" selection-start="847" selection-end="847" vertical-scroll-proportion="0.7517007">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Character/SicariusCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/verified/CardActivatorScaenicusBasicTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/framework/interfaces/activators/ScaenicusActivator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="17" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorScaenicusCopyArchitectusTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="449" selection-end="449" vertical-scroll-proportion="-1.2645985">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorScaenicusBBasicTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="430" selection-end="430" vertical-scroll-proportion="-7.3889847">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/verified/CardActivatorScaenicusBBasicTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="13" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
@@ -783,31 +755,6 @@
     <entry file="file://$PROJECT_DIR$/src/Game/PlayerAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="5" selection-start="999" selection-end="999" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="78" selection-start="3551" selection-end="3551" vertical-scroll-proportion="2.7465987">
-          <folding>
-            <element signature="e#3902#3913#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/ScaenicusActivator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="15" selection-start="1767" selection-end="1767" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -837,11 +784,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/testadapter/ActivatorFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="7" selection-start="317" selection-end="317" vertical-scroll-proportion="0.57349396">
+        <state line="14" column="7" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#createActivator#0;class#ActivatorFactory#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/LegatActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="51" selection-start="836" selection-end="836" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/EssedumActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="53" selection-start="842" selection-end="842" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/HaruspexActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="0" selection-start="2511" selection-end="2511" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="27" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#3902#3913#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/ConsiliariusActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="55" selection-start="2108" selection-end="2108" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2497#2514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/MachinaActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="53" selection-start="1064" selection-end="1064" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#636#648#0" expanded="true" />
+            <element signature="e#2372#2389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="44" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/ScaenicusActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="51" selection-start="1903" selection-end="1903" vertical-scroll-proportion="0.33333334">
+          <folding />
         </state>
       </provider>
     </entry>

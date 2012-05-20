@@ -56,7 +56,9 @@ public class ConsiliariusActivator implements
      */
     @Override
     public void complete() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        controller.useFollowingActivatorPlayerDelegate(new ConsiliariusActivatorDelegatePlayer());
+        controller.performAction();
+        controller.ceaseUsingActivatorPlayerDelegate();
     }
 
     private class ConsiliariusActivatorDelegatePlayer extends DelegatedPlayer {

@@ -8,7 +8,7 @@ import Game.testadapter.GameController;
 import card.Card;
 
 import java.util.Collection;
-import java.util.List;
+import java.util.LinkedList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -67,7 +67,7 @@ public class AesculapinumActivator implements
 
         @Override
         public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
-            return ((List) cardsToChoseFromIn).subList(cardsToChoseFromIn.size() - 1 - pileIndex, cardsToChoseFromIn.size() - 1 - pileIndex);
+            return (new LinkedList<Card>(cardsToChoseFromIn)).subList(cardsToChoseFromIn.size() - 1 - pileIndex, cardsToChoseFromIn.size() - 1 - pileIndex);
         }
     }
 

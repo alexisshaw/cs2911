@@ -208,10 +208,7 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
      */
     @Override
     public void endTurn() throws UnsupportedOperationException {
-        gameController.setToSend(
-                new PlayerAction(PlayerAction.CardType.Pass)
-        );
-        gameController.performAction();
+        gameController.nextTurn();
     }
 
     /**

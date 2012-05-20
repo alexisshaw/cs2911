@@ -35,18 +35,15 @@ public class GameController {
     public void nextTurn() {
     }
 
-    ;
 
     public void setToSend(PlayerAction in) {
     }
 
-    ;
 
     public PlayerView getMyPlayerView() {
         return null;
     }
 
-    ;
 
     public interface toChooseFunctor {
         Collection<Card> cardToChoose(Collection<card.Card> chooseFrom);
@@ -55,5 +52,4 @@ public class GameController {
     public void setToChoose(toChooseFunctor functor) {
     }
 
-    ;
 }

@@ -26,7 +26,10 @@ public class ScaenicusActivator implements
     GameController controller;
     PlayerAction activationAction;
 
-    int diceDiskToMimic;
+    Player subDelegate;
+    card.Card chosenCard;
+    boolean hasSetBattleDieRoll;
+    int battleDieRoll;
 
     /**
      * Common Card Activator Creator, for use in the factory
@@ -44,10 +47,6 @@ public class ScaenicusActivator implements
         return newScaenicusActivator;
     }
 
-    Player subDelegate;
-    card.Card chosenCard;
-    boolean hasSetBattleDieRoll;
-    int battleDieRoll;
 
     /**
      * Select a card to mimic with the Scaenicus.
@@ -58,8 +57,8 @@ public class ScaenicusActivator implements
      * so the test may use it to activate the selected card.
      * </p>
      *
-     * @param diceDisc
-     * @return
+     * @param diceDisc DiceDisk to activate;
+     * @return a cardactivator for the mimiced card
      */
     @Override
     public CardActivator getScaenicusMimicTarget(int diceDisc) {
@@ -136,27 +135,27 @@ public class ScaenicusActivator implements
 
         @Override
         public Collection<Disk> diskChooser(String message, String emptyMessage, int numCards, Collection<Disk> cardsToChoseFromIn) {
-            return diskChooser(message, emptyMessage, numCards, cardsToChoseFromIn);
+            return subDelegate.diskChooser(message, emptyMessage, numCards, cardsToChoseFromIn);
         }
 
         @Override
         public Map<Disk, Card> cardPlacer(Collection<Card> cards, String titleMessage, String perCardMessage) {
-            return cardPlacer(cards, titleMessage, perCardMessage);
+            return subDelegate.cardPlacer(cards, titleMessage, perCardMessage);
         }
 
         @Override
         public Die diceChooser(String message, String emptyMessage) {
-            return diceChooser(message, emptyMessage);
+            return subDelegate.diceChooser(message, emptyMessage);
         }
 
         @Override
         public Die diceChooser(String message, String emptyMessage, List<Die> d) {
-            return diceChooser(message, emptyMessage, d);
+            return subDelegate.diceChooser(message, emptyMessage, d);
         }
 
         @Override
         public Map<Disk, Card> cardMultiPlacer(Collection<Card> toChooseFrom, boolean mustPlaceAll) {
-            return cardMultiPlacer(toChooseFrom, mustPlaceAll);
+            return subDelegate.cardMultiPlacer(toChooseFrom, mustPlaceAll);
         }
     }
 }

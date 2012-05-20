@@ -17,7 +17,6 @@ import java.util.Collection;
  */
 public class HaruspexActivator implements
         framework.interfaces.activators.HaruspexActivator {
-    private PlayerView myView;
     private GameController controller;
     private PlayerAction action;
 
@@ -34,7 +33,6 @@ public class HaruspexActivator implements
      */
     public static HaruspexActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         HaruspexActivator haruspexActivator = new HaruspexActivator();
-        haruspexActivator.myView = myView;
         haruspexActivator.controller = controller;
         haruspexActivator.action = action;
         return haruspexActivator;

@@ -7,16 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ActivatorWithCreate.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java" />
-      <change type="MOVED" beforePath="C:\Users\Alexis Shaw\Desktop\cs2911\src\Game\testadapter\deligatedPlayer.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/delegatedPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/ForumActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ForumActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/AssetTranslator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/AssetTranslator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ArchitectusActivator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/CenturioActivator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsiliariusActivator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsulActivator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/EssedumActivator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/GladiatorActivator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/HaruspexActivator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/LegatActivator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/LegionariusActivator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/MachinaActivator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/AssetTranslator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/GameController.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/GameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/registeredActionPlayer.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/registeredActionPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Buildings/ForumCard.java" afterPath="$PROJECT_DIR$/src/card/Buildings/ForumCard.java" />
     </list>
     <ignored path="cs2911.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,6 +31,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -78,19 +87,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ForumCard.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/card/Buildings/ForumCard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="33" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="17" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
+            <state line="15" column="47" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,85 +98,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForumActivator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/ForumActivator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="36" selection-start="3230" selection-end="3415" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AesculapinumActivator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="34" selection-start="435" selection-end="435" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AesculapinumCard.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/card/Buildings/AesculapinumCard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="53" selection-start="1156" selection-end="1156" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActivatorWithCreate.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/ActivatorWithCreate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="29" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CardActivator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/framework/interfaces/activators/CardActivator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="17" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GameController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game/testadapter/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="60" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameState.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/framework/interfaces/GameState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="205" column="104" selection-start="6097" selection-end="6097" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AssetTranslator.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/AssetTranslator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="13" selection-start="388" selection-end="388" vertical-scroll-proportion="0.7373494">
+            <state line="17" column="38" selection-start="490" selection-end="490" vertical-scroll-proportion="0.6643678">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#fromInternalToTestCard#0;class#AssetTranslator#0" expanded="false" />
-                <element signature="method#fromTestToInternalCard#0;class#AssetTranslator#0" expanded="false" />
-                <element signature="method#findEquivelentCard#0;class#AssetTranslator#0" expanded="false" />
-                <element signature="method#findEquivelentDie#0;class#AssetTranslator#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -199,22 +126,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Game/Game.java" />
-        <option value="$PROJECT_DIR$/src/Game/testadapter/cardTranslator.java" />
-        <option value="$PROJECT_DIR$/src/Game/testadapter/assetTranslator.java" />
-        <option value="$PROJECT_DIR$/src/Game/testadapter/deligatedPlayer.java" />
-        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/ForumActivatro.java" />
-        <option value="$PROJECT_DIR$/src/framework/interfaces/MoveMaker.java" />
-        <option value="$PROJECT_DIR$/src/Game/testadapter/registeredActionPlayer.java" />
-        <option value="$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java" />
-        <option value="$PROJECT_DIR$/src/Game/testadapter/AssetTranslator.java" />
-        <option value="$PROJECT_DIR$/src/card/Buildings/ForumCard.java" />
-        <option value="$PROJECT_DIR$/src/Game/testadapter/GameController.java" />
         <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/ModelActivator.java" />
         <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/ActivatorWithCreate.java" />
         <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/ForumActivator.java" />
         <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/Ascapl.java" />
         <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/ArchitectusActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/CenturioActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsiliariusActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsulActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/EssedumActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/GladiatorActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/HaruspexActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/LegatActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/LegionariusActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/MachinaActivator.java" />
+        <option value="$PROJECT_DIR$/src/Game/testadapter/GameController.java" />
       </list>
     </option>
   </component>
@@ -297,6 +224,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs2911" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs2911" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -399,6 +344,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="card" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs2911" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs2911" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="card" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Buildings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -665,7 +632,11 @@
       <created>1337505999843</created>
       <updated>1337505999843</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Two new Activators">
+      <created>1337514627264</created>
+      <updated>1337514627264</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -695,25 +666,25 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6709265" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28434506" sideWeight="0.49025974" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5040584" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26517573" sideWeight="0.49025974" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25892857" sideWeight="0.7348243" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39935064" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26136363" sideWeight="0.7348243" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2891374" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -786,144 +757,142 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/framework/interfaces/MoveMaker.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/ConsulActivator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="52" selection-start="983" selection-end="983" vertical-scroll-proportion="-1.4681584">
+        <state line="77" column="55" selection-start="2415" selection-end="2415" vertical-scroll-proportion="0.3415493">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/card/Character/GladiatorCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/AcceptanceInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/GladiatorActivator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="7" selection-start="1367" selection-end="1367" vertical-scroll-proportion="0.0">
+        <state line="61" column="55" selection-start="2026" selection-end="2026" vertical-scroll-proportion="0.00528169">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/registeredActionPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/card/Character/ArchitectusCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="75" selection-start="2262" selection-end="2262" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getMyView#0;class#registeredActionPlayer#0" expanded="false" />
-            <element signature="method#setPlayerName#0;class#registeredActionPlayer#0" expanded="false" />
-            <element signature="method#setPlayerView#0;class#registeredActionPlayer#0" expanded="false" />
-            <element signature="method#getName#0;class#registeredActionPlayer#0" expanded="false" />
-            <element signature="method#initialSwapCardsInteraction#0;class#registeredActionPlayer#0" expanded="false" />
-            <element signature="method#initialCardPlacementInteraction#0;class#registeredActionPlayer#0" expanded="false" />
-            <element signature="e#1197#1208#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="29" selection-start="641" selection-end="641" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/framework/interfaces/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="205" column="104" selection-start="6097" selection-end="6097" vertical-scroll-proportion="0.0">
+        <state line="11" column="13" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/ArchitectusActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="14" selection-start="2112" selection-end="2112" vertical-scroll-proportion="0.3810316">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#711#717#0" expanded="true" />
+            <element signature="e#758#764#0" expanded="true" />
+            <element signature="e#2570#2587#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorArchitectusBasicTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="13" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/card/Character/HaruspexCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/HaruspexActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="55" selection-start="1985" selection-end="1985" vertical-scroll-proportion="0.29081634">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="17" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
+        <state line="15" column="47" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Buildings/ForumCard.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/LegatActivator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="33" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0">
+        <state line="51" column="55" selection-start="1800" selection-end="1800" vertical-scroll-proportion="1.4425957">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/card/Character/LegionariusCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/LegionariusActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="39" selection-start="923" selection-end="923" vertical-scroll-proportion="0.8768719">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/card/Buildings/MachinaCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/ConsiliariusActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="64" selection-start="3078" selection-end="3078" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2472#2489#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/MachinaActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="115" selection-start="1852" selection-end="1852" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#682#694#0" expanded="true" />
+            <element signature="e#2423#2440#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/testadapter/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="60" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
+        <state line="17" column="38" selection-start="490" selection-end="490" vertical-scroll-proportion="0.6643678">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1453#1470#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/framework/interfaces/activators/CardActivator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="17" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/ActivatorWithCreate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="29" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/framework/interfaces/activators/AesculapinumActivator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="17" selection-start="293" selection-end="293" vertical-scroll-proportion="0.26333907">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/ForumActivator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="36" selection-start="3230" selection-end="3415" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Buildings/AesculapinumCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="53" selection-start="1156" selection-end="1156" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="34" selection-start="435" selection-end="435" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/AssetTranslator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="388" selection-end="388" vertical-scroll-proportion="0.7373494">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#fromInternalToTestCard#0;class#AssetTranslator#0" expanded="false" />
-            <element signature="method#fromTestToInternalCard#0;class#AssetTranslator#0" expanded="false" />
-            <element signature="method#findEquivelentCard#0;class#AssetTranslator#0" expanded="false" />
-            <element signature="method#findEquivelentDie#0;class#AssetTranslator#0" expanded="false" />
           </folding>
         </state>
       </provider>

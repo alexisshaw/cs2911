@@ -1,6 +1,5 @@
 package Game.testadapter.Activators;
 
-
 import Game.PlayerAction;
 import Game.PlayerView;
 import Game.testadapter.GameController;
@@ -8,23 +7,25 @@ import Game.testadapter.delegatedPlayer;
 import card.Card;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
  * User: Alexis Shaw
- * Date: 5/20/12
- * Time: 9:39 PM
+ * Date: 5/21/12
+ * Time: 12:44 AM
  * To change this template use File | Settings | File Templates.
  */
-public class AesculapinumActivator implements
-        framework.interfaces.activators.AesculapinumActivator,
-        ActivatorWithCreate<AesculapinumActivator>{
-    int pileIndex = 0;
+public class HaruspexActivator implements
+        framework.interfaces.activators.HaruspexActivator,
+        ActivatorWithCreate<HaruspexActivator>
+{
+    private PlayerView myView;
+    private GameController controller;
+    private PlayerAction action;
 
-    PlayerView myView;
-    GameController controller;
-    PlayerAction action;
+    int index;
+
+
     /**
      * Common Card Activator Creator, for use in the factory
      *
@@ -34,12 +35,12 @@ public class AesculapinumActivator implements
      * @return A new activator of the generic type
      */
     @Override
-    public AesculapinumActivator create(PlayerView myView, GameController controller, PlayerAction action) {
-        AesculapinumActivator aesculapinumActivator = new AesculapinumActivator();
-        aesculapinumActivator.myView = myView;
-        aesculapinumActivator.controller = controller;
-        aesculapinumActivator.action = action;
-        return aesculapinumActivator;
+    public HaruspexActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+        HaruspexActivator haruspexActivator = new HaruspexActivator();
+        haruspexActivator.myView = myView;
+        haruspexActivator.controller = controller;
+        haruspexActivator.action = action;
+        return haruspexActivator;
     }
 
     /**
@@ -55,18 +56,21 @@ public class AesculapinumActivator implements
      */
     @Override
     public void complete() {
-        controller.useFollowingActivatorPlayerDelegate(new AesculapinumActivatorDelegatePlayer());
+        controller.useFollowingActivatorPlayerDelegate(new HaruspexActivatorDelegatedPlayer());
         controller.performAction();
         controller.ceaseUsingActivatorPlayerDelegate();
     }
-
-    private class AesculapinumActivatorDelegatePlayer extends delegatedPlayer {
-        @Override  public PlayerAction getNextActionInteraction() {
+    private class HaruspexActivatorDelegatedPlayer extends delegatedPlayer{
+        @Override
+        public PlayerAction getNextActionInteraction() {
             return action;
         }
 
-        @Override public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
-            return ((List) cardsToChoseFromIn).subList(cardsToChoseFromIn.size() - 1 - pileIndex, cardsToChoseFromIn.size() - 1 - pileIndex);
+        @Override
+        public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
+            return controller.getDeck().getDeck().subList(
+                    controller.getDeck().getDeck().size() - 1 - index,
+                    controller.getDeck().getDeck().size() - 1 - index);
         }
     }
 
@@ -82,6 +86,6 @@ public class AesculapinumActivator implements
      */
     @Override
     public void chooseCardFromPile(int indexOfCard) {
-        pileIndex = indexOfCard;
+        this.index = indexOfCard;
     }
 }

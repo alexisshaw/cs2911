@@ -1,5 +1,6 @@
 package Game.testadapter;
 
+import Game.Deck;
 import Game.Player;
 
 /**
@@ -13,4 +14,6 @@ public class GameController {
     public void performAction(){}
     public void useFollowingActivatorPlayerDelegate(Player p){}
     public void ceaseUsingActivatorPlayerDelegate(){}
+    public void setBattleDieRoll(int roll){}
+    public Deck getDeck(){return null;};
 }

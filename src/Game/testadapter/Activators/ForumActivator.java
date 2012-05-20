@@ -1,6 +1,14 @@
 package Game.testadapter.Activators;
 
 
+import Game.Die;
+import Game.PlayerAction;
+import Game.PlayerView;
+import Game.testadapter.GameController;
+import Game.testadapter.delegatedPlayer;
+
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Alexis Shaw
@@ -8,7 +16,35 @@ package Game.testadapter.Activators;
  * Time: 7:10 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ForumActivator implements framework.interfaces.activators.ForumActivator {
+public class ForumActivator implements
+        framework.interfaces.activators.ForumActivator,
+        ActivatorWithCreate<ForumActivator> {
+    PlayerView myView;
+    GameController controller;
+    PlayerAction activationAction;
+
+    boolean doesUseTemplum = false;
+    int templumDieValue;
+    int forumDieValue;
+
+    /**
+     * Common Card Activator Creator, for use in the factory
+     *
+     * @param myView     thePlayerView to use
+     * @param controller the GameController the activator to use
+     * @param action     the action for the game to use
+     * @return A new activator of the generic type
+     */
+
+    @Override
+    public ForumActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+        ForumActivator newForumActivator = new ForumActivator();
+        newForumActivator.myView = myView;
+        newForumActivator.controller = controller;
+        newForumActivator.activationAction = action;
+        return newForumActivator;
+    }
+
     /**
      * Choose whether to activate a Templum with your forum activation
      *
@@ -16,7 +52,7 @@ public class ForumActivator implements framework.interfaces.activators.ForumActi
      */
     @Override
     public void chooseActivateTemplum(boolean activate) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        doesUseTemplum = activate;
     }
 
     /**
@@ -29,7 +65,7 @@ public class ForumActivator implements framework.interfaces.activators.ForumActi
      */
     @Override
     public void chooseActivateTemplum(int diceValue) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        templumDieValue = diceValue;
     }
 
     /**
@@ -52,7 +88,7 @@ public class ForumActivator implements framework.interfaces.activators.ForumActi
      */
     @Override
     public void chooseActionDice(int actionDiceValue) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        forumDieValue = actionDiceValue;
     }
 
     /**
@@ -68,6 +104,26 @@ public class ForumActivator implements framework.interfaces.activators.ForumActi
      */
     @Override
     public void complete() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        controller.useFollowingActivatorPlayerDelegate(new ForumAcceptanceDelegatedPlayer());
+        controller.performAction();
+        controller.ceaseUsingActivatorPlayerDelegate();
+    }
+
+    private class ForumAcceptanceDelegatedPlayer extends delegatedPlayer {
+        @Override public PlayerAction getNextActionInteraction() {
+            return activationAction;
+        }
+
+        @Override public Die diceChooser(String message, String emptyMessage) {
+            return Game.testadapter.AssetTranslator.findEquivelentDie(myView.getDice(),forumDieValue);
+        }
+
+        @Override public Die diceChooser(String message, String emptyMessage, List<Die> d) {
+            return Game.testadapter.AssetTranslator.findEquivelentDie(myView.getDice(), templumDieValue);
+        }
+
+        @Override public boolean conditionalInteraction(String question, String trueChar, String falseChar) {
+            return doesUseTemplum;
+        }
     }
 }

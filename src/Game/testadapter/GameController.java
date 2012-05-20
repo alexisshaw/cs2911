@@ -1,5 +1,7 @@
 package Game.testadapter;
 
+import Game.Player;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Alexis Shaw
@@ -9,4 +11,6 @@ package Game.testadapter;
  */
 public class GameController {
     public void performAction(){}
+    public void useFollowingActivatorPlayerDelegate(Player p){}
+    public void ceaseUsingActivatorPlayerDelegate(){}
 }

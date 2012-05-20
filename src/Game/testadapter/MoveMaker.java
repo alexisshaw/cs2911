@@ -6,6 +6,7 @@ import Game.PlayerView;
 import framework.cards.Card;
 import framework.interfaces.activators.CardActivator;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -16,9 +17,11 @@ import java.util.Collection;
  * To change this template use File | Settings | File Templates.
  */
 public class MoveMaker implements framework.interfaces.MoveMaker {
-    PlayerAction toSend;
-    PlayerView playerView;
-    GameController gameController;
+    private PlayerAction toSend;
+    private PlayerView playerView;
+    private GameController gameController;
+    private toChooseFunctor toChoose;
+    delegatedPlayer delegate;
 
     /**
      * Activate the card that is currently on the given dice disc.
@@ -37,8 +40,8 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
      * </ul>
      * </p>
      *
-     * @param disc       the disc where the card to be activated is
-     * @param parameters the ActivateData needed by that specific card
+     * @param disc the disc where the card to be activated is
+     *             the ActivateData needed by that specific card
      * @throws UnsupportedOperationException if the move is not yet
      *                                       implemented
      */
@@ -81,7 +84,21 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
      */
     @Override
     public void activateCardsDisc(int diceToUse, Card chosen) throws UnsupportedOperationException {
-
+        toSend = new PlayerAction(PlayerAction.CardType.Draw, AssetTranslator.findEquivelentDie(playerView.getDice(),diceToUse));
+        toChoose = new activateCardChooseFunctor(chosen);
+        gameController.performAction();
+    }
+    private class activateCardChooseFunctor implements toChooseFunctor{
+        private Card chosen;
+        activateCardChooseFunctor(Card chosen){
+            this.chosen = chosen;
+        }
+        @Override
+        public Collection<card.Card> cardToChoose(Collection<card.Card> chooseFrom) {
+            Collection<card.Card> toReturn = new ArrayList(1);
+            toReturn.add(AssetTranslator.findEquivelentCard(chooseFrom, chosen));
+            return toReturn;
+        }
     }
 
     /**
@@ -171,7 +188,8 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
     @Override
     public void endTurn() throws UnsupportedOperationException {
         toSend = new PlayerAction(PlayerAction.CardType.Pass);
-        gameController.performAction();    }
+        gameController.performAction();
+    }
 
     /**
      * Place a card from the current player's hand on to the selected
@@ -219,5 +237,11 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
 
     public PlayerAction getNextAction(){
         return toSend;
+    }
+    public toChooseFunctor cardToChoose(){
+        return toChoose;
+    }
+    interface toChooseFunctor{
+        Collection<card.Card> cardToChoose(Collection<card.Card> chooseFrom);
     }
 }

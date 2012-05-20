@@ -1,0 +1,15 @@
+#!/bin/bash
+# requires java, javac.
+# Copyright (C) 2012    Damon Stacey            (@damon.stacey)
+set -e
+
+if [[ `uname` == 'Linux' ]]; then
+   if [ `whoami` == "damon" ]; then
+      reset
+   fi
+   java -ea framework.TestRunner -color
+elif [[ `uname` == 'Darwin' ]]; then
+   java -ea framework.TestRunner -color
+else 
+   java -ea framework.TestRunner
+fi

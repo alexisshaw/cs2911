@@ -5,7 +5,7 @@ package Game;
 
 import Game.GameState.GameState;
 import card.Card;
-import Game.CLIPlayer.Player;
+import Game.Player;
 import card.DefenseModificationActor;
 
 import java.util.*;
@@ -13,7 +13,7 @@ import java.util.*;
 public class CardView {
     private GameState state;
     private int playerId;
-    
+
     public CardView(GameState state, int playerNo){
         this.state=state;
         this.playerId=playerNo;

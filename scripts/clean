@@ -1,0 +1,14 @@
+#!/bin/bash
+# destroys all class files and temp files
+
+rm -f *.class
+rm -f */*.class
+rm -f */*/*.class
+
+rm -f *~
+rm -f */*~
+rm -f */*/*~
+
+if [ `whoami` == "damon" ]; then
+   reset
+fi

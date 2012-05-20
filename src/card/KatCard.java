@@ -14,7 +14,7 @@ import java.util.Map;
  * Time: 12:47 AM
  * To change this template use File | Settings | File Templates.
  */
-public class Kat implements Card {
+public class KatCard implements Card {
     private int currentLife = 1;
 
     @Override
@@ -71,12 +71,12 @@ public class Kat implements Card {
         @Override
         public CardAction getAction(DiscardView in) {
             CardAction returnValue = new CardAction();
-            if(in.getCardBeingDiscarded().equals(Kat.this)){
-                if(Kat.this.currentLife < 9 && in.getManorOfDiscard().equals(DiscardView.DiscardManor.NORMAL)){
+            if(in.getCardBeingDiscarded().equals(KatCard.this)){
+                if(KatCard.this.currentLife < 9 && in.getManorOfDiscard().equals(DiscardView.DiscardManor.NORMAL)){
                     Map<Disk, Card> relayMap = new HashMap<Disk, Card>();
-                    relayMap.put(in.getOriginalLocation(), Kat.this);
+                    relayMap.put(in.getOriginalLocation(), KatCard.this);
                     returnValue.setPlaceCards(relayMap);
-                    Kat.this.currentLife++;
+                    KatCard.this.currentLife++;
                 } else {
                     returnValue.setDiscardActorToRemove(this);
                 }
@@ -86,7 +86,7 @@ public class Kat implements Card {
 
         @Override
         public Card getCard() {
-            return Kat.this;
+            return KatCard.this;
         }
     }
 

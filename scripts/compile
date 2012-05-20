@@ -1,0 +1,34 @@
+#!/bin/bash
+# requires java, javac.
+# Copyright (C) 2012    Lasath Fernando         (@lasath.fernando)
+# Copyright (C) 2012    Benjamin James Wright   (@ben.wright)
+# Copyright (C) 2012    Damon Stacey            (@damon.stacey)
+# Copyright (C) 2012    Alexis Shaw             (@alexis.shaw)
+
+
+export BASE_DIR="`cd .. ; pwd`"
+export SRC_DIR="$BASE_DIR/src"
+export BUILD_DIR="$BASE_DIR/build"
+export LIB_DIR="$BASE_DIR/lib"
+export TESTEE_DIR="$BASE_DIR/testee"
+export CLASSPATH="$BUILD_DIR:$LIB_DIR/*:$TESTEE_DIR/*"
+
+# Don't continue after errors
+set -e
+
+echo Compiling...
+mkdir -p $BUILD_DIR
+
+pushd $SRC_DIR
+# this will automatically compile any imported files whose source
+# has modified since last compile.
+javac -source 1.6 -d $BUILD_DIR -sourcepath . framework/TestRunner.java
+popd
+
+pushd $SRC_DIR
+# This will compile all the tests in stable so the tester can get them
+find tests/ -type f -name "*.java" -exec javac -source 1.6 -d $BUILD_DIR -sourcepath $SRC_DIR {} \;
+popd
+
+echo Compilation Complete!
+

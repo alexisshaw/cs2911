@@ -25,7 +25,7 @@ public class Field extends HashMap<Disk, Card> {
         public DiscardView getDiscardView(Card responsible, Card toDiscard,DiscardView.DiscardManor manor, Disk location);
     }
 
-    public Field(Collection<Card> discard, Collection<DiscardActor> discardActors, DiscardActivator discardActivator){
+    public Field(List<Card> discard, Collection<DiscardActor> discardActors, DiscardActivator discardActivator){
         this.discard = discard;
         this.discardActors = discardActors;
         this.discardActivator = discardActivator;

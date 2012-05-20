@@ -92,14 +92,17 @@ public class Deck {
         deck.push(new TempulmCard());
         deck.push(new TurrisCard());
         deck.push(new TurrisCard());
-        deck.push(new Kat());
-        deck.push(new Kat());
-        deck.push(new GrimReaper());
+        deck.push(new KatCard());
+        deck.push(new KatCard());
+        deck.push(new GrimReaperCard());
     }
 
-    /*public Deck(Stack<card.Card> deck){
+    public Stack<Card> getDeckStack(){
+        return deck;
+    }
+    public void setDeckStack(Stack<Card> deck){
         this.deck = deck;
-    } */
+    }
 
     //Returns top card from deck and removes it from deck
     public card.Card drawCard() throws DeckEmptyException{

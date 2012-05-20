@@ -29,7 +29,7 @@ public class PlayerState {
     Set<Disk> blockedDisks;
 
     //Constructor for creating player state
-    public PlayerState(Collection<Card> discard,
+    public PlayerState(List<Card> discard,
                        Collection<DiscardActor> discardActors,
                        Field.DiscardActivator discardActivator,
                        Set<Disk> blockedDisks
@@ -49,6 +49,15 @@ public class PlayerState {
         randomness = new Random();
         field = new Field(discard, discardActors, discardActivator);
     }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public void setHand(Vector<Card> hand) {
+        this.hand = hand;
+    }
+
     public boolean canActivateDisk(Disk disk, Die bribeDie){
         if(disk == Disk.BRIBE_DISK){
             return dice.contains(bribeDie) &&

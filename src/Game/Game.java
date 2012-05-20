@@ -3,7 +3,6 @@ package Game;
 import Game.GameState.GameState;
 import card.Card;
 import card.CardAction;
-import Game.CLIPlayer.Player;
 
 import java.util.*;
 
@@ -16,6 +15,8 @@ import java.util.*;
  */
 public class Game {
 
+    public static final int NO_CARDS_TO_SWAP = 2;
+    public static final int NO_INITIAL_CARDS = 4;
     //Declarations for Game.CLIPlayer.Player, Game.GameState.GameState classes
     private Player[] players;
     private GameState gameState;
@@ -70,7 +71,7 @@ public class Game {
 
     private void playersSwapCards() {
         //Have each player choose 2 cards to give to opponent
-        Card[][] chosenCards = new Card[players.length][2];
+        Card[][] chosenCards = new Card[players.length][NO_CARDS_TO_SWAP];
         for(int i=0; i< players.length; i++){
             chosenCards[i] = players[i].initialSwapCardsInteraction().toArray(new Card[1]);
         }
@@ -78,8 +79,8 @@ public class Game {
             //Give 2 cards to opponent.
             //Remove cards from hand
             gameState.getPlayerState(i).removeFromHand(Arrays.asList(chosenCards[i]));
-            for (int j = 0; j < 2; j++) {
-                gameState.getPlayerState(i).addToHand(chosenCards[(i + 1) % 2][j]);
+            for (int j = 0; j < NO_CARDS_TO_SWAP; j++) {
+                gameState.getPlayerState(i).addToHand(chosenCards[(i + 1) % NO_CARDS_TO_SWAP][j]);
             }
         }
     }
@@ -87,7 +88,7 @@ public class Game {
     private void givePlayersInitialCards() throws Deck.DeckEmptyException{
         //Give each player 4 cards
         for(int i=0; i< players.length; i++){
-            for (int j = 0; j < 4; j++) {
+            for (int j = 0; j < NO_INITIAL_CARDS; j++) {
                gameState.getPlayerState(i).addToHand(gameState.getDeck().drawCard());
             }
         }
@@ -101,6 +102,7 @@ public class Game {
         }
         } catch (GameOverException e){
             notifyOfGameEnd(findWinner());
+            gameState.setGameOver(true);
             System.exit(0);
         }
     }
@@ -166,7 +168,12 @@ public class Game {
                 if(gameState.getPlayerState(playerID).hasDie(nextAction.getDice()[0])){
                     try {
                         Card[] newCards = gameState.getDeck().drawCard(nextAction.getDice()[0].getDieValue());
-                        gameState.getPlayerState(playerID).addToHand(players[playerID].newCardChoiceInteraction(Arrays.asList(newCards)));
+                        Card toAddToHand = players[playerID].cardChooser(
+                                "Please choose One of the following cards to put into your hand:\n",
+                                "",
+                                1,
+                                Arrays.asList(newCards)).iterator().next();
+                        gameState.getPlayerState(playerID).addToHand(toAddToHand);
                         gameState.getPlayerState(playerID).removeDie(nextAction.getDice()[0]);
                     } catch (Deck.DeckEmptyException e){
                         System.exit(1);
@@ -175,12 +182,12 @@ public class Game {
                 break;
             case Place:
                 if(nextAction.getCard() == null){
-                    System.out.println("There is no card to place");
+                    players[playerID].sendMessage("There is no card to place");
                 }else if(gameState.getPlayerState(playerID).getMoney() >= nextAction.getCard().getPrice()){
                     gameState.getPlayerState(playerID).placeOnField(nextAction.getCard(), nextAction.getLocation());
                     gameState.getPlayerState(playerID).addMoney(-nextAction.getCard().getPrice());
                 }else{
-                    System.out.println("You cannot afford to place this card");
+                    players[playerID].sendMessage("You cannot afford to place this card");
                 }
                 break;
             case Activate:
@@ -223,7 +230,6 @@ public class Game {
                 count++;
                 if (!gameState.getPlayerState(cardAssignments.indexOf(m)).getHand().contains(e.getValue())){
                     returnValue = false;
-                    System.out.println(e.getValue().toString());
                 }
                 //to check that the player has not submitted multiple copies of the same card
             }

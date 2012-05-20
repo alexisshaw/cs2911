@@ -15,19 +15,22 @@ import java.util.*;
  * Time: 6:41 PM
  * Game.CLIPlayer.Player class for game play interactions
  */
-public class Player {
+public class Player implements Game.Player {
     private String name;
     private Scanner sc;
     private final CliPlayerPrinter cliPlayerPrinter;
     private PlayerView myView;
 
-    public PlayerView getMyView() {
-        return myView;
-    }
-
     public Player() {
         name = "Player";
         cliPlayerPrinter = new CliPlayerPrinter(this);
+    }
+
+    public PlayerView getMyView() {
+        return myView;
+    }
+    public String getName() {
+        return name;
     }
     public void setPlayerName(){
         System.out.println(CliPlayerPrinter.getBanner());
@@ -36,14 +39,24 @@ public class Player {
         name = sc.nextLine();
         System.out.println("");
     }
-
     public void setPlayerView(PlayerView newView) {
         myView = newView;
     }
 
-    public String getName() {
-        return name;
+    public Collection<Card> initialSwapCardsInteraction() {
+        System.out.println(cliPlayerPrinter.getMyBanner());
+        return cardChooser("Please please chose two cards to give to your opponent", "",
+                2,
+                myView.getHand());
     }
+    public Map<Disk,Card> initialCardPlacementInteraction(){
+        System.out.println(cliPlayerPrinter.getMyBanner());
+        cliPlayerPrinter.printHand();
+        return cardPlacer(myView.getHand(),
+                "You need to place your %d cards on the field:\n",
+                "Please choose where you would Like %s to go\n");
+    }
+
     public void notifyOfLoss(String winner){
         System.out.println(CliPlayerPrinter.getBanner());
         System.out.println();
@@ -55,22 +68,16 @@ public class Player {
         System.out.println("The game is over, you win.");
     }
 
+    public void sendMessage(String in){
+        System.out.println(in);
+    }
+
+
     public PlayerAction getNextActionInteraction(){
         PlayerAction returnValue;
         newPlayerAction playerAction = new newPlayerAction(this);
         returnValue = playerAction.getNextActionInteractionInnards();
         return returnValue;
-    }
-
-    public Card newCardChoiceInteraction(Collection<Card> cardsToChoseFrom){
-        Collection<Card> returnSet = cardChooser("Please choose One of the following cards to put into your hand:\n",
-                "",1,cardsToChoseFrom);
-        if (!returnSet.isEmpty()){
-            return returnSet.iterator().next();
-        }else{
-            return null;
-        }
-
     }
 
     public boolean conditionalInteraction(String question, String trueChar, String falseChar){
@@ -90,20 +97,6 @@ public class Player {
             number = sc.nextInt();
         }
         return number;
-    }
-
-    public Collection<Card> initialSwapCardsInteraction() {
-        System.out.println(cliPlayerPrinter.getMyBanner());
-        return cardChooser("Please please chose two cards to give to your opponent", "",
-                2,
-                myView.getHand());
-    }
-    public Map<Disk,Card> initialCardPlacementInteraction(){
-        System.out.println(cliPlayerPrinter.getMyBanner());
-        cliPlayerPrinter.printHand();
-        return cardPlacer(myView.getHand(),
-                "You need to place your %d cards on the field:\n",
-                "Please choose where you would Like %s to go\n");
     }
 
     public Collection<Card> cardChooser(String message, String emptyMessage,  int numCards, Collection<Card> cardsToChoseFromIn){

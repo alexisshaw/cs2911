@@ -3,7 +3,7 @@ package Game.GameState;
 import Game.*;
 import Game.field.Field;
 import card.*;
-import Game.CLIPlayer.Player;
+import Game.Player;
 
 import java.util.*;
 
@@ -25,12 +25,21 @@ public class GameState {
 
     //declare the deck
     private Deck ourDeck;
-    private Collection<Card> discardPile;
+    private List<Card> discardPile;
     private Map<Disk, Set<Card>> blockedDisks;
     private Collection<PlayerTurnChangeActor> playerTurnChangeActors;
     private Collection<DiscardActor> discardActors;
     private Collection<DefenseModificationActor> defenseModificationActors;
     private int turnNumber;
+    private boolean gameOver = false;
+
+    public boolean isGameOver() {
+        return gameOver;
+    }
+
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
+    }
 
     public int getCurrentPlayerID() {
         return currentPlayerID;
@@ -49,8 +58,12 @@ public class GameState {
         return blockedDisks.keySet();
     }
 
-    public Collection<Card> getDiscardPile() {
+    public List<Card> getDiscardPile() {
         return discardPile;
+    }
+
+    public void setDiscardPile(List<Card> discardPile) {
+        this.discardPile = discardPile;
     }
 
     public int getTurnNumber() {

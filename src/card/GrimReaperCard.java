@@ -9,7 +9,7 @@ import Game.CardView;
  * Time: 1:21 AM
  * To change this template use File | Settings | File Templates.
  */
-public class GrimReaper implements Card {
+public class GrimReaperCard implements Card {
     @Override
     public String toString() {
         return "Grim Reaper";
@@ -22,7 +22,7 @@ public class GrimReaper implements Card {
 
     @Override
     public int getNumberOfDiceRequired() {
-        return 1;
+        return 0;
     }
 
     @Override

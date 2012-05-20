@@ -5,8 +5,7 @@ import card.CardAction;
 import Game.CardView;
 import Game.Die;
 
-import java.util.Collection;
-import java.util.HashSet;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -50,7 +49,9 @@ public class ForumCard implements Card {
             if (c.getClass() == BasilicaCard.class) returnValue.setVictoryPointsToAdd(returnValue.getVictoryPointsToAdd()+2);
             if (c.getClass() == TempulmCard.class){
                 if(input.getPlayer().conditionalInteraction("Would you like to activate " + c.toString()+ "?" ,"y","n")){
-                    Die thirdDie = input.getPlayer().diceChooser("Please Choose a Third die to activate "+ this.toString() +":\n", "You cannot choose a die");
+                    List<Die> secondChoiceDie = new LinkedList<Die>(input.getMyPlayerView().getDice());
+                    secondChoiceDie.remove(secondDie);
+                    Die thirdDie = input.getPlayer().diceChooser("Please Choose a Third die to activate "+ this.toString() +":\n", "You cannot choose a die", secondChoiceDie);
                     dieSet.add(thirdDie);
                     returnValue.setVictoryPointsToAdd(returnValue.getVictoryPointsToAdd() +thirdDie.getDieValue());
                 }

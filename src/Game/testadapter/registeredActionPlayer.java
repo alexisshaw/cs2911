@@ -71,8 +71,8 @@ public class registeredActionPlayer implements Player {
         return 0;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    @Override public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    @Override public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<card.Card> cardsToChoseFromIn) {
+        return myMoveMaker.cardToChoose().cardToChoose(cardsToChoseFromIn);
     }
 
     @Override public Collection<Disk> diskChooser(String message, String emptyMessage, int numCards, Collection<Disk> cardsToChoseFromIn) {

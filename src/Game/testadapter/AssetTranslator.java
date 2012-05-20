@@ -16,8 +16,8 @@ import java.util.Collection;
  * Time: 2:09 PM
  * To change this template use File | Settings | File Templates.
  */
-class AssetTranslator {
-    static framework.cards.Card fromInternalToTestCard(card.Card c){
+public class AssetTranslator {
+    static public framework.cards.Card fromInternalToTestCard(card.Card c){
         if(c.getClass() == AesculapinumCard.class){
             return Card.AESCULAPINUM;
         } else if(c.getClass() == ArchitectusCard.class){
@@ -78,7 +78,7 @@ class AssetTranslator {
             return Card.NOT_A_CARD;
         }
     }
-    static card.Card fromTestToInternalCard(framework.cards.Card c){
+    static public card.Card fromTestToInternalCard(framework.cards.Card c){
         card.Card toReturn;
         switch (c) {
             case AESCULAPINUM:
@@ -174,14 +174,14 @@ class AssetTranslator {
         }
         return toReturn;
     }
-    static card.Card findEquivelentCard(Collection<card.Card> toLookIn, framework.cards.Card toLookFor){
+    static public card.Card findEquivelentCard(Collection<card.Card> toLookIn, framework.cards.Card toLookFor){
         Class<? extends card.Card> cardClass = fromTestToInternalCard(toLookFor).getClass();
         card.Card toReturn = null;
         for(card.Card c: toLookIn) if(c.getClass() == cardClass)
             toReturn = c;
         return toReturn;
     }
-    static Game.Die  findEquivelentDie (Collection<Game.Die>  toLookIn, int toLookFor){
+    static public Game.Die  findEquivelentDie (Collection<Game.Die>  toLookIn, int toLookFor){
           for(Game.Die d: toLookIn) if(d.getDieValue() == toLookFor) return d;
           return null;
     }

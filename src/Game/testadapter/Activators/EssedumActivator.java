@@ -13,8 +13,7 @@ import Game.testadapter.GameController;
  * To change this template use File | Settings | File Templates.
  */
 public class EssedumActivator implements
-        framework.interfaces.activators.EssedumActivator,
-        ActivatorWithCreate<EssedumActivator> {
+        framework.interfaces.activators.EssedumActivator {
     GameController controller;
     PlayerAction action;
 
@@ -26,8 +25,7 @@ public class EssedumActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public EssedumActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static EssedumActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         EssedumActivator essedumActivator = new EssedumActivator();
         essedumActivator.controller = controller;
         essedumActivator.action = action;

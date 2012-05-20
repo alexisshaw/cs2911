@@ -13,8 +13,7 @@ import Game.testadapter.GameController;
  * To change this template use File | Settings | File Templates.
  */
 public class MercatorActivator implements
-        framework.interfaces.activators.MercatorActivator,
-        ActivatorWithCreate<MercatorActivator> {
+        framework.interfaces.activators.MercatorActivator {
 
     PlayerView myView;
     GameController controller;
@@ -30,8 +29,7 @@ public class MercatorActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public MercatorActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static MercatorActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         MercatorActivator newMercatorActivator = new MercatorActivator();
         newMercatorActivator.myView = myView;
         newMercatorActivator.controller = controller;

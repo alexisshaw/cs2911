@@ -21,8 +21,7 @@ import java.util.Stack;
  * To change this template use File | Settings | File Templates.
  */
 public class SenatorActivator implements
-        framework.interfaces.activators.SenatorActivator,
-        ActivatorWithCreate<SenatorActivator> {
+        framework.interfaces.activators.SenatorActivator {
     PlayerView myView;
     GameController controller;
     PlayerAction activationAction;
@@ -39,8 +38,7 @@ public class SenatorActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public SenatorActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static SenatorActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         SenatorActivator newSenatorActivator = new SenatorActivator();
         newSenatorActivator.myView = myView;
         newSenatorActivator.controller = controller;

@@ -18,8 +18,7 @@ import java.util.Collection;
  * To change this template use File | Settings | File Templates.
  */
 public class SicariusActivator implements
-        framework.interfaces.activators.SicariusActivator,
-        ActivatorWithCreate<SicariusActivator> {
+        framework.interfaces.activators.SicariusActivator {
 
     int diceDiskIndex;
 
@@ -35,8 +34,7 @@ public class SicariusActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public SicariusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static SicariusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         SicariusActivator newSicariusActivator = new SicariusActivator();
         newSicariusActivator.myView = myView;
         newSicariusActivator.controller = controller;

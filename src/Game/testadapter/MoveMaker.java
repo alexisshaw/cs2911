@@ -2,7 +2,7 @@ package Game.testadapter;
 
 import Game.Disk;
 import Game.PlayerAction;
-import Game.PlayerView;
+import Game.testadapter.GameController.toChooseFunctor;
 import framework.cards.Card;
 import framework.interfaces.activators.CardActivator;
 
@@ -17,11 +17,7 @@ import java.util.Collection;
  * To change this template use File | Settings | File Templates.
  */
 public class MoveMaker implements framework.interfaces.MoveMaker {
-    private PlayerAction toSend;
-    private PlayerView playerView;
     private GameController gameController;
-    private toChooseFunctor toChoose;
-    DelegatedPlayer delegate;
 
     /**
      * Activate the card that is currently on the given dice disc.
@@ -47,7 +43,16 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
      */
     @Override
     public CardActivator chooseCardToActivate(int disc) throws UnsupportedOperationException {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        PlayerAction action = new PlayerAction(
+                PlayerAction.CardType.Activate,
+                new Disk(disc),
+                AssetTranslator.findEquivelentDie(gameController.getMyPlayerView().getDice(), disc));
+
+        return ActivatorFactory.createActivator(
+                gameController.getMyPlayerView().getField(gameController.getMyPlayerView().getPlayerId()).get(new Disk(disc)),
+                gameController.getMyPlayerView(),
+                gameController,
+                action);
     }
 
     /**
@@ -84,8 +89,11 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
      */
     @Override
     public void activateCardsDisc(int diceToUse, Card chosen) throws UnsupportedOperationException {
-        toSend = new PlayerAction(PlayerAction.CardType.Draw, AssetTranslator.findEquivelentDie(playerView.getDice(), diceToUse));
-        toChoose = new activateCardChooseFunctor(chosen);
+        gameController.setToSend(new PlayerAction(
+                PlayerAction.CardType.Draw,
+                AssetTranslator.findEquivelentDie(gameController.getMyPlayerView().getDice(), diceToUse)
+        ));
+        gameController.setToChoose(new activateCardChooseFunctor(chosen));
         gameController.performAction();
     }
 
@@ -98,7 +106,7 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
 
         @Override
         public Collection<card.Card> cardToChoose(Collection<card.Card> chooseFrom) {
-            Collection<card.Card> toReturn = new ArrayList(1);
+            Collection<card.Card> toReturn = new ArrayList<card.Card>(1);
             toReturn.add(AssetTranslator.findEquivelentCard(chooseFrom, chosen));
             return toReturn;
         }
@@ -129,9 +137,10 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
      */
     @Override
     public void activateMoneyDisc(int diceToUse) throws UnsupportedOperationException {
-        toSend = new PlayerAction(PlayerAction.CardType.Money,
-                AssetTranslator.findEquivelentDie(playerView.getDice(), diceToUse)
-        );
+        gameController.setToSend(new PlayerAction(
+                PlayerAction.CardType.Money,
+                AssetTranslator.findEquivelentDie(gameController.getMyPlayerView().getDice(), diceToUse)
+        ));
         gameController.performAction();
     }
 
@@ -165,7 +174,16 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
      */
     @Override
     public CardActivator activateBribeDisc(int diceToUse) throws UnsupportedOperationException {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        PlayerAction action = new PlayerAction(
+                PlayerAction.CardType.Activate,
+                Disk.BRIBE_DISK,
+                AssetTranslator.findEquivelentDie(gameController.getMyPlayerView().getDice(), diceToUse));
+
+        return ActivatorFactory.createActivator(
+                gameController.getMyPlayerView().getField(gameController.getMyPlayerView().getPlayerId()).get(Disk.BRIBE_DISK),
+                gameController.getMyPlayerView(),
+                gameController,
+                action);
     }
 
     /**
@@ -190,7 +208,9 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
      */
     @Override
     public void endTurn() throws UnsupportedOperationException {
-        toSend = new PlayerAction(PlayerAction.CardType.Pass);
+        gameController.setToSend(
+                new PlayerAction(PlayerAction.CardType.Pass)
+        );
         gameController.performAction();
     }
 
@@ -229,24 +249,14 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
      */
     @Override
     public void placeCard(Card toPlace, int discToPlaceOn) throws UnsupportedOperationException {
-        Collection<card.Card> hand = playerView.getHand();
-        toSend = new PlayerAction(
+        Collection<card.Card> hand = gameController.getMyPlayerView().getHand();
+        gameController.setToSend(new PlayerAction(
                 PlayerAction.CardType.Place,
                 AssetTranslator.findEquivelentCard(hand, toPlace),
                 new Disk(discToPlaceOn)
-        );
+        ));
         gameController.performAction();
     }
 
-    public PlayerAction getNextAction() {
-        return toSend;
-    }
 
-    public toChooseFunctor cardToChoose() {
-        return toChoose;
-    }
-
-    interface toChooseFunctor {
-        Collection<card.Card> cardToChoose(Collection<card.Card> chooseFrom);
-    }
 }

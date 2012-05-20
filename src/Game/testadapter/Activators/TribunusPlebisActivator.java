@@ -13,8 +13,7 @@ import Game.testadapter.GameController;
  * To change this template use File | Settings | File Templates.
  */
 public class TribunusPlebisActivator implements
-        framework.interfaces.activators.TribunusPlebisActivator,
-        ActivatorWithCreate<TribunusPlebisActivator> {
+        framework.interfaces.activators.TribunusPlebisActivator {
 
     PlayerView myView;
     GameController controller;
@@ -28,8 +27,7 @@ public class TribunusPlebisActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public TribunusPlebisActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static TribunusPlebisActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         TribunusPlebisActivator newTribunusPlebisActivator = new TribunusPlebisActivator();
         newTribunusPlebisActivator.myView = myView;
         newTribunusPlebisActivator.controller = controller;

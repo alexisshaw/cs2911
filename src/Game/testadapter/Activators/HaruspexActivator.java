@@ -16,8 +16,7 @@ import java.util.Collection;
  * To change this template use File | Settings | File Templates.
  */
 public class HaruspexActivator implements
-        framework.interfaces.activators.HaruspexActivator,
-        ActivatorWithCreate<HaruspexActivator> {
+        framework.interfaces.activators.HaruspexActivator {
     private PlayerView myView;
     private GameController controller;
     private PlayerAction action;
@@ -33,8 +32,7 @@ public class HaruspexActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public HaruspexActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static HaruspexActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         HaruspexActivator haruspexActivator = new HaruspexActivator();
         haruspexActivator.myView = myView;
         haruspexActivator.controller = controller;

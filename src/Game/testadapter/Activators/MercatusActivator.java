@@ -13,8 +13,7 @@ import Game.testadapter.GameController;
  * To change this template use File | Settings | File Templates.
  */
 public class MercatusActivator implements
-        framework.interfaces.activators.MercatusActivator,
-        ActivatorWithCreate<MercatusActivator> {
+        framework.interfaces.activators.MercatusActivator {
 
     PlayerView myView;
     GameController controller;
@@ -28,8 +27,7 @@ public class MercatusActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public MercatusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static MercatusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         MercatusActivator newMercatusActivator = new MercatusActivator();
         newMercatusActivator.myView = myView;
         newMercatusActivator.controller = controller;

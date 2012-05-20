@@ -17,8 +17,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class ForumActivator implements
-        framework.interfaces.activators.ForumActivator,
-        ActivatorWithCreate<ForumActivator> {
+        framework.interfaces.activators.ForumActivator {
     PlayerView myView;
     GameController controller;
     PlayerAction activationAction;
@@ -36,8 +35,7 @@ public class ForumActivator implements
      * @return A new activator of the generic type
      */
 
-    @Override
-    public ForumActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static ForumActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         ForumActivator newForumActivator = new ForumActivator();
         newForumActivator.myView = myView;
         newForumActivator.controller = controller;

@@ -13,8 +13,7 @@ import Game.testadapter.GameController;
  * To change this template use File | Settings | File Templates.
  */
 public class LegionariusActivator implements
-        framework.interfaces.activators.LegionariusActivator,
-        ActivatorWithCreate<LegionariusActivator> {
+        framework.interfaces.activators.LegionariusActivator {
     GameController controller;
     PlayerAction action;
 
@@ -28,8 +27,7 @@ public class LegionariusActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public LegionariusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static LegionariusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         LegionariusActivator legionariusActivator = new LegionariusActivator();
         legionariusActivator.controller = controller;
         legionariusActivator.action = action;

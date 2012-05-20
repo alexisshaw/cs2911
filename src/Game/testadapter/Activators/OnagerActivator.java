@@ -18,8 +18,7 @@ import java.util.Collection;
  * To change this template use File | Settings | File Templates.
  */
 public class OnagerActivator implements
-        framework.interfaces.activators.OnagerActivator,
-        ActivatorWithCreate<OnagerActivator> {
+        framework.interfaces.activators.OnagerActivator {
 
     PlayerView myView;
     GameController controller;
@@ -36,8 +35,7 @@ public class OnagerActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public OnagerActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static OnagerActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         OnagerActivator newOnagerActivator = new OnagerActivator();
         newOnagerActivator.myView = myView;
         newOnagerActivator.controller = controller;
@@ -74,6 +72,7 @@ public class OnagerActivator implements
     @Override
     public void complete() {
         controller.useFollowingActivatorPlayerDelegate(new OnagerAcceptanceDelegatedPlayer());
+        controller.setBattleDieRoll(attackRoll);
         controller.performAction();
         controller.ceaseUsingActivatorPlayerDelegate();
     }

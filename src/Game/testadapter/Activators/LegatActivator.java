@@ -13,8 +13,7 @@ import Game.testadapter.GameController;
  * To change this template use File | Settings | File Templates.
  */
 public class LegatActivator implements
-        framework.interfaces.activators.LegatActivator,
-        ActivatorWithCreate<LegatActivator> {
+        framework.interfaces.activators.LegatActivator {
     GameController controller;
     PlayerAction action;
 
@@ -26,8 +25,7 @@ public class LegatActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public LegatActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static LegatActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         LegatActivator legatActivator = new LegatActivator();
         legatActivator.controller = controller;
         legatActivator.action = action;

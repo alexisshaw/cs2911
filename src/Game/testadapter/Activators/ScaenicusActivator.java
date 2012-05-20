@@ -1,9 +1,16 @@
 package Game.testadapter.Activators;
 
-import Game.PlayerAction;
-import Game.PlayerView;
+import Game.*;
+import Game.testadapter.ActivatorFactory;
+import Game.testadapter.DelegatedPlayer;
 import Game.testadapter.GameController;
+import card.Card;
 import framework.interfaces.activators.CardActivator;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,8 +20,7 @@ import framework.interfaces.activators.CardActivator;
  * To change this template use File | Settings | File Templates.
  */
 public class ScaenicusActivator implements
-        framework.interfaces.activators.ScaenicusActivator,
-        ActivatorWithCreate<ScaenicusActivator> {
+        framework.interfaces.activators.ScaenicusActivator {
 
     PlayerView myView;
     GameController controller;
@@ -30,14 +36,18 @@ public class ScaenicusActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public ScaenicusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static ScaenicusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         ScaenicusActivator newScaenicusActivator = new ScaenicusActivator();
         newScaenicusActivator.myView = myView;
         newScaenicusActivator.controller = controller;
         newScaenicusActivator.activationAction = action;
         return newScaenicusActivator;
     }
+
+    Player subDelegate;
+    card.Card chosenCard;
+    boolean hasSetBattleDieRoll;
+    int battleDieRoll;
 
     /**
      * Select a card to mimic with the Scaenicus.
@@ -53,7 +63,33 @@ public class ScaenicusActivator implements
      */
     @Override
     public CardActivator getScaenicusMimicTarget(int diceDisc) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        chosenCard = myView.getField(myView.getPlayerId()).get(new Disk(diceDisc));
+        GameController wrapperController = new GameController() {
+            @Override
+            public void performAction() {
+            }
+
+            @Override
+            public void useFollowingActivatorPlayerDelegate(Player p) {
+                subDelegate = p;
+            }
+
+            @Override
+            public void ceaseUsingActivatorPlayerDelegate() {
+            }
+
+            @Override
+            public void setBattleDieRoll(int roll) {
+                hasSetBattleDieRoll = true;
+                battleDieRoll = roll;
+            }
+
+            @Override
+            public Deck getDeck() {
+                return controller.getDeck();
+            }
+        };
+        return ActivatorFactory.createActivator(chosenCard, myView, wrapperController, activationAction);
     }
 
     /**
@@ -69,6 +105,58 @@ public class ScaenicusActivator implements
      */
     @Override
     public void complete() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        controller.useFollowingActivatorPlayerDelegate(new wrapperDelegatePlayer());
+        if (hasSetBattleDieRoll) controller.setBattleDieRoll(battleDieRoll);
+        controller.performAction();
+        controller.ceaseUsingActivatorPlayerDelegate();
+    }
+
+    public class wrapperDelegatePlayer extends DelegatedPlayer {
+        boolean hasSentScandicusCardChooserPayload = false;
+
+        @Override
+        public boolean conditionalInteraction(String question, String trueChar, String falseChar) {
+            return subDelegate.conditionalInteraction(question, trueChar, falseChar);
+        }
+
+        @Override
+        public int integerInteraction(String question, int maxVal, int minVal) {
+            return subDelegate.integerInteraction(question, maxVal, minVal);
+        }
+
+        @Override
+        public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
+            if (hasSentScandicusCardChooserPayload) {
+                return subDelegate.cardChooser(message, emptyMessage, numCards, cardsToChoseFromIn);
+            } else {
+                hasSentScandicusCardChooserPayload = true;
+                return Arrays.asList(chosenCard);
+            }
+        }
+
+        @Override
+        public Collection<Disk> diskChooser(String message, String emptyMessage, int numCards, Collection<Disk> cardsToChoseFromIn) {
+            return diskChooser(message, emptyMessage, numCards, cardsToChoseFromIn);
+        }
+
+        @Override
+        public Map<Disk, Card> cardPlacer(Collection<Card> cards, String titleMessage, String perCardMessage) {
+            return cardPlacer(cards, titleMessage, perCardMessage);
+        }
+
+        @Override
+        public Die diceChooser(String message, String emptyMessage) {
+            return diceChooser(message, emptyMessage);
+        }
+
+        @Override
+        public Die diceChooser(String message, String emptyMessage, List<Die> d) {
+            return diceChooser(message, emptyMessage, d);
+        }
+
+        @Override
+        public Map<Disk, Card> cardMultiPlacer(Collection<Card> toChooseFrom, boolean mustPlaceAll) {
+            return cardMultiPlacer(toChooseFrom, mustPlaceAll);
+        }
     }
 }

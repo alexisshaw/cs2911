@@ -15,8 +15,7 @@ import Game.testadapter.GameController;
  * To change this template use File | Settings | File Templates.
  */
 public class ConsulActivator implements
-        framework.interfaces.activators.ConsulActivator,
-        ActivatorWithCreate<ConsulActivator> {
+        framework.interfaces.activators.ConsulActivator {
     PlayerView myView;
     GameController controller;
     PlayerAction action;
@@ -32,8 +31,7 @@ public class ConsulActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public ConsulActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static ConsulActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         ConsulActivator consulActivator = new ConsulActivator();
         consulActivator.myView = myView;
         consulActivator.controller = controller;

@@ -18,8 +18,7 @@ import java.util.Collection;
  * To change this template use File | Settings | File Templates.
  */
 public class NeroActivator implements
-        framework.interfaces.activators.NeroActivator,
-        ActivatorWithCreate<NeroActivator> {
+        framework.interfaces.activators.NeroActivator {
 
     PlayerView myView;
     GameController controller;
@@ -35,8 +34,7 @@ public class NeroActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public NeroActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static NeroActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         NeroActivator newNeroActivator = new NeroActivator();
         newNeroActivator.myView = myView;
         newNeroActivator.controller = controller;
@@ -74,7 +72,7 @@ public class NeroActivator implements
      */
     @Override
     public void chooseDiceDisc(int diceDisc) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        diceDiskIndex = diceDisc;
     }
 
     private class NeroAcceptanceDelegatedPlayer extends DelegatedPlayer {

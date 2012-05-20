@@ -20,8 +20,7 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class ConsiliariusActivator implements
-        framework.interfaces.activators.ConsiliariusActivator,
-        ActivatorWithCreate<ConsiliariusActivator> {
+        framework.interfaces.activators.ConsiliariusActivator {
     PlayerView myView;
     GameController controller;
     PlayerAction action;
@@ -36,8 +35,7 @@ public class ConsiliariusActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public ConsiliariusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static ConsiliariusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         ConsiliariusActivator consiliariusActivator = new ConsiliariusActivator();
         consiliariusActivator.myView = myView;
         consiliariusActivator.controller = controller;

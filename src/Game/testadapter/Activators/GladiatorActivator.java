@@ -18,8 +18,7 @@ import java.util.Collection;
  * To change this template use File | Settings | File Templates.
  */
 public class GladiatorActivator implements
-        framework.interfaces.activators.GladiatorActivator,
-        ActivatorWithCreate<GladiatorActivator> {
+        framework.interfaces.activators.GladiatorActivator {
     PlayerView myView;
     GameController controller;
     PlayerAction action;
@@ -34,8 +33,7 @@ public class GladiatorActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public GladiatorActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static GladiatorActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         GladiatorActivator gladiatorActivator = new GladiatorActivator();
         gladiatorActivator.myView = myView;
         gladiatorActivator.controller = controller;

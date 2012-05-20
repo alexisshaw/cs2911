@@ -8,7 +8,10 @@ import Game.testadapter.DelegatedPlayer;
 import Game.testadapter.GameController;
 import framework.cards.Card;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,8 +21,7 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class ArchitectusActivator implements
-        framework.interfaces.activators.ArchitectusActivator,
-        ActivatorWithCreate<ArchitectusActivator> {
+        framework.interfaces.activators.ArchitectusActivator {
     PlayerView myView;
     GameController controller;
     PlayerAction action;
@@ -35,8 +37,7 @@ public class ArchitectusActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public ArchitectusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static ArchitectusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         ArchitectusActivator architectusActivator = new ArchitectusActivator();
         architectusActivator.myView = myView;
         architectusActivator.controller = controller;
@@ -63,7 +64,9 @@ public class ArchitectusActivator implements
      */
     @Override
     public void complete() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        controller.useFollowingActivatorPlayerDelegate(new ArchitectusActivatorPlayerDelegate());
+        controller.performAction();
+        controller.ceaseUsingActivatorPlayerDelegate();
     }
 
     private class ArchitectusActivatorPlayerDelegate extends DelegatedPlayer {

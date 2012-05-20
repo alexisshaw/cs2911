@@ -19,8 +19,7 @@ import java.util.LinkedList;
  * To change this template use File | Settings | File Templates.
  */
 public class CenturioActivator implements
-        framework.interfaces.activators.CenturioActivator,
-        ActivatorWithCreate<CenturioActivator> {
+        framework.interfaces.activators.CenturioActivator {
     PlayerView myView;
     GameController controller;
     PlayerAction action;
@@ -37,8 +36,7 @@ public class CenturioActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public CenturioActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static CenturioActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         CenturioActivator centurioActivator = new CenturioActivator();
         centurioActivator.myView = myView;
         centurioActivator.controller = controller;

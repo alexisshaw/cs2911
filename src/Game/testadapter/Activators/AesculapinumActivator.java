@@ -18,8 +18,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class AesculapinumActivator implements
-        framework.interfaces.activators.AesculapinumActivator,
-        ActivatorWithCreate<AesculapinumActivator> {
+        framework.interfaces.activators.AesculapinumActivator {
     int pileIndex = 0;
 
     PlayerView myView;
@@ -34,8 +33,7 @@ public class AesculapinumActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public AesculapinumActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static AesculapinumActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         AesculapinumActivator aesculapinumActivator = new AesculapinumActivator();
         aesculapinumActivator.myView = myView;
         aesculapinumActivator.controller = controller;

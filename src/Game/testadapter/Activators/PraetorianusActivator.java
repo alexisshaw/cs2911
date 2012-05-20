@@ -17,8 +17,7 @@ import java.util.Collection;
  * To change this template use File | Settings | File Templates.
  */
 public class PraetorianusActivator implements
-        framework.interfaces.activators.PraetorianusActivator,
-        ActivatorWithCreate<PraetorianusActivator> {
+        framework.interfaces.activators.PraetorianusActivator {
 
     PlayerView myView;
     GameController controller;
@@ -34,8 +33,7 @@ public class PraetorianusActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public PraetorianusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static PraetorianusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         PraetorianusActivator newPraetorianusActivator = new PraetorianusActivator();
         newPraetorianusActivator.myView = myView;
         newPraetorianusActivator.controller = controller;

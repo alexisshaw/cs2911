@@ -20,8 +20,7 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class MachinaActivator implements
-        framework.interfaces.activators.MachinaActivator,
-        ActivatorWithCreate<MachinaActivator> {
+        framework.interfaces.activators.MachinaActivator {
     Map<Disk, Card> toReLay = new HashMap<Disk, Card>();
     PlayerAction action;
     GameController controller;
@@ -34,8 +33,7 @@ public class MachinaActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public MachinaActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static MachinaActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         MachinaActivator machinaActivator = new MachinaActivator();
         machinaActivator.action = action;
         machinaActivator.controller = controller;

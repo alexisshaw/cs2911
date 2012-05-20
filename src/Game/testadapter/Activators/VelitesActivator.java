@@ -1,11 +1,13 @@
 package Game.testadapter.Activators;
 
+import Game.Disk;
 import Game.PlayerAction;
 import Game.PlayerView;
 import Game.testadapter.DelegatedPlayer;
 import Game.testadapter.GameController;
 import card.Card;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 /**
@@ -16,8 +18,7 @@ import java.util.Collection;
  * To change this template use File | Settings | File Templates.
  */
 public class VelitesActivator implements
-        framework.interfaces.activators.VelitesActivator,
-        ActivatorWithCreate<VelitesActivator> {
+        framework.interfaces.activators.VelitesActivator {
 
     PlayerView myView;
     GameController controller;
@@ -32,14 +33,15 @@ public class VelitesActivator implements
      * @param action     the action for the game to use
      * @return A new activator of the generic type
      */
-    @Override
-    public VelitesActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+    public static VelitesActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         VelitesActivator newVelitesActivator = new VelitesActivator();
         newVelitesActivator.myView = myView;
         newVelitesActivator.controller = controller;
         newVelitesActivator.activationAction = action;
         return newVelitesActivator;
     }
+
+    int battleDieRoll;
 
     /**
      * Give the result of an attack die roll.
@@ -53,7 +55,7 @@ public class VelitesActivator implements
      */
     @Override
     public void giveAttackDieRoll(int roll) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        battleDieRoll = roll;
     }
 
     /**
@@ -70,9 +72,12 @@ public class VelitesActivator implements
     @Override
     public void complete() {
         controller.useFollowingActivatorPlayerDelegate(new VelitesAcceptanceDelegatedPlayer());
+        controller.setBattleDieRoll(battleDieRoll);
         controller.performAction();
         controller.ceaseUsingActivatorPlayerDelegate();
     }
+
+    Disk diskToUse;
 
     /**
      * The user chooses a dice disc.
@@ -86,18 +91,18 @@ public class VelitesActivator implements
      */
     @Override
     public void chooseDiceDisc(int diceDisc) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        diskToUse = new Disk(diceDisc);
     }
 
     private class VelitesAcceptanceDelegatedPlayer extends DelegatedPlayer {
         @Override
         public PlayerAction getNextActionInteraction() {
-            return activationAction;  //To change body of implemented methods use File | Settings | File Templates.
+            return activationAction;
         }
 
         @Override
         public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
-            return null;  //To change body of implemented methods use File | Settings | File Templates.
+            return Arrays.asList(myView.getField((myView.getPlayerId() + 1) % myView.getNoPlayers()).get(diskToUse));
         }
     }
 }

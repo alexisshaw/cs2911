@@ -2,62 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" name="Default" comment="Merge remote-tracking branch 'remotes/origin/master'&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/AssetTranslator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/DelegatedPlayer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/RegisteredActionPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="a0911f10-dcfa-4805-9cab-fba1dd420232" name="Failed commit: Default" comment="Merge remote-tracking branch 'remotes/origin/master'&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/MercatorActivator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/MercatusActivator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/NeroActivator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/OnagerActivator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/PraetorianusActivator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ScaenicusActivator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/SenatorActivator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/SicariusActivator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/TribunusPlebisActivator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/VelitesActivator.java" />
       <change type="MOVED" beforePath="C:\Users\Alexis Shaw\Desktop\cs2911\src\Game\testadapter\delegatedPlayer.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/DelegatedPlayer.java" />
       <change type="MOVED" beforePath="C:\Users\Alexis Shaw\Desktop\cs2911\src\Game\testadapter\registeredActionPlayer.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/RegisteredActionPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/ArchitectusActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ArchitectusActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/CenturioActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/CenturioActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsiliariusActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsiliariusActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsulActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsulActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/EssedumActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/EssedumActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/ForumActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ForumActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/GladiatorActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/GladiatorActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/HaruspexActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/HaruspexActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/LegatActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/LegatActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/LegionariusActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/LegionariusActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/MachinaActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/MachinaActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java" />
     </list>
     <ignored path="cs2911.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/TribunusPlebisActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823143" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsiliariusActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823108" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/OnagerActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823108" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/ScaenicusActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823107" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/CenturioActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823107" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/VelitesActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823106" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/ArchitectusActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823106" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/PraetorianusActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823105" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/NeroActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823105" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/SicariusActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823104" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823100" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/MachinaActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823097" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/LegionariusActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823096" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/LegatActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823095" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/ForumActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823095" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/HaruspexActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823094" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/GladiatorActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823094" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/AesculapinumActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823093" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/EssedumActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823093" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/ConsulActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532823092" ignored="false" />
-    <file path="$PROJECT_DIR$/src/Game/testadapter/Activators/SenatorActivator.java" changelist="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" time="1337532822760" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,8 +101,10 @@
       <file leaf-file-name="AssetTranslator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game/testadapter/AssetTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="13" selection-start="585" selection-end="585" vertical-scroll-proportion="0.52873564">
-              <folding />
+            <state line="22" column="13" selection-start="588" selection-end="588" vertical-scroll-proportion="0.80229884">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -684,7 +638,11 @@
       <created>1337531923075</created>
       <updated>1337531923075</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge remote-tracking branch 'remotes/origin/master'&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;">
+      <created>1337532905327</created>
+      <updated>1337532905327</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -755,7 +713,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
     <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'remotes/origin/master'&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -917,8 +875,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/testadapter/AssetTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="13" selection-start="585" selection-end="585" vertical-scroll-proportion="0.52873564">
-          <folding />
+        <state line="22" column="13" selection-start="588" selection-end="588" vertical-scroll-proportion="0.80229884">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

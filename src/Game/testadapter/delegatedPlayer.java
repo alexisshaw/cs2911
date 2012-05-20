@@ -14,7 +14,7 @@ import java.util.Map;
  * Time: 7:08 PM
  * To change this template use File | Settings | File Templates.
  */
-public class delegatedPlayer implements Player {
+public class DelegatedPlayer implements Player {
     @Override
     public PlayerView getMyView() {
         return null;  //To change body of implemented methods use File | Settings | File Templates.

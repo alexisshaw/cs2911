@@ -17,69 +17,68 @@ import java.util.Collection;
  * To change this template use File | Settings | File Templates.
  */
 public class AssetTranslator {
-    static public framework.cards.Card fromInternalToTestCard(card.Card c) {
-        if (c.getClass() == AesculapinumCard.class) {
+    static public framework.cards.Card fromInternalToTestCard(card.Card c){
+        if(c.getClass() == AesculapinumCard.class){
             return Card.AESCULAPINUM;
-        } else if (c.getClass() == ArchitectusCard.class) {
+        } else if(c.getClass() == ArchitectusCard.class){
             return Card.ARCHITECTUS;
-        } else if (c.getClass() == BasilicaCard.class) {
+        } else if(c.getClass() == BasilicaCard.class){
             return Card.BASILICA;
-        } else if (c.getClass() == CenturioCard.class) {
+        } else if(c.getClass() == CenturioCard.class){
             return Card.CENTURIO;
-        } else if (c.getClass() == ConsiliariusCard.class) {
+        } else if(c.getClass() == ConsiliariusCard.class){
             return Card.CONSILIARIUS;
-        } else if (c.getClass() == ConsulCard.class) {
+        } else if(c.getClass() == ConsulCard.class){
             return Card.CONSUL;
-        } else if (c.getClass() == EssedumCard.class) {
+        } else if(c.getClass() == EssedumCard.class){
             return Card.ESSEDUM;
-        } else if (c.getClass() == ForumCard.class) {
+        } else if(c.getClass() == ForumCard.class){
             return Card.FORUM;
-        } else if (c.getClass() == GladiatorCard.class) {
+        } else if(c.getClass() == GladiatorCard.class){
             return Card.GLADIATOR;
-        } else if (c.getClass() == HaruspexCard.class) {
+        } else if(c.getClass() == HaruspexCard.class){
             return Card.HARUSPEX;
-        } else if (c.getClass() == LegatCard.class) {
+        } else if(c.getClass() == LegatCard.class){
             return Card.LEGAT;
-        } else if (c.getClass() == LegionariusCard.class) {
+        } else if(c.getClass() == LegionariusCard.class){
             return Card.LEGIONARIUS;
-        } else if (c.getClass() == MachinaCard.class) {
+        } else if(c.getClass() == MachinaCard.class){
             return Card.MACHINA;
-        } else if (c.getClass() == MercatorCard.class) {
+        } else if(c.getClass() == MercatorCard.class){
             return Card.MERCATOR;
-        } else if (c.getClass() == MercatusCard.class) {
+        } else if(c.getClass() == MercatusCard.class){
             return Card.MERCATUS;
-        } else if (c.getClass() == NeroCard.class) {
+        } else if(c.getClass() == NeroCard.class){
             return Card.NERO;
-        } else if (c.getClass() == OnagerCard.class) {
+        } else if(c.getClass() == OnagerCard.class){
             return Card.ONAGER;
-        } else if (c.getClass() == PraetorianusCard.class) {
+        } else if(c.getClass() == PraetorianusCard.class){
             return Card.PRAETORIANUS;
-        } else if (c.getClass() == ScaenicusCard.class) {
+        } else if(c.getClass() == ScaenicusCard.class){
             return Card.SCAENICUS;
-        } else if (c.getClass() == SenatorCard.class) {
+        } else if(c.getClass() == SenatorCard.class){
             return Card.SENATOR;
-        } else if (c.getClass() == SicariusCard.class) {
+        } else if(c.getClass() == SicariusCard.class){
             return Card.SICARIUS;
-        } else if (c.getClass() == TempulmCard.class) {
+        } else if(c.getClass() == TempulmCard.class){
             return Card.TEMPLUM;
-        } else if (c.getClass() == TribunusPlebusCard.class) {
+        } else if(c.getClass() == TribunusPlebusCard.class){
             return Card.TRIBUNUSPLEBIS;
-        } else if (c.getClass() == TurrisCard.class) {
+        } else if(c.getClass() == TurrisCard.class){
             return Card.TURRIS;
-        } else if (c.getClass() == VelitesCard.class) {
+        } else if(c.getClass() == VelitesCard.class){
             return Card.VELITES;
-        } else if (c.getClass() == GrimReaperCard.class) {
+        } else if(c.getClass() == GrimReaperCard.class){
             return Card.GRIMREAPER;
-        } else if (c.getClass() == KatCard.class) {
+        } else if(c.getClass() == KatCard.class){
             return Card.KAT;
-        } else if (c.getClass() == TelephoneBoxCard.class) {
+        } else if(c.getClass() == TelephoneBoxCard.class){
             return Card.TELEPHONEBOX;
         } else {
             return Card.NOT_A_CARD;
         }
     }
-
-    static public card.Card fromTestToInternalCard(framework.cards.Card c) {
+    static public card.Card fromTestToInternalCard(framework.cards.Card c){
         card.Card toReturn;
         switch (c) {
             case AESCULAPINUM:
@@ -175,18 +174,15 @@ public class AssetTranslator {
         }
         return toReturn;
     }
-
-    static public card.Card findEquivelentCard(Collection<card.Card> toLookIn, framework.cards.Card toLookFor) {
+    static public card.Card findEquivelentCard(Collection<card.Card> toLookIn, framework.cards.Card toLookFor){
         Class<? extends card.Card> cardClass = fromTestToInternalCard(toLookFor).getClass();
         card.Card toReturn = null;
-        for (card.Card c : toLookIn)
-            if (c.getClass() == cardClass)
-                toReturn = c;
+        for(card.Card c: toLookIn) if(c.getClass() == cardClass)
+            toReturn = c;
         return toReturn;
     }
-
-    static public Game.Die findEquivelentDie(Collection<Game.Die> toLookIn, int toLookFor) {
-        for (Game.Die d : toLookIn) if (d.getDieValue() == toLookFor) return d;
-        return null;
+    static public Game.Die  findEquivelentDie (Collection<Game.Die>  toLookIn, int toLookFor){
+          for(Game.Die d: toLookIn) if(d.getDieValue() == toLookFor) return d;
+          return null;
     }
 }

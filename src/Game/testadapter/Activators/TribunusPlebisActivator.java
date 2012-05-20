@@ -7,16 +7,18 @@ import Game.testadapter.GameController;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Alexis Shaw
- * Date: 5/21/12
- * Time: 12:23 AM
+ * User: Kent
+ * Date: 20/05/12
+ * Time: 10:20 PM
  * To change this template use File | Settings | File Templates.
  */
-public class EssedumActivator implements
-        framework.interfaces.activators.EssedumActivator,
-        ActivatorWithCreate<EssedumActivator> {
+public class TribunusPlebisActivator implements
+        framework.interfaces.activators.TribunusPlebisActivator,
+        ActivatorWithCreate<TribunusPlebisActivator> {
+
+    PlayerView myView;
     GameController controller;
-    PlayerAction action;
+    PlayerAction activationAction;
 
     /**
      * Common Card Activator Creator, for use in the factory
@@ -27,11 +29,12 @@ public class EssedumActivator implements
      * @return A new activator of the generic type
      */
     @Override
-    public EssedumActivator create(PlayerView myView, GameController controller, PlayerAction action) {
-        EssedumActivator essedumActivator = new EssedumActivator();
-        essedumActivator.controller = controller;
-        essedumActivator.action = action;
-        return essedumActivator;
+    public TribunusPlebisActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+        TribunusPlebisActivator newTribunusPlebisActivator = new TribunusPlebisActivator();
+        newTribunusPlebisActivator.myView = myView;
+        newTribunusPlebisActivator.controller = controller;
+        newTribunusPlebisActivator.activationAction = action;
+        return newTribunusPlebisActivator;
     }
 
     /**
@@ -47,15 +50,15 @@ public class EssedumActivator implements
      */
     @Override
     public void complete() {
-        controller.useFollowingActivatorPlayerDelegate(new EssedumActivatorDelegatePlayer());
+        controller.useFollowingActivatorPlayerDelegate(new TribunusPlebisAcceptanceDelegatedPlayer());
         controller.performAction();
-        controller.ceaseUsingActivatorPlayerDelegate();
+        controller.ceaseUsingActivatorPlayerDelegate();//To change body of implemented methods use File | Settings | File Templates.
     }
 
-    private class EssedumActivatorDelegatePlayer extends DelegatedPlayer {
+    private class TribunusPlebisAcceptanceDelegatedPlayer extends DelegatedPlayer {
         @Override
         public PlayerAction getNextActionInteraction() {
-            return action;
+            return activationAction;  //To change body of implemented methods use File | Settings | File Templates.
         }
     }
 }

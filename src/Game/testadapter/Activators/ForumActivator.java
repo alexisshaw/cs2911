@@ -4,8 +4,8 @@ package Game.testadapter.Activators;
 import Game.Die;
 import Game.PlayerAction;
 import Game.PlayerView;
+import Game.testadapter.DelegatedPlayer;
 import Game.testadapter.GameController;
-import Game.testadapter.delegatedPlayer;
 
 import java.util.List;
 
@@ -109,20 +109,24 @@ public class ForumActivator implements
         controller.ceaseUsingActivatorPlayerDelegate();
     }
 
-    private class ForumAcceptanceDelegatedPlayer extends delegatedPlayer {
-        @Override public PlayerAction getNextActionInteraction() {
+    private class ForumAcceptanceDelegatedPlayer extends DelegatedPlayer {
+        @Override
+        public PlayerAction getNextActionInteraction() {
             return activationAction;
         }
 
-        @Override public Die diceChooser(String message, String emptyMessage) {
-            return Game.testadapter.AssetTranslator.findEquivelentDie(myView.getDice(),forumDieValue);
+        @Override
+        public Die diceChooser(String message, String emptyMessage) {
+            return Game.testadapter.AssetTranslator.findEquivelentDie(myView.getDice(), forumDieValue);
         }
 
-        @Override public Die diceChooser(String message, String emptyMessage, List<Die> d) {
+        @Override
+        public Die diceChooser(String message, String emptyMessage, List<Die> d) {
             return Game.testadapter.AssetTranslator.findEquivelentDie(myView.getDice(), templumDieValue);
         }
 
-        @Override public boolean conditionalInteraction(String question, String trueChar, String falseChar) {
+        @Override
+        public boolean conditionalInteraction(String question, String trueChar, String falseChar) {
             return doesUseTemplum;
         }
     }

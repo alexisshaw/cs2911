@@ -4,8 +4,8 @@ import Game.Die;
 import Game.PlayerAction;
 import Game.PlayerView;
 import Game.testadapter.AssetTranslator;
+import Game.testadapter.DelegatedPlayer;
 import Game.testadapter.GameController;
-import Game.testadapter.delegatedPlayer;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,7 +16,7 @@ import Game.testadapter.delegatedPlayer;
  */
 public class ConsulActivator implements
         framework.interfaces.activators.ConsulActivator,
-        ActivatorWithCreate<ConsulActivator>{
+        ActivatorWithCreate<ConsulActivator> {
     PlayerView myView;
     GameController controller;
     PlayerAction action;
@@ -77,7 +77,8 @@ public class ConsulActivator implements
         controller.performAction();
         controller.ceaseUsingActivatorPlayerDelegate();
     }
-    public class ConsulActivatorDelegatedPlayer extends delegatedPlayer {
+
+    public class ConsulActivatorDelegatedPlayer extends DelegatedPlayer {
         @Override
         public PlayerAction getNextActionInteraction() {
             return action;
@@ -90,7 +91,7 @@ public class ConsulActivator implements
 
         @Override
         public Die diceChooser(String message, String emptyMessage) {
-            return AssetTranslator.findEquivelentDie(myView.getDice(),originalRoll);
+            return AssetTranslator.findEquivelentDie(myView.getDice(), originalRoll);
         }
     }
 }

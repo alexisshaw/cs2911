@@ -5,26 +5,26 @@ import Game.PlayerAction;
 import Game.PlayerView;
 import Game.testadapter.DelegatedPlayer;
 import Game.testadapter.GameController;
-import card.Card;
 
 import java.util.Arrays;
 import java.util.Collection;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Alexis Shaw
- * Date: 5/21/12
- * Time: 12:29 AM
+ * User: Kent
+ * Date: 21/05/12
+ * Time: 12:28 AM
  * To change this template use File | Settings | File Templates.
  */
-public class GladiatorActivator implements
-        framework.interfaces.activators.GladiatorActivator,
-        ActivatorWithCreate<GladiatorActivator> {
+public class PraetorianusActivator implements
+        framework.interfaces.activators.PraetorianusActivator,
+        ActivatorWithCreate<PraetorianusActivator> {
+
     PlayerView myView;
     GameController controller;
-    PlayerAction action;
+    PlayerAction activationAction;
 
-    Disk toAttack;
+    Collection<Disk> diceDiskHolder;
 
     /**
      * Common Card Activator Creator, for use in the factory
@@ -35,12 +35,12 @@ public class GladiatorActivator implements
      * @return A new activator of the generic type
      */
     @Override
-    public GladiatorActivator create(PlayerView myView, GameController controller, PlayerAction action) {
-        GladiatorActivator gladiatorActivator = new GladiatorActivator();
-        gladiatorActivator.myView = myView;
-        gladiatorActivator.controller = controller;
-        gladiatorActivator.action = action;
-        return gladiatorActivator;
+    public PraetorianusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+        PraetorianusActivator newPraetorianusActivator = new PraetorianusActivator();
+        newPraetorianusActivator.myView = myView;
+        newPraetorianusActivator.controller = controller;
+        newPraetorianusActivator.activationAction = action;
+        return newPraetorianusActivator;
     }
 
     /**
@@ -56,21 +56,9 @@ public class GladiatorActivator implements
      */
     @Override
     public void complete() {
-        controller.useFollowingActivatorPlayerDelegate(new GladiatorActivatorDelegatePlayer());
+        controller.useFollowingActivatorPlayerDelegate(new SenatorAcceptanceDelegatedPlayer());
         controller.performAction();
         controller.ceaseUsingActivatorPlayerDelegate();
-    }
-
-    private class GladiatorActivatorDelegatePlayer extends DelegatedPlayer {
-        @Override
-        public PlayerAction getNextActionInteraction() {
-            return action;    //To change body of overridden methods use File | Settings | File Templates.
-        }
-
-        @Override
-        public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
-            return Arrays.asList(myView.getField((myView.getPlayerId() + 1) % myView.getNoPlayers()).get(toAttack));    //To change body of overridden methods use File | Settings | File Templates.
-        }
     }
 
     /**
@@ -85,6 +73,19 @@ public class GladiatorActivator implements
      */
     @Override
     public void chooseDiceDisc(int diceDisc) {
-        toAttack = new Disk(diceDisc);
+        diceDiskHolder = Arrays.asList(new Disk[diceDisc]);
+
+    }
+
+    private class SenatorAcceptanceDelegatedPlayer extends DelegatedPlayer {
+        @Override
+        public PlayerAction getNextActionInteraction() {
+            return activationAction;  //To change body of implemented methods use File | Settings | File Templates.
+        }
+
+        @Override
+        public Collection<Disk> diskChooser(String message, String emptyMessage, int numCards, Collection<Disk> cardsToChoseFromIn) {
+            return diceDiskHolder;
+        }
     }
 }

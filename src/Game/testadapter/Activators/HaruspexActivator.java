@@ -2,8 +2,8 @@ package Game.testadapter.Activators;
 
 import Game.PlayerAction;
 import Game.PlayerView;
+import Game.testadapter.DelegatedPlayer;
 import Game.testadapter.GameController;
-import Game.testadapter.delegatedPlayer;
 import card.Card;
 
 import java.util.Collection;
@@ -17,8 +17,7 @@ import java.util.Collection;
  */
 public class HaruspexActivator implements
         framework.interfaces.activators.HaruspexActivator,
-        ActivatorWithCreate<HaruspexActivator>
-{
+        ActivatorWithCreate<HaruspexActivator> {
     private PlayerView myView;
     private GameController controller;
     private PlayerAction action;
@@ -60,7 +59,8 @@ public class HaruspexActivator implements
         controller.performAction();
         controller.ceaseUsingActivatorPlayerDelegate();
     }
-    private class HaruspexActivatorDelegatedPlayer extends delegatedPlayer{
+
+    private class HaruspexActivatorDelegatedPlayer extends DelegatedPlayer {
         @Override
         public PlayerAction getNextActionInteraction() {
             return action;

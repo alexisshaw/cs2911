@@ -12,19 +12,20 @@ import java.util.Collection;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Alexis Shaw
- * Date: 5/21/12
- * Time: 12:29 AM
+ * User: Kent
+ * Date: 21/05/12
+ * Time: 12:48 AM
  * To change this template use File | Settings | File Templates.
  */
-public class GladiatorActivator implements
-        framework.interfaces.activators.GladiatorActivator,
-        ActivatorWithCreate<GladiatorActivator> {
+public class NeroActivator implements
+        framework.interfaces.activators.NeroActivator,
+        ActivatorWithCreate<NeroActivator> {
+
     PlayerView myView;
     GameController controller;
-    PlayerAction action;
+    PlayerAction activationAction;
 
-    Disk toAttack;
+    int diceDiskIndex;
 
     /**
      * Common Card Activator Creator, for use in the factory
@@ -35,12 +36,12 @@ public class GladiatorActivator implements
      * @return A new activator of the generic type
      */
     @Override
-    public GladiatorActivator create(PlayerView myView, GameController controller, PlayerAction action) {
-        GladiatorActivator gladiatorActivator = new GladiatorActivator();
-        gladiatorActivator.myView = myView;
-        gladiatorActivator.controller = controller;
-        gladiatorActivator.action = action;
-        return gladiatorActivator;
+    public NeroActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+        NeroActivator newNeroActivator = new NeroActivator();
+        newNeroActivator.myView = myView;
+        newNeroActivator.controller = controller;
+        newNeroActivator.activationAction = action;
+        return newNeroActivator;
     }
 
     /**
@@ -56,21 +57,9 @@ public class GladiatorActivator implements
      */
     @Override
     public void complete() {
-        controller.useFollowingActivatorPlayerDelegate(new GladiatorActivatorDelegatePlayer());
+        controller.useFollowingActivatorPlayerDelegate(new NeroAcceptanceDelegatedPlayer());
         controller.performAction();
         controller.ceaseUsingActivatorPlayerDelegate();
-    }
-
-    private class GladiatorActivatorDelegatePlayer extends DelegatedPlayer {
-        @Override
-        public PlayerAction getNextActionInteraction() {
-            return action;    //To change body of overridden methods use File | Settings | File Templates.
-        }
-
-        @Override
-        public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
-            return Arrays.asList(myView.getField((myView.getPlayerId() + 1) % myView.getNoPlayers()).get(toAttack));    //To change body of overridden methods use File | Settings | File Templates.
-        }
     }
 
     /**
@@ -85,6 +74,19 @@ public class GladiatorActivator implements
      */
     @Override
     public void chooseDiceDisc(int diceDisc) {
-        toAttack = new Disk(diceDisc);
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    private class NeroAcceptanceDelegatedPlayer extends DelegatedPlayer {
+        @Override
+        public PlayerAction getNextActionInteraction() {
+            return activationAction;  //To change body of implemented methods use File | Settings | File Templates.
+        }
+
+        @Override
+        public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
+            card.Card toReturn = myView.getField((myView.getPlayerId() + 1) % myView.getNoPlayers()).get(new Disk(diceDiskIndex));
+            return Arrays.asList(toReturn);
+        }
     }
 }

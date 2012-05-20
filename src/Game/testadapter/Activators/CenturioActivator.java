@@ -4,8 +4,8 @@ import Game.Die;
 import Game.PlayerAction;
 import Game.PlayerView;
 import Game.testadapter.AssetTranslator;
+import Game.testadapter.DelegatedPlayer;
 import Game.testadapter.GameController;
-import Game.testadapter.delegatedPlayer;
 import card.Card;
 
 import java.util.Collection;
@@ -112,7 +112,8 @@ public class CenturioActivator implements
         controller.performAction();
         controller.ceaseUsingActivatorPlayerDelegate();
     }
-    private class CenturioActivatorDelegatePlayer extends delegatedPlayer{
+
+    private class CenturioActivatorDelegatePlayer extends DelegatedPlayer {
         @Override
         public PlayerAction getNextActionInteraction() {
             return action;
@@ -120,7 +121,7 @@ public class CenturioActivator implements
 
         @Override
         public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
-            return (new LinkedList<Card>(cardsToChoseFromIn)).subList(0,0);
+            return (new LinkedList<Card>(cardsToChoseFromIn)).subList(0, 0);
         }
 
         @Override
@@ -130,7 +131,7 @@ public class CenturioActivator implements
 
         @Override
         public Die diceChooser(String message, String emptyMessage) {
-            return AssetTranslator.findEquivelentDie(myView.getDice(),actionDieValue);
+            return AssetTranslator.findEquivelentDie(myView.getDice(), actionDieValue);
         }
     }
 }

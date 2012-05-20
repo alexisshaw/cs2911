@@ -7,18 +7,18 @@ import Game.testadapter.GameController;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Alexis Shaw
- * Date: 5/21/12
- * Time: 1:02 AM
+ * User: Kent
+ * Date: 21/05/12
+ * Time: 12:55 AM
  * To change this template use File | Settings | File Templates.
  */
-public class LegionariusActivator implements
-        framework.interfaces.activators.LegionariusActivator,
-        ActivatorWithCreate<LegionariusActivator> {
-    GameController controller;
-    PlayerAction action;
+public class MercatusActivator implements
+        framework.interfaces.activators.MercatusActivator,
+        ActivatorWithCreate<MercatusActivator> {
 
-    int attackDieRoll;
+    PlayerView myView;
+    GameController controller;
+    PlayerAction activationAction;
 
     /**
      * Common Card Activator Creator, for use in the factory
@@ -29,26 +29,12 @@ public class LegionariusActivator implements
      * @return A new activator of the generic type
      */
     @Override
-    public LegionariusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
-        LegionariusActivator legionariusActivator = new LegionariusActivator();
-        legionariusActivator.controller = controller;
-        legionariusActivator.action = action;
-        return legionariusActivator;
-    }
-
-    /**
-     * Give the result of an attack die roll.
-     * <p/>
-     * <p>
-     * Only valid if the pending activation requires an attack dice
-     * roll.
-     * </p>
-     *
-     * @param roll the outcome of the attack dice roll
-     */
-    @Override
-    public void giveAttackDieRoll(int roll) {
-        attackDieRoll = roll;
+    public MercatusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+        MercatusActivator newMercatusActivator = new MercatusActivator();
+        newMercatusActivator.myView = myView;
+        newMercatusActivator.controller = controller;
+        newMercatusActivator.activationAction = action;
+        return newMercatusActivator;
     }
 
     /**
@@ -64,17 +50,15 @@ public class LegionariusActivator implements
      */
     @Override
     public void complete() {
-        controller.useFollowingActivatorPlayerDelegate(new LegionatiusActivatorDelegatedCard());
-        controller.setBattleDieRoll(attackDieRoll);
+        controller.useFollowingActivatorPlayerDelegate(new MercatusAcceptanceDelegatedPlayer());
         controller.performAction();
         controller.ceaseUsingActivatorPlayerDelegate();
-
     }
 
-    private class LegionatiusActivatorDelegatedCard extends DelegatedPlayer {
+    private class MercatusAcceptanceDelegatedPlayer extends DelegatedPlayer {
         @Override
         public PlayerAction getNextActionInteraction() {
-            return action;
+            return activationAction;
         }
     }
 }

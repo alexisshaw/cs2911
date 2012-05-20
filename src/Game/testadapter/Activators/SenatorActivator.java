@@ -11,20 +11,25 @@ import framework.cards.Card;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Alexis Shaw
- * Date: 5/21/12
- * Time: 1:15 AM
+ * User: Kent
+ * Date: 20/05/12
+ * Time: 11:06 PM
  * To change this template use File | Settings | File Templates.
  */
-public class MachinaActivator implements
-        framework.interfaces.activators.MachinaActivator,
-        ActivatorWithCreate<MachinaActivator> {
-    Map<Disk, Card> toReLay = new HashMap<Disk, Card>();
-    PlayerAction action;
+public class SenatorActivator implements
+        framework.interfaces.activators.SenatorActivator,
+        ActivatorWithCreate<SenatorActivator> {
+    PlayerView myView;
     GameController controller;
+    PlayerAction activationAction;
+
+
+    Stack<Card> toLay = new Stack<Card>();
+    Stack<Disk> diskToUse = new Stack<Disk>();
 
     /**
      * Common Card Activator Creator, for use in the factory
@@ -35,11 +40,18 @@ public class MachinaActivator implements
      * @return A new activator of the generic type
      */
     @Override
-    public MachinaActivator create(PlayerView myView, GameController controller, PlayerAction action) {
-        MachinaActivator machinaActivator = new MachinaActivator();
-        machinaActivator.action = action;
-        machinaActivator.controller = controller;
-        return machinaActivator;
+    public SenatorActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+        SenatorActivator newSenatorActivator = new SenatorActivator();
+        newSenatorActivator.myView = myView;
+        newSenatorActivator.controller = controller;
+        newSenatorActivator.activationAction = action;
+        return newSenatorActivator;
+    }
+
+    @Override
+    public void layCard(Card myCard, int whichDiceDisc) {
+        toLay.push(myCard);
+        diskToUse.push(new Disk(whichDiceDisc));
     }
 
     /**
@@ -55,42 +67,27 @@ public class MachinaActivator implements
      */
     @Override
     public void complete() {
-        controller.useFollowingActivatorPlayerDelegate(new MachinaActivatorDelegatedPlayer());
+        controller.useFollowingActivatorPlayerDelegate(new SenatorAcceptanceDelegatedPlayer());
         controller.performAction();
         controller.ceaseUsingActivatorPlayerDelegate();
     }
 
-    private class MachinaActivatorDelegatedPlayer extends DelegatedPlayer {
+    private class SenatorAcceptanceDelegatedPlayer extends DelegatedPlayer {
         @Override
         public PlayerAction getNextActionInteraction() {
-            return action;
+            return activationAction;
         }
 
         @Override
         public Map<Disk, card.Card> cardMultiPlacer(Collection<card.Card> toChooseFrom, boolean mustPlaceAll) {
             Map<Disk, card.Card> returnValue = new HashMap<Disk, card.Card>();
-            for (Map.Entry<Disk, Card> e : toReLay.entrySet()) {
-                returnValue.put(e.getKey(), AssetTranslator.findEquivelentCard(toChooseFrom, e.getValue()));
+            while (!toLay.isEmpty()) {
+                returnValue.put(diskToUse.pop(), AssetTranslator.findEquivelentCard(toChooseFrom, toLay.pop()));
             }
             return returnValue;
         }
     }
-
-    /**
-     * Place a floating card on to a dice disc.
-     * <p/>
-     * <p>
-     * When cards that allow rearrangement are activated, all the cards
-     * affected enter a floating state. Cards are then given new
-     * locations with this method. The pending activation cannot be
-     * completed while there are floating cards.
-     * </p>
-     *
-     * @param card     the card to place
-     * @param diceDisc the location for the card to be placed
-     */
-    @Override
-    public void placeCard(Card card, int diceDisc) {
-        toReLay.put(new Disk(diceDisc), card);
-    }
 }
+
+
+

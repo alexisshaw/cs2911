@@ -4,14 +4,13 @@ import Game.Disk;
 import Game.PlayerAction;
 import Game.PlayerView;
 import Game.testadapter.AssetTranslator;
+import Game.testadapter.DelegatedPlayer;
 import Game.testadapter.GameController;
-import Game.testadapter.delegatedPlayer;
 import framework.cards.Card;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Stack;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,12 +21,12 @@ import java.util.Stack;
  */
 public class ConsiliariusActivator implements
         framework.interfaces.activators.ConsiliariusActivator,
-        ActivatorWithCreate<ConsiliariusActivator>{
+        ActivatorWithCreate<ConsiliariusActivator> {
     PlayerView myView;
     GameController controller;
     PlayerAction action;
 
-    Map<Disk,Card> toReLay = new HashMap<Disk, Card>();
+    Map<Disk, Card> toReLay = new HashMap<Disk, Card>();
 
     /**
      * Common Card Activator Creator, for use in the factory
@@ -61,7 +60,8 @@ public class ConsiliariusActivator implements
     public void complete() {
         //To change body of implemented methods use File | Settings | File Templates.
     }
-    private class ConsiliariusActivatorDelegatePlayer extends delegatedPlayer {
+
+    private class ConsiliariusActivatorDelegatePlayer extends DelegatedPlayer {
         @Override
         public PlayerAction getNextActionInteraction() {
             return action;
@@ -70,13 +70,12 @@ public class ConsiliariusActivator implements
         @Override
         public Map<Disk, card.Card> cardMultiPlacer(Collection<card.Card> toChooseFrom, boolean mustPlaceAll) {
             Map<Disk, card.Card> returnValue = new HashMap<Disk, card.Card>();
-            for(Map.Entry<Disk,Card> e: toReLay.entrySet()){
-                returnValue.put(e.getKey(), AssetTranslator.findEquivelentCard(toChooseFrom,e.getValue()));
+            for (Map.Entry<Disk, Card> e : toReLay.entrySet()) {
+                returnValue.put(e.getKey(), AssetTranslator.findEquivelentCard(toChooseFrom, e.getValue()));
             }
             return returnValue;
         }
     }
-
 
 
     /**

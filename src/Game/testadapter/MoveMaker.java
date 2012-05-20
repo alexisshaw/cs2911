@@ -21,7 +21,7 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
     private PlayerView playerView;
     private GameController gameController;
     private toChooseFunctor toChoose;
-    delegatedPlayer delegate;
+    DelegatedPlayer delegate;
 
     /**
      * Activate the card that is currently on the given dice disc.
@@ -84,15 +84,18 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
      */
     @Override
     public void activateCardsDisc(int diceToUse, Card chosen) throws UnsupportedOperationException {
-        toSend = new PlayerAction(PlayerAction.CardType.Draw, AssetTranslator.findEquivelentDie(playerView.getDice(),diceToUse));
+        toSend = new PlayerAction(PlayerAction.CardType.Draw, AssetTranslator.findEquivelentDie(playerView.getDice(), diceToUse));
         toChoose = new activateCardChooseFunctor(chosen);
         gameController.performAction();
     }
-    private class activateCardChooseFunctor implements toChooseFunctor{
+
+    private class activateCardChooseFunctor implements toChooseFunctor {
         private Card chosen;
-        activateCardChooseFunctor(Card chosen){
+
+        activateCardChooseFunctor(Card chosen) {
             this.chosen = chosen;
         }
+
         @Override
         public Collection<card.Card> cardToChoose(Collection<card.Card> chooseFrom) {
             Collection<card.Card> toReturn = new ArrayList(1);
@@ -127,7 +130,7 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
     @Override
     public void activateMoneyDisc(int diceToUse) throws UnsupportedOperationException {
         toSend = new PlayerAction(PlayerAction.CardType.Money,
-                AssetTranslator.findEquivelentDie(playerView.getDice(),diceToUse)
+                AssetTranslator.findEquivelentDie(playerView.getDice(), diceToUse)
         );
         gameController.performAction();
     }
@@ -230,18 +233,20 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
         toSend = new PlayerAction(
                 PlayerAction.CardType.Place,
                 AssetTranslator.findEquivelentCard(hand, toPlace),
-                new Disk( discToPlaceOn )
+                new Disk(discToPlaceOn)
         );
         gameController.performAction();
     }
 
-    public PlayerAction getNextAction(){
+    public PlayerAction getNextAction() {
         return toSend;
     }
-    public toChooseFunctor cardToChoose(){
+
+    public toChooseFunctor cardToChoose() {
         return toChoose;
     }
-    interface toChooseFunctor{
+
+    interface toChooseFunctor {
         Collection<card.Card> cardToChoose(Collection<card.Card> chooseFrom);
     }
 }

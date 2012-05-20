@@ -3,8 +3,8 @@ package Game.testadapter.Activators;
 
 import Game.PlayerAction;
 import Game.PlayerView;
+import Game.testadapter.DelegatedPlayer;
 import Game.testadapter.GameController;
-import Game.testadapter.delegatedPlayer;
 import card.Card;
 
 import java.util.Collection;
@@ -19,12 +19,13 @@ import java.util.List;
  */
 public class AesculapinumActivator implements
         framework.interfaces.activators.AesculapinumActivator,
-        ActivatorWithCreate<AesculapinumActivator>{
+        ActivatorWithCreate<AesculapinumActivator> {
     int pileIndex = 0;
 
     PlayerView myView;
     GameController controller;
     PlayerAction action;
+
     /**
      * Common Card Activator Creator, for use in the factory
      *
@@ -60,12 +61,14 @@ public class AesculapinumActivator implements
         controller.ceaseUsingActivatorPlayerDelegate();
     }
 
-    private class AesculapinumActivatorDelegatePlayer extends delegatedPlayer {
-        @Override  public PlayerAction getNextActionInteraction() {
+    private class AesculapinumActivatorDelegatePlayer extends DelegatedPlayer {
+        @Override
+        public PlayerAction getNextActionInteraction() {
             return action;
         }
 
-        @Override public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
+        @Override
+        public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
             return ((List) cardsToChoseFromIn).subList(cardsToChoseFromIn.size() - 1 - pileIndex, cardsToChoseFromIn.size() - 1 - pileIndex);
         }
     }

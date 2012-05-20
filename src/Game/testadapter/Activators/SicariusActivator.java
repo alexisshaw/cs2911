@@ -12,19 +12,20 @@ import java.util.Collection;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Alexis Shaw
- * Date: 5/21/12
- * Time: 12:29 AM
+ * User: Kent
+ * Date: 20/05/12
+ * Time: 10:25 PM
  * To change this template use File | Settings | File Templates.
  */
-public class GladiatorActivator implements
-        framework.interfaces.activators.GladiatorActivator,
-        ActivatorWithCreate<GladiatorActivator> {
+public class SicariusActivator implements
+        framework.interfaces.activators.SicariusActivator,
+        ActivatorWithCreate<SicariusActivator> {
+
+    int diceDiskIndex;
+
     PlayerView myView;
     GameController controller;
-    PlayerAction action;
-
-    Disk toAttack;
+    PlayerAction activationAction;
 
     /**
      * Common Card Activator Creator, for use in the factory
@@ -35,12 +36,12 @@ public class GladiatorActivator implements
      * @return A new activator of the generic type
      */
     @Override
-    public GladiatorActivator create(PlayerView myView, GameController controller, PlayerAction action) {
-        GladiatorActivator gladiatorActivator = new GladiatorActivator();
-        gladiatorActivator.myView = myView;
-        gladiatorActivator.controller = controller;
-        gladiatorActivator.action = action;
-        return gladiatorActivator;
+    public SicariusActivator create(PlayerView myView, GameController controller, PlayerAction action) {
+        SicariusActivator newSicariusActivator = new SicariusActivator();
+        newSicariusActivator.myView = myView;
+        newSicariusActivator.controller = controller;
+        newSicariusActivator.activationAction = action;
+        return newSicariusActivator;
     }
 
     /**
@@ -56,21 +57,9 @@ public class GladiatorActivator implements
      */
     @Override
     public void complete() {
-        controller.useFollowingActivatorPlayerDelegate(new GladiatorActivatorDelegatePlayer());
+        controller.useFollowingActivatorPlayerDelegate(new SicariusAcceptanceDelegatedPlayer());
         controller.performAction();
         controller.ceaseUsingActivatorPlayerDelegate();
-    }
-
-    private class GladiatorActivatorDelegatePlayer extends DelegatedPlayer {
-        @Override
-        public PlayerAction getNextActionInteraction() {
-            return action;    //To change body of overridden methods use File | Settings | File Templates.
-        }
-
-        @Override
-        public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
-            return Arrays.asList(myView.getField((myView.getPlayerId() + 1) % myView.getNoPlayers()).get(toAttack));    //To change body of overridden methods use File | Settings | File Templates.
-        }
     }
 
     /**
@@ -85,6 +74,19 @@ public class GladiatorActivator implements
      */
     @Override
     public void chooseDiceDisc(int diceDisc) {
-        toAttack = new Disk(diceDisc);
+        diceDiskIndex = diceDisc;
+    }
+
+    private class SicariusAcceptanceDelegatedPlayer extends DelegatedPlayer {
+        @Override
+        public PlayerAction getNextActionInteraction() {
+            return activationAction;    //To change body of overridden methods use File | Settings | File Templates.
+        }
+
+        @Override
+        public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
+            card.Card toReturn = myView.getField((myView.getPlayerId() + 1) % myView.getNoPlayers()).get(new Disk(diceDiskIndex));
+            return Arrays.asList(toReturn);
+        }
     }
 }

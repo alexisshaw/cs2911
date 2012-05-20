@@ -2,8 +2,8 @@ package Game.testadapter.Activators;
 
 import Game.PlayerAction;
 import Game.PlayerView;
+import Game.testadapter.DelegatedPlayer;
 import Game.testadapter.GameController;
-import Game.testadapter.delegatedPlayer;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,10 +14,10 @@ import Game.testadapter.delegatedPlayer;
  */
 public class LegatActivator implements
         framework.interfaces.activators.LegatActivator,
-        ActivatorWithCreate<LegatActivator>
-{
+        ActivatorWithCreate<LegatActivator> {
     GameController controller;
     PlayerAction action;
+
     /**
      * Common Card Activator Creator, for use in the factory
      *
@@ -30,7 +30,7 @@ public class LegatActivator implements
     public LegatActivator create(PlayerView myView, GameController controller, PlayerAction action) {
         LegatActivator legatActivator = new LegatActivator();
         legatActivator.controller = controller;
-        legatActivator.action     = action;
+        legatActivator.action = action;
         return legatActivator;
     }
 
@@ -51,7 +51,8 @@ public class LegatActivator implements
         controller.performAction();
         controller.ceaseUsingActivatorPlayerDelegate();
     }
-    public class LegatActivatorDelegatrdPlayer extends delegatedPlayer {
+
+    public class LegatActivatorDelegatrdPlayer extends DelegatedPlayer {
         @Override
         public PlayerAction getNextActionInteraction() {
             return action;

@@ -8,9 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Buildings/MachinaCard.java" afterPath="$PROJECT_DIR$/src/card/Buildings/MachinaCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Character/LegatCard.java" afterPath="$PROJECT_DIR$/src/card/Character/LegatCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Character/SicariusCard.java" afterPath="$PROJECT_DIR$/src/card/Character/SicariusCard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Character/ConsiliariusCard.java" afterPath="$PROJECT_DIR$/src/card/Character/ConsiliariusCard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Character/PraetorianusCard.java" afterPath="$PROJECT_DIR$/src/card/Character/PraetorianusCard.java" />
     </list>
     <ignored path="cs2911.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,19 +97,6 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/card/Character/LegionariusCard.java" line="54" class="card.Character.LegionariusCard" package="card.Character">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/src/tests/verified/CardActivatorMachinaABasicTest.java" line="86" class="tests.verified.CardActivatorMachinaABasicTest" package="tests.verified">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -165,37 +151,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DeckRefillTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/unverified/DeckRefillTest.java">
+      <file leaf-file-name="GameController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="148" column="2" selection-start="4425" selection-end="4425" vertical-scroll-proportion="0.0">
+            <state line="45" column="0" selection-start="1179" selection-end="1179" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LegionariusActivator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/LegionariusActivator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="77" column="0" selection-start="2406" selection-end="2406" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CardActivatorLegatBasicTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tests/verified/CardActivatorLegatBasicTest.java">
+      <file leaf-file-name="CardActivatorLegionariusBasicTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tests/verified/CardActivatorLegionariusBasicTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="0" selection-start="2417" selection-end="2417" vertical-scroll-proportion="0.3620178">
+            <state line="64" column="0" selection-start="1894" selection-end="1894" vertical-scroll-proportion="0.9918699">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LegatActivator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/LegatActivator.java">
+      <file leaf-file-name="LegionariusCard.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/card/Character/LegionariusCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="0" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0">
+            <state line="54" column="0" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#1099#1105#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameState.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/GameState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="289" column="0" selection-start="9454" selection-end="9454" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MoveMaker.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java">
+      <file leaf-file-name="Disk.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/Disk.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="0" selection-start="1840" selection-end="1840" vertical-scroll-proportion="0.0">
+            <state line="35" column="0" selection-start="899" selection-end="899" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerState.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/GameState/PlayerState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="101" column="0" selection-start="2678" selection-end="2678" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameState.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/GameState/GameState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="156" column="0" selection-start="4183" selection-end="4183" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -222,8 +248,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Game/testadapter/GameState.java" />
-        <option value="$PROJECT_DIR$/src/Game/testadapter/GameController.java" />
         <option value="$PROJECT_DIR$/src/card/Buildings/ForumCard.java" />
         <option value="$PROJECT_DIR$/src/Game/CardView.java" />
         <option value="$PROJECT_DIR$/src/card/Character/GladiatorCard.java" />
@@ -238,6 +262,8 @@
         <option value="$PROJECT_DIR$/src/card/Character/SicariusCard.java" />
         <option value="$PROJECT_DIR$/src/card/Buildings/MachinaCard.java" />
         <option value="$PROJECT_DIR$/src/card/Character/LegatCard.java" />
+        <option value="$PROJECT_DIR$/src/card/Character/PraetorianusCard.java" />
+        <option value="$PROJECT_DIR$/src/card/Character/ConsiliariusCard.java" />
       </list>
     </option>
   </component>
@@ -359,6 +385,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs2911" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs2911" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="card" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Buildings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -418,96 +466,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.tests in Cs2911">
-    <configuration default="false" name="CardActivatorSicariusBasicTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tests.verified.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Cs2911" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="tests.verified" />
-      <option name="MAIN_CLASS_NAME" value="tests.verified.CardActivatorSicariusBasicTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="InitialisationDeckBasicTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tests.verified.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Cs2911" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="tests.verified" />
-      <option name="MAIN_CLASS_NAME" value="tests.verified.InitialisationDeckBasicTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="CardActivatorMachinaABasicTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tests.verified.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Cs2911" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="tests.verified" />
-      <option name="MAIN_CLASS_NAME" value="tests.verified.CardActivatorMachinaABasicTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="CardActivatorLegatBasicTest" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -573,6 +531,96 @@
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CardActivatorPraetorianusZTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tests.unverified.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Cs2911" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="tests.unverified" />
+      <option name="MAIN_CLASS_NAME" value="tests.unverified.CardActivatorPraetorianusZTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CardActivatorLegionariusBasicTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tests.verified.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Cs2911" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="tests.verified" />
+      <option name="MAIN_CLASS_NAME" value="tests.verified.CardActivatorLegionariusBasicTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CardActivatorForumABasicTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tests.verified.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Cs2911" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="tests.verified" />
+      <option name="MAIN_CLASS_NAME" value="tests.verified.CardActivatorForumABasicTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -727,11 +775,11 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.tests in Cs2911" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CardActivatorSicariusBasicTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.InitialisationDeckBasicTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CardActivatorMachinaABasicTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.CardActivatorLegatBasicTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.BrocksEyesCardActivatorPraetorianusBasicTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.CardActivatorLegatBasicTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BrocksEyesCardActivatorPraetorianusBasicTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CardActivatorPraetorianusZTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.CardActivatorLegionariusBasicTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.CardActivatorForumABasicTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -795,7 +843,11 @@
       <created>1337619781093</created>
       <updated>1337619781093</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="changes to fix bugs found using acceptance tests">
+      <created>1337620955104</created>
+      <updated>1337620955104</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -824,11 +876,11 @@
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.51757187" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.75878596" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42971247" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6134185" sideWeight="0.8961039" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56070286" sideWeight="0.8961039" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6086262" sideWeight="0.09821428" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -839,8 +891,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31685576" sideWeight="0.5782748" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42172524" sideWeight="0.8084416" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31685576" sideWeight="0.2683706" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7316294" sideWeight="0.8084416" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -884,7 +936,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="testUpgrade" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes to fix bugs found using acceptance tests" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -905,6 +957,7 @@
     <MESSAGE value="All original roma cards implemented." />
     <MESSAGE value="Fixes found by working through acceptance tests" />
     <MESSAGE value="testUpgrade" />
+    <MESSAGE value="changes to fix bugs found using acceptance tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -914,32 +967,83 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/tests/verified/CardActivatorForumABasicTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/field/FieldKeySet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="0" selection-start="3715" selection-end="3715" vertical-scroll-proportion="0.79518074">
+        <state line="42" column="0" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexBasicTest.java">
+    <entry file="file://$PROJECT_DIR$/src/card/Character/ConsiliariusCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="4" selection-start="2447" selection-end="2447" vertical-scroll-proportion="0.08450704">
+        <state line="47" column="26" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.6175115">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Character/SicariusCard.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/field/Field.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="35" selection-start="678" selection-end="678" vertical-scroll-proportion="0.2857143">
+        <state line="48" column="0" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/field/ValueKeySet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="0" selection-start="2125" selection-end="2125" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="200" column="0" selection-start="8133" selection-end="8133" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#1360#1366#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/verified/InitialisationDeckBasicTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/DelegatingPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="72" selection-start="638" selection-end="638" vertical-scroll-proportion="0.31841654">
+        <state line="23" column="0" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="0" selection-start="1179" selection-end="1179" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/LegionariusActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="0" selection-start="2406" selection-end="2406" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/GameState/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="0" selection-start="4183" selection-end="4183" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/GameState/PlayerState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="0" selection-start="2678" selection-end="2678" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Disk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="899" selection-end="899" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -953,85 +1057,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/MachinaActivator.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="1896" selection-end="1896" vertical-scroll-proportion="0.0">
+        <state line="289" column="0" selection-start="9454" selection-end="9454" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Buildings/MachinaCard.java">
+    <entry file="file://$PROJECT_DIR$/src/framework/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="2213" selection-end="2213" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/model/FrameworkMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#977#983#0" expanded="true" />
+            <element signature="e#0#1777#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/GameState/GameState.java">
+    <entry file="file://$PROJECT_DIR$/src/tests/verified/CardActivatorLegionariusBasicTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="1490" selection-end="1490" vertical-scroll-proportion="1.0243902">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/verified/CardActivatorMachinaABasicTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="0" selection-start="3003" selection-end="3003" vertical-scroll-proportion="1.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/unverified/DeckRefillTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="2" selection-start="4425" selection-end="4425" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/MoveMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="0" selection-start="1840" selection-end="1840" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/LegatActivator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="830" selection-end="830" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="190" column="0" selection-start="7807" selection-end="7807" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Character/LegatCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="26" selection-start="1467" selection-end="1467" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/verified/CardActivatorLegatBasicTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="2417" selection-end="2417" vertical-scroll-proportion="0.3620178">
+        <state line="64" column="0" selection-start="1894" selection-end="1894" vertical-scroll-proportion="0.9918699">
           <folding />
         </state>
       </provider>

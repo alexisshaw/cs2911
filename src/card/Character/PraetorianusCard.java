@@ -61,7 +61,7 @@ public class PraetorianusCard implements Card {
         @Override
         public CardAction getAction() {
             CardAction returnValue = new CardAction();
-            if(in.getTurnNumber() > oldTurn && in.getCurrentPlayerID() == playerID){
+            if(in.getTurnNumber() >= (oldTurn + in.getMyPlayerView().getNoPlayers())){
                 returnValue.setToUnblock(diskToUnblock);
             }
             return returnValue;

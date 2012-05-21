@@ -37,6 +37,7 @@ public class GrimReaperCard implements Card {
 
     @Override
     public CardAction getCardPlacementAction(CardView input) {
+
         return null;
     }
 

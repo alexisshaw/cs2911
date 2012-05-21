@@ -122,7 +122,7 @@ public class GameState {
         this.players = players;
 
         //creates the deck
-        ourDeck = new Deck();
+        ourDeck = new Deck(discardPile);
 
     }
     public int getNumPlayers(){
@@ -142,7 +142,7 @@ public class GameState {
 
         @Override
         public DiscardView getDiscardView(Card responsible, Card toDiscard, DiscardView.DiscardManor manor, Disk location) {
-            return new DiscardView(toDiscard,manor, location);
+            return new DiscardView(toDiscard,manor, location, i);
         }
     }
 

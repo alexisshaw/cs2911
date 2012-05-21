@@ -52,6 +52,9 @@ public class Field extends HashMap<Disk, Card> {
         for(DiscardActor a:discardActors){
             discardActivator.applyAction(a.getAction(discardActivator.getDiscardView(a.getCard(), previous, manor, location)), a.getCard());
         }
+        for(DiscardActor a:discardActors){
+            a.cleanupAfterRound();
+        }
     }
 
     @Override

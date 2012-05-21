@@ -6,6 +6,7 @@ import card.Character.*;
 import card.Character.EssedumCard;
 import card.Buildings.TurrisCard;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Stack;
 
@@ -27,8 +28,8 @@ public class Deck {
     private Stack<card.Card> deck;
 
     //Constructor function to create the deck and fill with game cards
-    public Deck(){
-
+    public Deck(Collection<Card> discardPile){
+        this.discardPile = discardPile;
         //create new stack
         deck = new Stack<Card>();
 
@@ -103,11 +104,12 @@ public class Deck {
     public void setDeckStack(Stack<Card> deck){
         this.deck = deck;
     }
-
+    private Collection<card.Card> discardPile;
     //Returns top card from deck and removes it from deck
     public card.Card drawCard() throws DeckEmptyException{
         if(deck.empty()){
-            throw new Deck.DeckEmptyException();
+            deck.addAll(discardPile);
+            discardPile.clear();
         }
         return deck.pop();
     }
@@ -115,8 +117,8 @@ public class Deck {
     public card.Card[] drawCard(int count) throws DeckEmptyException{
         card.Card[] cardsDrawn = new card.Card[count];
         int i;
-        for (i=0; (i< count) && !deck.empty(); i++){
-            cardsDrawn[i] = deck.pop();
+        for (i=0; (i< count); i++){
+            cardsDrawn[i] = drawCard();
         }
         if(!(i == count)){
             throw new DeckEmptyException();

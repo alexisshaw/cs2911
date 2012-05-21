@@ -72,10 +72,17 @@ public class TurrisCard implements Card {
         whenDiscardedDefenseModificationActor(DefenseModificationActor toRemove){
             this.toRemove = toRemove;
         }
+
+        @Override
+        public void cleanupAfterRound() {
+            //To change body of implemented methods use File | Settings | File Templates.
+        }
+
         @Override
         public CardAction getAction(DiscardView discardView) {
             CardAction returnValue = new CardAction();
-            if(discardView.getCardBeingDiscarded().equals(TurrisCard.this)){
+            int sideOfBoard = 0;
+            if(discardView.getCardBeingDiscarded().equals(TurrisCard.this) && !GrimReaperDiscardActor.willSaveMe(TurrisCard.this)){
                 returnValue.setDefenseModificationActorToRemove(toRemove);
             }
             return returnValue;

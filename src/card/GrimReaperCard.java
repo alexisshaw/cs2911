@@ -1,6 +1,10 @@
 package card;
 
 import Game.CardView;
+import Game.DiscardView;
+import org.slf4j.impl.StaticLoggerBinder;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -37,8 +41,11 @@ public class GrimReaperCard implements Card {
 
     @Override
     public CardAction getCardPlacementAction(CardView input) {
+        CardAction returnValue = new CardAction();
 
-        return null;
+        returnValue.setDiscardActorToAdd(new GrimReaperDiscardActor(this, input));
+
+        return returnValue;
     }
 
     @Override

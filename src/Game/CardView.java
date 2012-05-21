@@ -44,6 +44,13 @@ public class CardView {
     public int getCurrentPlayerID(){
         return state.getCurrentPlayerID();
     }
+    public int getMyPlayerID(Card me){
+        for(int i=0; i<(getMyPlayerView().getNoPlayers()) ; i++){
+            if (getMyPlayerView().getField(i).containsValue(me))
+                return i;
+        }
+        return -1;
+    }
 
     public Disk getCardKey(Card me) throws NoSuchElementException{
         Map<Disk, Card> field = getMyPlayerView().getField(getMyPlayerView().getPlayerId());

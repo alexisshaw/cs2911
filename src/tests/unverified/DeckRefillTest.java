@@ -17,7 +17,6 @@ import framework.interfaces.MoveMaker;
 * @author Shannon Green
 *
 */
-/*
 public class DeckRefillTest extends Test{
 
 	@Override
@@ -145,5 +144,3 @@ public class DeckRefillTest extends Test{
 	}
 
 }
-
-*/

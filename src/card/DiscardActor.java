@@ -11,5 +11,6 @@ import Game.DiscardView;
  */
 public interface DiscardActor {
     public CardAction getAction(DiscardView in);
+    public void cleanupAfterRound();
     public Card getCard();
 }

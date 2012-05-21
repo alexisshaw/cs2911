@@ -21,6 +21,9 @@ public class KatCard implements Card {
     public String toString() {
         return "Kat ("+getLifeString()+")";
     }
+    public int getCurrentLivesRemaining(){
+        return 9 - currentLife;
+    }
     private String getLifeString(){
         if(currentLife ==1){
             return "1st life";
@@ -82,6 +85,11 @@ public class KatCard implements Card {
                 }
             }
             return returnValue;
+        }
+
+        @Override
+        public void cleanupAfterRound() {
+            //To change body of implemented methods use File | Settings | File Templates.
         }
 
         @Override

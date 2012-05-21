@@ -51,7 +51,7 @@ public class LegionariusCard implements Card {
                 toAttackCollection.add(input.getMyPlayerView().getField(i).get(myIndex));
             }
         }
-        Die BattleDie = new Die(new Random());
+        Die BattleDie = input.getBattleDie();
         Collection<Card> toAttackSet = input.getPlayer().cardChooser(
                 "Please Choose one of these cards to attack",
                 "You cannot attack a card",

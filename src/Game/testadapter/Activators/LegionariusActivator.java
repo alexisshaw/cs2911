@@ -1,9 +1,15 @@
 package Game.testadapter.Activators;
 
+import Game.Disk;
 import Game.PlayerAction;
 import Game.PlayerView;
 import Game.testadapter.DelegatedPlayer;
 import Game.testadapter.GameController;
+import card.Card;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,6 +20,7 @@ import Game.testadapter.GameController;
  */
 public class LegionariusActivator implements
         framework.interfaces.activators.LegionariusActivator {
+    PlayerView myView;
     GameController controller;
     PlayerAction action;
 
@@ -31,6 +38,7 @@ public class LegionariusActivator implements
         LegionariusActivator legionariusActivator = new LegionariusActivator();
         legionariusActivator.controller = controller;
         legionariusActivator.action = action;
+        legionariusActivator.myView = myView;
         return legionariusActivator;
     }
 
@@ -73,6 +81,11 @@ public class LegionariusActivator implements
         @Override
         public PlayerAction getNextActionInteraction() {
             return action;
+        }
+
+        @Override
+        public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
+            return Arrays.asList(cardsToChoseFromIn.iterator().next());
         }
     }
 }

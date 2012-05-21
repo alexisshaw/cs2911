@@ -7,19 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Alexis Shaw\Desktop\new_cs2911\cs2911\src\Game\GameOverException.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/CardView.java" afterPath="$PROJECT_DIR$/src/Game/CardView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/Game.java" afterPath="$PROJECT_DIR$/src/Game/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/GameState/GameState.java" afterPath="$PROJECT_DIR$/src/Game/GameState/GameState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/GameState/PlayerState.java" afterPath="$PROJECT_DIR$/src/Game/GameState/PlayerState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/field/Field.java" afterPath="$PROJECT_DIR$/src/Game/field/Field.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/field/ValueKeySet.java" afterPath="$PROJECT_DIR$/src/Game/field/ValueKeySet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/GameController.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/GameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/GameState.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/GameState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Buildings/BasilicaCard.java" afterPath="$PROJECT_DIR$/src/card/Buildings/BasilicaCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Buildings/ForumCard.java" afterPath="$PROJECT_DIR$/src/card/Buildings/ForumCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Character/GladiatorCard.java" afterPath="$PROJECT_DIR$/src/card/Character/GladiatorCard.java" />
     </list>
     <ignored path="cs2911.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -133,7 +122,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexAesculapinumTest.java" line="205" class="tests.unverified.CardActivatorHaruspexAesculapinumTest" package="tests.unverified">
+      <breakpoint url="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexAesculapinumTest.java" line="138" class="tests.unverified.CardActivatorHaruspexAesculapinumTest" package="tests.unverified">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -210,7 +199,7 @@
       <file leaf-file-name="CardActivatorHaruspexAesculapinumTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexAesculapinumTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="0" selection-start="4372" selection-end="4372" vertical-scroll-proportion="1.0161943">
+            <state line="205" column="0" selection-start="6727" selection-end="6727" vertical-scroll-proportion="0.6119403">
               <folding />
             </state>
           </provider>
@@ -268,7 +257,7 @@
       <file leaf-file-name="GameState.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/GameState/GameState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="297" column="107" selection-start="10192" selection-end="10192" vertical-scroll-proportion="-7.44">
+            <state line="167" column="0" selection-start="4518" selection-end="4518" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -592,7 +581,7 @@
       <recent name="Game.field" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CardActivatorHaruspexAesculapinumTest">
+  <component name="RunManager" selected="JUnit.tests in Cs2911">
     <configuration default="false" name="CardActivatorCenturioCBasicTest" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -958,7 +947,11 @@
       <created>1337612751492</created>
       <updated>1337612751492</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixes found by working through acceptance tests">
+      <created>1337617443675</created>
+      <updated>1337617443675</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -983,7 +976,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="786" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -991,19 +984,19 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42971247" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37220448" sideWeight="0.8961039" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5351438" sideWeight="0.8961039" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6086262" sideWeight="0.09821428" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.0" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5335463" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5335463" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26904377" sideWeight="0.46645367" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17092651" sideWeight="0.8084416" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26904377" sideWeight="0.2859425" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7140575" sideWeight="0.8084416" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1173,13 +1166,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/GameState/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="297" column="107" selection-start="10192" selection-end="10192" vertical-scroll-proportion="-7.44">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="130" column="0" selection-start="4199" selection-end="4199" vertical-scroll-proportion="0.0">
@@ -1189,9 +1175,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/GameState/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="167" column="0" selection-start="4518" selection-end="4518" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexAesculapinumTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="0" selection-start="4372" selection-end="4372" vertical-scroll-proportion="1.0161943">
+        <state line="205" column="0" selection-start="6727" selection-end="6727" vertical-scroll-proportion="0.6119403">
           <folding />
         </state>
       </provider>

@@ -161,11 +161,11 @@ public class GameState {
     }
     public void checkVictoryPoints() {
         for(int i=0; i < players.length; i++){
-            if(this.getPlayerState(i).getVictoryPoints() <= 0){
-                this.setGameOver(true);
+            if(playerStates[i].getVictoryPoints() <= 0){
+                setGameOver(true);
             }
         }
-        if(this.getCurrentVPPool() >= 0) this.setGameOver(true);
+        if(getCurrentVPPool() <= 0) setGameOver(true);
     }
     // applyAction will always destroy cards before placing other cards.
     public void applyAction(CardAction input, int playerId, Card card){

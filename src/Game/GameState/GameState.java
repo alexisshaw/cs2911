@@ -206,6 +206,14 @@ public class GameState {
                 playerStates[i].setVictoryPoints(playerStates[i].getVictoryPoints() + victoryPointsToChange[i], getCurrentVPPool());
             }
         }
+        
+        if(input.getMoneyChangeArray() != null){
+            int[] moneyToChange = input.getMoneyChangeArray();
+            for(int i=0; i< moneyToChange.length; i++){
+                playerStates[i].setMoney(playerStates[i].getMoney() + moneyToChange[i]);
+            }
+        }
+        
         if(input.getDiceModifications() != null){
             for(Map.Entry<Die, Integer> d : input.getDiceModifications().entrySet()){
                 for(PlayerState p : playerStates){

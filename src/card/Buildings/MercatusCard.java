@@ -39,20 +39,23 @@ public class MercatusCard implements Card {
     }
 
     public CardAction getCardActivationAction(CardView in) {
-        int newVictoryPoints = 0;
+        int[] victoryChange = new int[in.getMyPlayerView().getNoPlayers()];
         for (int i=0; i < in.getMyPlayerView().getNoPlayers(); i++){
             if(i != in.getMyPlayerView().getPlayerId()){
                 Map<Disk,Card> playerField = in.getMyPlayerView().getField(i);
+                int newVictoryPoints = 0;
                 for (Card c : playerField.values()){
                     if(c.getClass() == ForumCard.class){
                         newVictoryPoints ++;
                     }
                 }
+                victoryChange[in.getMyPlayerView().getPlayerId()] += newVictoryPoints;
+                victoryChange[i] = -newVictoryPoints;
             }
         }
         CardAction returnValue = new CardAction();
-        returnValue.setVictoryPointsToAdd(newVictoryPoints);
-        return new CardAction();
+        returnValue.setVictoryPointsChangeArray(victoryChange);
+        return returnValue;
     }
 
     public String getCardOracle() {

@@ -54,6 +54,7 @@ public class ForumCard implements Card {
                     Die thirdDie = input.getPlayer().diceChooser("Please Choose a Third die to activate "+ this.toString() +":\n", "You cannot choose a die", secondChoiceDie);
                     dieSet.add(thirdDie);
                     returnValue.setVictoryPointsToAdd(returnValue.getVictoryPointsToAdd() +thirdDie.getDieValue());
+                    break;
                 }
             }
         }

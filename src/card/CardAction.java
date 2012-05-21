@@ -34,7 +34,15 @@ public class CardAction {
     Collection<Disk> toUnblock = null;
     DefenseModificationActor defenseModificationActorToAdd = null;
     DefenseModificationActor defenseModificationActorToRemove = null;
+    int[] moneyChangeArray = null;
 
+    public int[] getMoneyChangeArray() {
+        return moneyChangeArray;
+    }
+
+    public void setMoneyChangeArray(int[] moneyChangeArray) {
+        this.moneyChangeArray = moneyChangeArray;
+    }
 
     public DefenseModificationActor getDefenseModificationActorToAdd() {
         return defenseModificationActorToAdd;

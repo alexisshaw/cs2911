@@ -9,6 +9,10 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ *
+ */
+
 public class ArchitectusCard implements Card {
     //returns the name of the card
     public String toString(){

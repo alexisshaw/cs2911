@@ -5,11 +5,11 @@ import card.CardAction;
 import Game.CardView;
 
 /**
- * Created by IntelliJ IDEA.
- * User: ates466
- * Date: 5/8/12
- * Time: 12:59 PM
- * To change this template use File | Settings | File Templates.
+ * Created with IntelliJ IDEA.
+ * @author: ates466, kmcl552
+ * @since 5/8/12
+ *
+ *
  */
 public class BasilicaCard implements Card {
     public String toString() {

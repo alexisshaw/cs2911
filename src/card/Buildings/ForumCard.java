@@ -32,7 +32,7 @@ public class ForumCard implements Card {
     }
 
     public int getDefence() {
-        return 6;
+        return 5;
     }
 
     public CardAction getCardPlacementAction(CardView input) {

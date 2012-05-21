@@ -1,7 +1,9 @@
 package Game.testadapter;
 
+import Game.CardView;
 import Game.Die;
 import Game.Disk;
+import card.CardAction;
 import framework.Rules;
 import framework.cards.Card;
 
@@ -311,7 +313,12 @@ public class GameState implements framework.interfaces.GameState {
         for (int i=0; i<discCards.length; i++){
             Card c = discCards[i];
             if(c != Card.NOT_A_CARD){
-                gameState.getPlayerState(playerNum).getField().put(new Disk(i+1),getInternalCardFromTestingCard(c));
+                card.Card internalCard = getInternalCardFromTestingCard(c);
+                gameState.getPlayerState(playerNum).getField().put(new Disk(i+1), internalCard);
+                CardAction acp = internalCard.getCardPlacementAction(new CardView(gameState,playerNum));
+                if(acp!=null){
+                    gameState.applyAction(acp,playerNum,internalCard);
+                }
             }
         }
     }

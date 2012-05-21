@@ -69,10 +69,11 @@ public class PlayerState {
             for (Die die:dice){
                 if(die.getDieValue() == disk.intValue()) haveCorrectDie = true;
             }
-            return field.containsKey(disk) &&
+            boolean cardExists = field.containsKey(disk);
+            boolean notBlocked = !(blockedDisks.contains(disk) );
+            return  cardExists &&
                     haveCorrectDie &&
-                    field.containsKey(disk) &&
-                    !blockedDisks.contains(disk);
+                    notBlocked;
         }
     }
 

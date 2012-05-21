@@ -46,7 +46,7 @@ public class GameState {
     //declare the deck
     private Deck ourDeck;
     private List<Card> discardPile;
-    private Map<Disk, Set<Card>> blockedDisks;
+    private Map<Integer, Map<Disk, Set<Card>>> blockedDisks;
     private Collection<PlayerTurnChangeActor> playerTurnChangeActors;
     private Collection<DiscardActor> discardActors;
     private Collection<DefenseModificationActor> defenseModificationActors;
@@ -74,8 +74,8 @@ public class GameState {
 
     private Player[] players;
 
-    public Set<Disk> getBlockedDisks() {
-        return blockedDisks.keySet();
+    public Set<Disk> getBlockedDisks(int playerID) {
+        return blockedDisks.get(playerID).keySet();
     }
 
     public List<Card> getDiscardPile() {
@@ -110,9 +110,14 @@ public class GameState {
         discardActors = new HashSet<DiscardActor>();
         playerTurnChangeActors = new HashSet<PlayerTurnChangeActor>();
         defenseModificationActors = new HashSet<DefenseModificationActor>();
-        blockedDisks = new HashMap<Disk, Set<Card>>();
+        blockedDisks = new HashMap<Integer, Map<Disk, Set<Card>>>();
         for (int i=0; i<players.length;i++){
-            playerStates[i] = new PlayerState(discardPile, discardActors, new gameDiscardActivator(i,this), blockedDisks.keySet(),i) ;
+            blockedDisks.put(i, new HashMap<Disk, Set<Card>>());
+            playerStates[i] = new PlayerState(discardPile,
+                    discardActors,
+                    new gameDiscardActivator(i,this),
+                    blockedDisks.get(i).keySet(),
+                    i) ;
         }
         this.players = players;
 
@@ -279,23 +284,26 @@ public class GameState {
         }
     }
     public void addBlocks(Collection<Disk> disks, Card c){
+        for(int i=0;i<players.length;i++) if(i!= currentPlayerID){
         for(Disk d:disks){
             if(blockedDisks.containsKey(d)){
-                blockedDisks.get(d).add(c);
+                blockedDisks.get(i).get(d).add(c);
             } else {
                 Set<Card> s = new HashSet<Card>();
                 s.add(c);
-                blockedDisks.put(d,s);
+                blockedDisks.get(i).put(d,s);
             }
+        }
         }
     }
     public void removeBlocks(Collection<Disk> disks, Card c){
-        for(Disk d:disks) if(blockedDisks.containsKey(d) && blockedDisks.get(d).contains(c)){
-            blockedDisks.get(d).remove(c);
-            if(blockedDisks.get(d).isEmpty()){
-                blockedDisks.remove(d);
+        for(Map<Disk,Set<Card>> m: blockedDisks.values()){
+            for(Disk d:disks) if(m.containsKey(d) && m.get(d).contains(c)){
+                m.get(d).remove(c);
+                if(m.get(d).isEmpty()){
+                    m.remove(d);
+                }
             }
-
         }
     }
     public int getCurrentVPPool(){

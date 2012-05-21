@@ -32,7 +32,11 @@ public class GameController {
     }
 
     public void performAction() {
-        game.getPlayersNextAction();
+        try{
+            game.getPlayersNextAction();
+        } catch (GameOverException e) {
+            game.getGameState().setGameOver(true);
+        }
     }
 
     public void useFollowingActivatorPlayerDelegate(Player in) {
@@ -61,7 +65,7 @@ public class GameController {
             p.setDelegate(new GameControllerDelegatedPlayer(in));
         }
     }
-    
+
     private class GameControllerDelegatedPlayer extends DelegatedPlayer{
         PlayerAction toSend;
 

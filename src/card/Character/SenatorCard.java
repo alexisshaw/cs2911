@@ -29,11 +29,11 @@ public class SenatorCard implements Card {
     }
 
     public int getPrice() {
-        return 5;
+        return 3;
     }
 
     public int getDefence() {
-        return 1;
+        return 3;
     }
 
     public CardAction getCardPlacementAction(CardView input) {

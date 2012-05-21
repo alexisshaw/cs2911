@@ -184,7 +184,13 @@ public class Game {
                     }
                     gameState.getPlayerState(playerID).removeDie(nextAction.getDice()[0]);
                     CardView view = new CardView(gameState,playerID);
-                    Card c = gameState.getPlayerState(playerID).getField().get(new Disk(nextAction.getDice()[0].getDieValue()));
+                    Disk d;
+                    if(!nextAction.getLocation().equals(Disk.BRIBE_DISK)){
+                        d = new Disk(nextAction.getDice()[0].getDieValue());
+                    } else {
+                        d = Disk.BRIBE_DISK;
+                    }
+                    Card c = gameState.getPlayerState(playerID).getField().get(d);
                     CardAction ac = c.getCardActivationAction(view);
                     if(ac!= null){
                         gameState.applyAction(ac, playerID,c);

@@ -193,6 +193,7 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
                 action);
     }
 
+
     /**
      * End the turn of the current player.
      * <p/>

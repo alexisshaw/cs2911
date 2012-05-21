@@ -55,6 +55,10 @@ public class CardView {
         }
         return cardsToChooseFrom;
     }
+    public Die getBattleDie(){
+        return state.isBattleDieIsSet()?state.getBattleDie(): new Die(new Random());
+    }
+
     public int getTurnNumber(){
         return state.getTurnNumber();
     }

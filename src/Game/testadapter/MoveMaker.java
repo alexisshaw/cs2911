@@ -1,5 +1,6 @@
 package Game.testadapter;
 
+import Game.Die;
 import Game.Disk;
 import Game.PlayerAction;
 import Game.testadapter.GameController.toChooseFunctor;
@@ -18,6 +19,10 @@ import java.util.Collection;
  */
 public class MoveMaker implements framework.interfaces.MoveMaker {
     private GameController gameController;
+
+    public MoveMaker(GameController gameController) {
+        this.gameController = gameController;
+    }
 
     /**
      * Activate the card that is currently on the given dice disc.
@@ -43,10 +48,12 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
      */
     @Override
     public CardActivator chooseCardToActivate(int disc) throws UnsupportedOperationException {
+        Disk d = new Disk(disc);
+        Die die  = AssetTranslator.findEquivelentDie(gameController.getMyPlayerView().getDice(), disc);
         PlayerAction action = new PlayerAction(
                 PlayerAction.CardType.Activate,
-                new Disk(disc),
-                AssetTranslator.findEquivelentDie(gameController.getMyPlayerView().getDice(), disc));
+                d,
+                die);
 
         return ActivatorFactory.createActivator(
                 gameController.getMyPlayerView().getField(gameController.getMyPlayerView().getPlayerId()).get(new Disk(disc)),
@@ -208,7 +215,8 @@ public class MoveMaker implements framework.interfaces.MoveMaker {
      */
     @Override
     public void endTurn() throws UnsupportedOperationException {
-        gameController.nextTurn();
+        gameController.setToSend(new PlayerAction(PlayerAction.CardType.Pass));
+        gameController.performAction();
     }
 
     /**

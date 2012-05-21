@@ -45,7 +45,7 @@ public class CenturioCard implements Card {
         Collection<Card> opposingCards = input.getOpposingCards(this);
         Collection<Card> toAttackCollection = new HashSet<Card>();
         for(Card c: opposingCards) if(!c.isBuilding()) toAttackCollection.add(c);
-        Die BattleDie = new Die(new Random());
+        Die BattleDie = input.getBattleDie();
         Collection<Card> toAttackSet = input.getPlayer().cardChooser(
                 "Please Choose one of these cards to attack",
                 "You cannot attack a card",

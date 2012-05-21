@@ -16,6 +16,10 @@ import java.util.*;
  */
 public class GameState implements framework.interfaces.GameState {
     private Game.GameState.GameState gameState;
+    
+    public GameState(Game.GameState.GameState gameState){
+        this.gameState = gameState;
+    }
     /**
      * Get the current turn's player number
      * <p/>
@@ -137,7 +141,8 @@ public class GameState implements framework.interfaces.GameState {
             toSet.add(getInternalCardFromTestingCard(c));
         }
         Collections.reverse(toSet);
-        gameState.setDiscardPile(toSet);
+        gameState.getDiscardPile().clear();
+        gameState.getDiscardPile().addAll(toSet);
     }
 
     /**
@@ -210,7 +215,7 @@ public class GameState implements framework.interfaces.GameState {
      */
     @Override
     public void setPlayerVictoryPoints(int playerNum, int points) {
-        gameState.getPlayerState(playerNum).setVictoryPoints(points,36);
+        gameState.getPlayerState(playerNum).setVictoryPoints(points,0);
     }
 
     /**
@@ -228,7 +233,7 @@ public class GameState implements framework.interfaces.GameState {
     @Override
     public Collection<Card> getPlayerHand(int playerNum) {
         Collection<card.Card> internalHand = gameState.getPlayerState(playerNum).getHand();
-        Collection<Card>      testHand     = new HashSet<Card>();
+        Collection<Card>      testHand     = new LinkedList<Card>();
         for(card.Card c: internalHand){
             testHand.add(getTestingCardFromInternalCard(c));
         }
@@ -324,7 +329,13 @@ public class GameState implements framework.interfaces.GameState {
      */
     @Override
     public int[] getActionDice() {
-        return new int[0];  //To change body of implemented methods use File | Settings | File Templates.
+        int[] dice = new int[gameState.getPlayerState(gameState.getCurrentPlayerID()).getDice().size()];
+        int i = 0;
+        for (Die d: gameState.getPlayerState(gameState.getCurrentPlayerID()).getDice()){
+            dice[i] = d.getDieValue();
+            i++;
+        }
+        return dice;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     /**

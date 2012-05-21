@@ -1,8 +1,11 @@
 package Game.testadapter;
 
-import framework.interfaces.*;
-import framework.interfaces.GameState;
-import framework.interfaces.MoveMaker;
+import Game.CLIPlayer.Player;
+import Game.Game;
+import Game.Deck;
+import Game.DelegatingPlayer;
+import Game.testadapter.*;
+import com.google.common.base.Strings;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,6 +15,12 @@ import framework.interfaces.MoveMaker;
  * To change this template use File | Settings | File Templates.
  */
 public class AcceptanceInterface implements framework.interfaces.AcceptanceInterface {
+    Game currentGame;
+    GameController controller;
+
+    public static void main(String[] args){
+
+    }
     /**
      * Return a {@link framework.interfaces.MoveMaker} that will modify the given GameState.
      * <p/>
@@ -26,8 +35,8 @@ public class AcceptanceInterface implements framework.interfaces.AcceptanceInter
      * @return a MoveMaker that will modify the given GameState
      */
     @Override
-    public MoveMaker getMover(GameState state) {
-        return new Game.testadapter.MoveMaker();
+    public framework.interfaces.MoveMaker getMover(framework.interfaces.GameState state) {
+        return new MoveMaker(controller);
     }
 
     /**
@@ -46,7 +55,22 @@ public class AcceptanceInterface implements framework.interfaces.AcceptanceInter
      * @return a GameState at the initial state
      */
     @Override
-    public GameState getInitialState() {
-        return new Game.testadapter.GameState();
+    public framework.interfaces.GameState getInitialState() {
+        //create new players
+        DelegatedPlayer standardDelegate = new DelegatedPlayer();
+        DelegatingPlayer[] players = new DelegatingPlayer[2];
+        players[0] = new DelegatingPlayer(standardDelegate);
+        players[1] = new DelegatingPlayer(standardDelegate);
+        //Create a new game
+        currentGame = new Game(players);
+        currentGame.getNames();
+        try{
+            currentGame.prepare();
+        } catch (Deck.DeckEmptyException e){
+            System.exit(1);
+        }
+        controller = new GameController(currentGame,standardDelegate,players);
+        
+        return new GameState(currentGame.getGameState());
     }
 }

@@ -63,7 +63,7 @@ public class ScaenicusActivator implements
     @Override
     public CardActivator getScaenicusMimicTarget(int diceDisc) {
         chosenCard = myView.getField(myView.getPlayerId()).get(new Disk(diceDisc));
-        GameController wrapperController = new GameController() {
+        GameController wrapperController = new GameController(controller) {
             @Override
             public void performAction() {
             }

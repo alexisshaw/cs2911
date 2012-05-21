@@ -22,6 +22,25 @@ public class GameState {
     //declare the player states
     private PlayerState[] playerStates;
 
+    public boolean isBattleDieIsSet() {
+        return battleDieIsSet;
+    }
+
+    public void setBattleDieIsSet(boolean battleDieIsSet) {
+        this.battleDieIsSet = battleDieIsSet;
+    }
+
+    public Die getBattleDie() {
+        return battleDie;
+    }
+
+    public void setBattleDie(Die battleDie) {
+        this.battleDie = battleDie;
+    }
+
+    boolean battleDieIsSet;
+    Die battleDie;
+
 
     //declare the deck
     private Deck ourDeck;
@@ -151,6 +170,11 @@ public class GameState {
             playerStates[playerId].getFieldMap().putAll(input.getLayCards());
         }
         if(input.getReLayCards() != null){
+            Map<Disk,Card> oldValues = playerStates[playerId].getField();
+            for(Card c: input.getReLayCards().values()){
+                oldValues.values().remove(c);
+            }
+            discardPile.addAll(oldValues.values());
             playerStates[playerId].getField().values().removeAll(input.getReLayCards().values(), false);
             playerStates[playerId].getField().putAll(input.getReLayCards());
         }

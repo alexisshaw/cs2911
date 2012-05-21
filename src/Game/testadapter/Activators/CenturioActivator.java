@@ -119,7 +119,7 @@ public class CenturioActivator implements
 
         @Override
         public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
-            return (new LinkedList<Card>(cardsToChoseFromIn)).subList(0, 0);
+            return (new LinkedList<Card>(cardsToChoseFromIn)).subList(0, 1);
         }
 
         @Override

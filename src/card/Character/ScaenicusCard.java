@@ -12,7 +12,7 @@ public class ScaenicusCard implements Card {
     private Card cloning;
     @Override
     public boolean equals(Object o) {
-        return super.equals(o) || !cloning.getClass().equals(this.getClass()) && cloning.equals(o) ;
+        return super.equals(o) || cloning != null && !cloning.getClass().equals(this.getClass()) && cloning.equals(o) ;
     }
 
     //returns the name of the card

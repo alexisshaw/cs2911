@@ -4,6 +4,7 @@ import Game.GameState.GameState;
 import card.Card;
 import card.CardAction;
 
+import java.awt.font.GlyphMetrics;
 import java.util.*;
 
 /**
@@ -16,14 +17,19 @@ import java.util.*;
 public class Game {
 
     public static final int NO_CARDS_TO_SWAP = 2;
-    public static final int NO_INITIAL_CARDS = 4;
+    public static final int NO_INITIAL_CARDS = 5;
     //Declarations for Game.CLIPlayer.Player, Game.GameState.GameState classes
     private Player[] players;
     private GameState gameState;
     public static final int VPPool = 36;
 
-    //bool for controlling when to end game
-    private boolean gameOver;
+    public GameState getGameState() {
+        return gameState;
+    }
+
+    public void setGameState(GameState gameState) {
+        this.gameState = gameState;
+    }
 
     //Constructor for game class
     public Game(Player[] playerArg){
@@ -39,8 +45,6 @@ public class Game {
             players[i].setPlayerView(this.getView(i));
         }
 
-        //Initialise gameOver to false
-        gameOver = false;
     }
 
     //function for pregame setup
@@ -97,8 +101,8 @@ public class Game {
     public void runGame(){
         //Runs the main stage of the game;
         try{
-        while(!gameOver){
-            getNextRound();
+        while(true){
+            getPlayersNextAction();
         }
         } catch (GameOverException e){
             notifyOfGameEnd(findWinner());
@@ -122,41 +126,21 @@ public class Game {
         }
     }
 
-    private void getNextRound(){
-        int CurrentPlayer;
-        gameState.incrementTurnNumber();
-
-        //While the game is not over, each player has its turn
-        for(CurrentPlayer=0; (CurrentPlayer< players.length) && !gameOver; CurrentPlayer++){
-            gameState.setCurrentPlayerID(CurrentPlayer);
-            getPlayersNextTurn();
-        }
-        gameState.setTurnNumber(gameState.getTurnNumber() + 1);
-    }
-
-    private void getPlayersNextTurn(){
-        //player rolls their dice
-        gameState.getPlayerState(gameState.getCurrentPlayerID()).rollDice();
-
-        gameState.getPlayerState(gameState.getCurrentPlayerID()).removeVictoryPointsForEmpty();
-
-        //bool for tracking whether the player has finished their turn
-        boolean finished = false;
-        gameState.activateTurnChangeActors();
-
-        //Run players turn until pass
-        while(!finished){
-            finished = getPlayersNextAction( finished);
-        }
-    }
-
-    private boolean getPlayersNextAction(boolean finished) {
+    public void getPlayersNextAction() {
         int playerID = gameState.getCurrentPlayerID();
         PlayerAction nextAction;
         nextAction = players[playerID].getNextActionInteraction();
         switch(nextAction.getActionType()){
             case Pass:
-                finished = true;
+                gameState.setCurrentPlayerID(gameState.getCurrentPlayerID() + 1);
+                gameState.setTurnNumber(gameState.getTurnNumber() + 1);
+                if(gameState.getCurrentPlayerID() >= players.length){
+                    gameState.setCurrentPlayerID(0);
+                }
+
+                gameState.getPlayerState(gameState.getCurrentPlayerID()).rollDice();
+                gameState.getPlayerState(gameState.getCurrentPlayerID()).removeVictoryPointsForEmpty();
+                gameState.activateTurnChangeActors();
                 break;
             case Money:
                 if(gameState.getPlayerState(playerID).hasDie(nextAction.getDice()[0])){
@@ -174,6 +158,9 @@ public class Game {
                                 1,
                                 Arrays.asList(newCards)).iterator().next();
                         gameState.getPlayerState(playerID).addToHand(toAddToHand);
+                        HashSet<Card> cardsToDiscard = new HashSet<Card>(Arrays.asList(newCards));
+                        cardsToDiscard.remove(toAddToHand);
+                        gameState.getDiscardPile().addAll(cardsToDiscard);
                         gameState.getPlayerState(playerID).removeDie(nextAction.getDice()[0]);
                     } catch (Deck.DeckEmptyException e){
                         System.exit(1);
@@ -207,7 +194,6 @@ public class Game {
             case Loop:
                 break;
         }
-        return finished;
     }
 
     //Creates a Game.PlayerView for a player
@@ -234,7 +220,7 @@ public class Game {
                 //to check that the player has not submitted multiple copies of the same card
             }
             //If there has not been a total of 4 cards chosen then return false
-            if (count !=4){
+            if (count != Game.NO_INITIAL_CARDS){
                 returnValue = false;
             }
         }

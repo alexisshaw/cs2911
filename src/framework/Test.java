@@ -4,6 +4,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.List;
 
+import Game.testadapter.AcceptanceInterface;
+
 import framework.cards.Card;
 import framework.interfaces.GameState;
 import framework.interfaces.MoveMaker;
@@ -46,6 +48,21 @@ import framework.interfaces.MoveMaker;
  * @author Lasath Fernando (lasath.fernando)
  */
 public abstract class Test {
+
+    @org.junit.Test
+    public void junitRun() {
+        System.setErr(System.out);
+        framework.interfaces.AcceptanceInterface ai =
+                // YOU NEED TO CHANGE THIS LINE TO SPECIFY YOUR IMPLEMENTATION.
+                new AcceptanceInterface();
+        // YOU DON'T NEED TO CHANGE ANYTHING ELSE.
+        GameState gs = ai.getInitialState();
+        MoveMaker mm = ai.getMover(gs);
+        try {
+            run(gs, mm);
+        } catch (IllegalArgumentException e) {
+        }
+    }
 
     /**
      * Returns a single line description of this test.

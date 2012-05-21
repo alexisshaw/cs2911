@@ -74,6 +74,7 @@ public class PlayerAction {
     }
     public PlayerAction(CardType type, Disk location, Die dieToUse){
         actionType = type;
+        dice = new Die[1];
         dice[0] = dieToUse;
         this.location  = location;
     }

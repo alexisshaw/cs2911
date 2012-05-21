@@ -51,7 +51,6 @@ public class ArchitectusCard implements Card {
 
         //Create and populate the CardAction
         CardAction myAction = new CardAction();
-        myAction.setDestroyCards(Location.values());
         myAction.setLayCards(Location);
         return myAction;
     }

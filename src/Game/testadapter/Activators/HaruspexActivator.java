@@ -66,7 +66,7 @@ public class HaruspexActivator implements
         public Collection<Card> cardChooser(String message, String emptyMessage, int numCards, Collection<Card> cardsToChoseFromIn) {
             return controller.getDeck().getDeck().subList(
                     controller.getDeck().getDeck().size() - 1 - index,
-                    controller.getDeck().getDeck().size() - 1 - index);
+                    controller.getDeck().getDeck().size() - index);
         }
     }
 

@@ -16,7 +16,7 @@ import java.util.*;
  */
 public class GameState implements framework.interfaces.GameState {
     private Game.GameState.GameState gameState;
-    
+
     public GameState(Game.GameState.GameState gameState){
         this.gameState = gameState;
     }
@@ -215,7 +215,7 @@ public class GameState implements framework.interfaces.GameState {
      */
     @Override
     public void setPlayerVictoryPoints(int playerNum, int points) {
-        gameState.getPlayerState(playerNum).setVictoryPoints(points,0);
+        gameState.getPlayerState(playerNum).setVictoryPoints(points);
     }
 
     /**

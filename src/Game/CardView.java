@@ -14,6 +14,18 @@ public class CardView {
     private GameState state;
     private int playerId;
 
+    public Collection<Card> getAllOpposingCards(Card me){
+        Disk cardIndex = getCardKey(me);
+        Set<Card> cardsToChooseFrom = new HashSet<Card>();
+        for (int i=0; i < getMyPlayerView().getNoPlayers(); i++){
+            if(i != getMyPlayerView().getPlayerId()){
+                cardsToChooseFrom.addAll(state.getPlayerState(i).getField().values());
+            }
+        }
+
+        return cardsToChooseFrom;
+    }
+
     public CardView(GameState state, int playerNo){
         this.state=state;
         this.playerId=playerNo;

@@ -25,11 +25,11 @@ public class BasilicaCard implements Card {
     }
 
     public int getPrice() {
-        return 5;
+        return 6;
     }
 
     public int getDefence() {
-        return 6;
+        return 5;
     }
 
     public CardAction getCardPlacementAction(CardView input) {

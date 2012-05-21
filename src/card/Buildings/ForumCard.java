@@ -46,7 +46,9 @@ public class ForumCard implements Card {
         CardAction returnValue = new CardAction();
         returnValue.setVictoryPointsToAdd(secondDie.getDieValue());
         for(Card c: input.getCardsNextTo(this)){
-            if (c.getClass() == BasilicaCard.class) returnValue.setVictoryPointsToAdd(returnValue.getVictoryPointsToAdd()+2);
+            if (c.getClass() == BasilicaCard.class){
+                returnValue.setVictoryPointsToAdd(returnValue.getVictoryPointsToAdd()+2);
+            }
             if (c.getClass() == TempulmCard.class){
                 if(input.getPlayer().conditionalInteraction("Would you like to activate " + c.toString()+ "?" ,"y","n")){
                     List<Die> secondChoiceDie = new LinkedList<Die>(input.getMyPlayerView().getDice());

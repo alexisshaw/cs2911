@@ -62,12 +62,16 @@ public class ValueKeySet implements Collection<Card> {
     }
     public boolean remove(Object o, boolean toDiscard){
         boolean hasChanged = false;
+        Disk toRemove = null;
+        boolean areRemoving = false;
         for(Disk d: field.keySet()){
             if(field.get(d) == o){
                 hasChanged = true;
-                field.remove(o,toDiscard);
+                areRemoving = true;
+                toRemove = d;
             }
         }
+        if(areRemoving) field.remove(toRemove,toDiscard);
         return hasChanged;
     }
 
@@ -94,16 +98,7 @@ public class ValueKeySet implements Collection<Card> {
         boolean hasChanged = false;
 
         for(Object o:objects){
-            Disk toRemove = null;
-            boolean areRemoving = false;
-            for(Disk d: field.keySet()){
-                if(field.get(d) == o){
-                    hasChanged = true;
-                    areRemoving = true;
-                    toRemove = d;
-                }
-            }
-            if(areRemoving) field.remove(toRemove,toDiscard);
+            remove(o,toDiscard);
         }
         return hasChanged;
     }

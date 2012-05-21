@@ -4,7 +4,6 @@ import Game.GameState.GameState;
 import card.Card;
 import card.CardAction;
 
-import java.awt.font.GlyphMetrics;
 import java.util.*;
 
 /**
@@ -100,15 +99,12 @@ public class Game {
 
     public void runGame(){
         //Runs the main stage of the game;
-        try{
-        while(true){
+        while(!gameState.isGameOver()){
             getPlayersNextAction();
         }
-        } catch (GameOverException e){
-            notifyOfGameEnd(findWinner());
-            gameState.setGameOver(true);
-            System.exit(0);
-        }
+        notifyOfGameEnd(findWinner());
+        gameState.setGameOver(true);
+        System.exit(0);
     }
     private Player findWinner(){
         int mostVP = 0;
@@ -141,6 +137,7 @@ public class Game {
                 gameState.getPlayerState(gameState.getCurrentPlayerID()).rollDice();
                 gameState.getPlayerState(gameState.getCurrentPlayerID()).removeVictoryPointsForEmpty();
                 gameState.activateTurnChangeActors();
+                gameState.checkVictoryPoints();
                 break;
             case Money:
                 if(gameState.getPlayerState(playerID).hasDie(nextAction.getDice()[0])){
@@ -180,7 +177,7 @@ public class Game {
             case Activate:
                 if(gameState.getPlayerState(playerID).canActivateDisk(nextAction.getLocation(), nextAction.getDice()[0])){
                     if(nextAction.getLocation().equals(Disk.BRIBE_DISK)){
-                        gameState.getPlayerState(playerID).addMoney(nextAction.getDice()[0].getDieValue());
+                        gameState.getPlayerState(playerID).addMoney(-nextAction.getDice()[0].getDieValue());
                     }
                     gameState.getPlayerState(playerID).removeDie(nextAction.getDice()[0]);
                     CardView view = new CardView(gameState,playerID);
@@ -200,7 +197,10 @@ public class Game {
             case Loop:
                 break;
         }
+        gameState.checkVictoryPoints();
     }
+
+
 
     //Creates a Game.PlayerView for a player
     private PlayerView getView(int playerId) {

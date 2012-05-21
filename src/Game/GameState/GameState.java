@@ -112,7 +112,7 @@ public class GameState {
         defenseModificationActors = new HashSet<DefenseModificationActor>();
         blockedDisks = new HashMap<Disk, Set<Card>>();
         for (int i=0; i<players.length;i++){
-            playerStates[i] = new PlayerState(discardPile, discardActors, new gameDiscardActivator(i,this), blockedDisks.keySet()) ;
+            playerStates[i] = new PlayerState(discardPile, discardActors, new gameDiscardActivator(i,this), blockedDisks.keySet(),i) ;
         }
         this.players = players;
 
@@ -158,6 +158,14 @@ public class GameState {
     }
     public Player getPlayer(int playerID){
         return players[playerID];
+    }
+    public void checkVictoryPoints() {
+        for(int i=0; i < players.length; i++){
+            if(this.getPlayerState(i).getVictoryPoints() <= 0){
+                this.setGameOver(true);
+            }
+        }
+        if(this.getCurrentVPPool() >= 0) this.setGameOver(true);
     }
     // applyAction will always destroy cards before placing other cards.
     public void applyAction(CardAction input, int playerId, Card card){
@@ -208,7 +216,10 @@ public class GameState {
         if(input.getVictoryPointsChangeArray() != null){
             int[] victoryPointsToChange = input.getVictoryPointsChangeArray();
             for(int i=0; i< victoryPointsToChange.length; i++){
-                playerStates[i].setVictoryPoints(playerStates[i].getVictoryPoints() + victoryPointsToChange[i], getCurrentVPPool());
+                playerStates[i].setVictoryPoints(playerStates[i].getVictoryPoints() + victoryPointsToChange[i]);
+            }
+            if(getCurrentVPPool() <= 0){
+                gameOver = true;
             }
         }
 
@@ -233,7 +244,8 @@ public class GameState {
             playerStates[playerId].addMoney(-input.getMoneyToPay());
         }
         if(input.getVictoryPointsToAdd() != 0){
-            playerStates[playerId].setVictoryPoints(playerStates[playerId].getVictoryPoints() + input.getVictoryPointsToAdd(), getCurrentVPPool());
+            playerStates[playerId].setVictoryPoints(playerStates[playerId].getVictoryPoints() + input.getVictoryPointsToAdd());
+            checkVictoryPoints();
         }
         if(input.getToRemoveFromDeck() != null){
             ourDeck.getDeck().removeAll(input.getToRemoveFromDeck());

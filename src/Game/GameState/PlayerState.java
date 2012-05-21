@@ -2,11 +2,9 @@ package Game.GameState;
 
 import Game.Die;
 import Game.Disk;
-import Game.GameOverException;
 import card.Card;
 import Game.field.Field;
 import card.DiscardActor;
-import Game.Game;
 
 import java.util.*;
 
@@ -27,15 +25,17 @@ public class PlayerState {
     private Random randomness;
     private int money;
     Set<Disk> blockedDisks;
+    private int playerID;
 
     //Constructor for creating player state
     public PlayerState(List<Card> discard,
                        Collection<DiscardActor> discardActors,
                        Field.DiscardActivator discardActivator,
-                       Set<Disk> blockedDisks
+                       Set<Disk> blockedDisks, int playerID
     ){
         //create empty array of dice
         dice = new ArrayList<Die>();
+        this.playerID = playerID;
 
         //Set victory points to 10
         victoryPoints = 10;
@@ -83,23 +83,16 @@ public class PlayerState {
     public void addMoney(int amount){
          money += amount;
     }
-    public void removeVictoryPointsForEmpty() throws GameOverException{
+    public void removeVictoryPointsForEmpty(){
         this.victoryPoints -= getNumEmptyFieldLocations();
-        if (victoryPoints <= 0){
-            throw new GameOverException();
-        }
     }
 
     //return victory points
     public int getVictoryPoints() {
         return victoryPoints;
     }
-    public void setVictoryPoints(int victoryPoints, int currentVPPoolSize) throws GameOverException{
+    public void setVictoryPoints(int victoryPoints){
         this.victoryPoints = victoryPoints;
-        if (victoryPoints + currentVPPoolSize > Game.VPPool ){
-            this.victoryPoints = Game.VPPool  - currentVPPoolSize;
-            throw new GameOverException();
-        }
     }
 
 

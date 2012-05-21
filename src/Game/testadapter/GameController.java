@@ -1,8 +1,6 @@
 package Game.testadapter;
 
 import Game.*;
-import Game.GameState.*;
-import Game.GameState.GameState;
 import card.Card;
 
 import java.util.Collection;
@@ -32,11 +30,7 @@ public class GameController {
     }
 
     public void performAction() {
-        try{
-            game.getPlayersNextAction();
-        } catch (GameOverException e) {
-            game.getGameState().setGameOver(true);
-        }
+        game.getPlayersNextAction();
     }
 
     public void useFollowingActivatorPlayerDelegate(Player in) {

@@ -1,7 +1,6 @@
 package Game.field;
 
 import Game.DiscardView;
-import Game.GameOverException;
 import card.Card;
 import Game.Disk;
 import card.CardAction;
@@ -21,7 +20,7 @@ public class Field extends HashMap<Disk, Card> {
     private Collection<DiscardActor> discardActors;
     private DiscardActivator discardActivator;
     public interface DiscardActivator{
-        public void applyAction(CardAction c, Card card) throws GameOverException;
+        public void applyAction(CardAction c, Card card);
         public DiscardView getDiscardView(Card responsible, Card toDiscard,DiscardView.DiscardManor manor, Disk location);
     }
 
@@ -41,7 +40,7 @@ public class Field extends HashMap<Disk, Card> {
     public Card remove(Object o){
         return remove(o,true);
     }
-    public Card remove(Object o, boolean toDiscard) throws GameOverException{
+    public Card remove(Object o, boolean toDiscard){
         Card previous = super.remove(o);
         if(toDiscard && previous != null){
             discard.add(previous);
@@ -49,7 +48,7 @@ public class Field extends HashMap<Disk, Card> {
         }
         return previous;
     }
-    private void activateAllDiscardActivator(Card previous, DiscardView.DiscardManor manor,Disk location) throws GameOverException{
+    private void activateAllDiscardActivator(Card previous, DiscardView.DiscardManor manor,Disk location){
         for(DiscardActor a:discardActors){
             discardActivator.applyAction(a.getAction(discardActivator.getDiscardView(a.getCard(), previous, manor, location)), a.getCard());
         }

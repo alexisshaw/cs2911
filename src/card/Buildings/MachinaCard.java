@@ -45,7 +45,7 @@ public class MachinaCard implements Card {
         for(Card c:cardsOnField) if(c.isBuilding()) characterCardsOnField.add(c);
         CardAction returnValue = new CardAction();
         returnValue.setReLayCards(view.getPlayer().cardMultiPlacer(characterCardsOnField,true));
-        return null;
+        return returnValue;
     }
 
     public String getCardOracle() {

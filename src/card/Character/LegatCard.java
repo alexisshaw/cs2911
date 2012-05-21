@@ -52,7 +52,7 @@ public class LegatCard implements Card {
         }
         CardAction returnValue = new CardAction();
         returnValue.setVictoryPointsToAdd(newVictoryPoints);
-        return new CardAction();
+        return returnValue;
     }
 
     //returns description of card

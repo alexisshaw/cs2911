@@ -173,6 +173,10 @@ public class Game {
                 }else{
                     players[playerID].sendMessage("You cannot afford to place this card");
                 }
+                CardAction acp = nextAction.getCard().getCardPlacementAction(new CardView(gameState,playerID));
+                if(acp!=null){
+                    gameState.applyAction(acp,playerID,nextAction.getCard());
+                }
                 break;
             case Activate:
                 if(gameState.getPlayerState(playerID).canActivateDisk(nextAction.getLocation(), nextAction.getDice()[0])){

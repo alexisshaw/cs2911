@@ -54,7 +54,7 @@ public class TurrisCard implements Card {
         public boolean doesModify(Card shouldModifyP) {
             boolean returnValue = false;
             for(Card c :cardView.getMyPlayerView().getField(cardView.getMyPlayerView().getPlayerId()).values()){
-                if(c == shouldModifyP){
+                if(c == shouldModifyP && c != TurrisCard.this){
                     returnValue = true;
                 }
             }

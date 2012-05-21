@@ -8,15 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/CardView.java" afterPath="$PROJECT_DIR$/src/Game/CardView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/PraetorianusActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/PraetorianusActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/testadapter/Activators/ScaenicusActivator.java" afterPath="$PROJECT_DIR$/src/Game/testadapter/Activators/ScaenicusActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Character/CenturioCard.java" afterPath="$PROJECT_DIR$/src/card/Character/CenturioCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Character/LegionariusCard.java" afterPath="$PROJECT_DIR$/src/card/Character/LegionariusCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Character/NeroCard.java" afterPath="$PROJECT_DIR$/src/card/Character/NeroCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Character/ScaenicusCard.java" afterPath="$PROJECT_DIR$/src/card/Character/ScaenicusCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Character/SenatorCard.java" afterPath="$PROJECT_DIR$/src/card/Character/SenatorCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Character/SicariusCard.java" afterPath="$PROJECT_DIR$/src/card/Character/SicariusCard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/Game.java" afterPath="$PROJECT_DIR$/src/Game/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/card/Buildings/TurrisCard.java" afterPath="$PROJECT_DIR$/src/card/Buildings/TurrisCard.java" />
     </list>
     <ignored path="cs2911.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,32 +76,6 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexABasicTest.java" line="86" class="tests.unverified.CardActivatorHaruspexABasicTest" package="tests.unverified">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexAesculapinumTest.java" line="138" class="tests.unverified.CardActivatorHaruspexAesculapinumTest" package="tests.unverified">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/src/tests/verified/CardActivatorMachinaABasicTest.java" line="86" class="tests.verified.CardActivatorMachinaABasicTest" package="tests.verified">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -123,6 +90,19 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/src/card/Character/ScaenicusCard.java" line="16" class="card.Character.ScaenicusCard" package="card.Character">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorTurrisBasicBTest.java" line="233" class="tests.unverified.CardActivatorTurrisBasicBTest" package="tests.unverified">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -176,33 +156,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NeroCard.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/card/Character/NeroCard.java">
+      <file leaf-file-name="CardActivatorTurrisBasicBTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorTurrisBasicBTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="39" selection-start="1414" selection-end="1414" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#1356#1362#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CardActivatorScaenicusBasicTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tests/verified/CardActivatorScaenicusBasicTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="0" selection-start="4249" selection-end="4249" vertical-scroll-proportion="0.40425533">
+            <state line="233" column="0" selection-start="5497" selection-end="5497" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SicariusCard.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/card/Character/SicariusCard.java">
+      <file leaf-file-name="OnagerActivator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/OnagerActivator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="39" selection-start="1418" selection-end="1418" vertical-scroll-proportion="0.0">
+            <state line="75" column="0" selection-start="2277" selection-end="2277" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/GameController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="0" selection-start="830" selection-end="830" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#1360#1366#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Game/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="194" column="0" selection-start="8046" selection-end="8046" vertical-scroll-proportion="0.33212996">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OnagerCard.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/card/Buildings/OnagerCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="0" selection-start="1360" selection-end="1360" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#990#996#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/card/CardHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="27" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#604#610#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Die.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/Die.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="0" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -210,10 +230,28 @@
       <file leaf-file-name="CardView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/CardView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="82" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0">
+            <state line="54" column="0" selection-start="1514" selection-end="1514" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#396#402#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/PlayerView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="0" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TurrisCard.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/card/Buildings/TurrisCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="44" selection-start="1578" selection-end="1578" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -239,9 +277,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/LegionariusActivator.java" />
-        <option value="$PROJECT_DIR$/src/tests/unverified/CardActivatorSenatorBasicTest.java" />
-        <option value="$PROJECT_DIR$/src/tests/unverified/DeckRefillTest.java" />
         <option value="$PROJECT_DIR$/src/card/Buildings/MachinaCard.java" />
         <option value="$PROJECT_DIR$/src/card/Character/LegatCard.java" />
         <option value="$PROJECT_DIR$/src/card/Character/PraetorianusCard.java" />
@@ -255,6 +290,9 @@
         <option value="$PROJECT_DIR$/src/Game/CardView.java" />
         <option value="$PROJECT_DIR$/src/card/Character/SicariusCard.java" />
         <option value="$PROJECT_DIR$/src/card/Character/NeroCard.java" />
+        <option value="$PROJECT_DIR$/src/tests/unverified/CardActivatorTurrisBasicBTest.java" />
+        <option value="$PROJECT_DIR$/src/Game/Game.java" />
+        <option value="$PROJECT_DIR$/src/card/Buildings/TurrisCard.java" />
       </list>
     </option>
   </component>
@@ -466,41 +504,7 @@
       <recent name="Game.field" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.tests in Cs2911">
-    <configuration default="false" name="BrocksEyesCardActivatorPraetorianusBasicTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tests.unverified.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Cs2911" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="tests.unverified" />
-      <option name="MAIN_CLASS_NAME" value="tests.unverified.BrocksEyesCardActivatorPraetorianusBasicTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.CardActivatorTurrisBasicBTest">
     <configuration default="false" name="CardActivatorPraetorianusZTest" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -610,6 +614,40 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CardActivatorTurrisBasicBTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tests.unverified.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Cs2911" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="tests.unverified" />
+      <option name="MAIN_CLASS_NAME" value="tests.unverified.CardActivatorTurrisBasicBTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -778,11 +816,11 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.tests in Cs2911" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.BrocksEyesCardActivatorPraetorianusBasicTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.CardActivatorPraetorianusZTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CardActivatorLegionariusBasicTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.CardActivatorForumABasicTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.CardActivatorScaenicusBasicTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.CardActivatorPraetorianusZTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.CardActivatorLegionariusBasicTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CardActivatorForumABasicTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.CardActivatorScaenicusBasicTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.CardActivatorTurrisBasicBTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -854,7 +892,15 @@
       <created>1337622695266</created>
       <updated>1337622695266</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="changes to fix bugs found using acceptance tests">
+      <created>1337628575024</created>
+      <updated>1337628575024</updated>
+    </task>
+    <task id="LOCAL-00012" summary="changes to fix bugs found using acceptance tests">
+      <created>1337629160192</created>
+      <updated>1337629160192</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -879,7 +925,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="786" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -887,7 +933,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42971247" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50159746" sideWeight="0.8961039" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.485623" sideWeight="0.8961039" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6086262" sideWeight="0.09821428" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -899,8 +945,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23338735" sideWeight="0.41533548" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5846645" sideWeight="0.8084416" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23338735" sideWeight="0.514377" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5846645" sideWeight="0.8084416" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -975,105 +1021,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/card/Character/SenatorCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="345" selection-end="345" vertical-scroll-proportion="-0.34013605">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Character/TribunusPlebusCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="235" selection-end="235" vertical-scroll-proportion="-0.4309484">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Character/VelitesCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="378" selection-end="378" vertical-scroll-proportion="-0.3294509">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Buildings/AesculapinumCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="315" selection-end="315" vertical-scroll-proportion="-0.3843594">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Character/CenturioCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="77" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#958#964#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Buildings/BasilicaCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="256" selection-end="256" vertical-scroll-proportion="-0.034941763">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Buildings/MachinaCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="311" selection-end="311" vertical-scroll-proportion="-0.27287853">
-          <folding>
-            <element signature="e#977#983#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Buildings/MercatusCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="296" selection-end="296" vertical-scroll-proportion="-0.31281197">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Buildings/OnagerCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="377" selection-end="377" vertical-scroll-proportion="-0.3622449">
-          <folding>
-            <element signature="e#990#996#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Buildings/TempulmCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="255" selection-end="255" vertical-scroll-proportion="-0.24459234">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Buildings/TurrisCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="253" selection-end="253" vertical-scroll-proportion="-0.95840263">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Buildings/ForumCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="293" selection-end="293" vertical-scroll-proportion="0.3180272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/CardView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="82" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#396#402#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/card/Character/SicariusCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="39" selection-start="1418" selection-end="1418" vertical-scroll-proportion="0.0">
@@ -1083,19 +1030,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/card/Character/NeroCard.java">
+    <entry file="file://$PROJECT_DIR$/src/card/CardAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="39" selection-start="1414" selection-end="1414" vertical-scroll-proportion="0.0">
+        <state line="15" column="13" selection-start="269" selection-end="269" vertical-scroll-proportion="0.32185885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexABasicTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="0" selection-start="2748" selection-end="2748" vertical-scroll-proportion="0.33212996">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexAesculapinumTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="0" selection-start="4372" selection-end="4372" vertical-scroll-proportion="0.33212996">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/card/Character/SenatorCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="34" selection-start="567" selection-end="567" vertical-scroll-proportion="0.08712121">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorOnagerABasicTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="0" selection-start="3633" selection-end="3633" vertical-scroll-proportion="0.3131313">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/OnagerActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="0" selection-start="2277" selection-end="2277" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/testadapter/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="830" selection-end="830" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#1356#1362#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/verified/CardActivatorScaenicusBasicTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/PlayerView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="0" selection-start="4249" selection-end="4249" vertical-scroll-proportion="0.40425533">
+        <state line="20" column="0" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/CardView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="1514" selection-end="1514" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#396#402#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Die.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/card/Buildings/OnagerCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="0" selection-start="1360" selection-end="1360" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#990#996#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/card/CardHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="27" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#604#610#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/card/Buildings/TurrisCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="44" selection-start="1578" selection-end="1578" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorTurrisBasicBTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="233" column="0" selection-start="5497" selection-end="5497" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="0" selection-start="8046" selection-end="8046" vertical-scroll-proportion="0.33212996">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

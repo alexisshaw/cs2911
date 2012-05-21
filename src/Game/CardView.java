@@ -42,6 +42,19 @@ public class CardView {
                 }
             }
         }
+
+        return cardsToChooseFrom;
+    }
+    public Collection<Card> getDirectlyOpposingCards(Card me){
+        Disk cardIndex = getCardKey(me);
+        Set<Card> cardsToChooseFrom = new HashSet<Card>();
+        for (int i=0; i < getMyPlayerView().getNoPlayers(); i++){
+            if(i != getMyPlayerView().getPlayerId()){
+                if(getMyPlayerView().getField(i).get(cardIndex) != null){
+                    cardsToChooseFrom.add(getMyPlayerView().getField(i).get(cardIndex));
+                }
+            }
+        }
         return cardsToChooseFrom;
     }
     public Collection<Card> getCardsNextTo(Card me){

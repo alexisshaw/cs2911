@@ -35,6 +35,15 @@ public class CardAction {
     DefenseModificationActor defenseModificationActorToAdd = null;
     DefenseModificationActor defenseModificationActorToRemove = null;
     int[] moneyChangeArray = null;
+    Collection<Card> addToCurrentPlayersHand;
+
+    public Collection<Card> getAddToCurrentPlayersHand() {
+        return addToCurrentPlayersHand;
+    }
+
+    public void setAddToCurrentPlayersHand(Collection<Card> addToCurrentPlayersHand) {
+        this.addToCurrentPlayersHand = addToCurrentPlayersHand;
+    }
 
     public int[] getMoneyChangeArray() {
         return moneyChangeArray;

@@ -57,7 +57,8 @@ public class Field extends HashMap<Disk, Card> {
 
     @Override
     public ValueKeySet values() {
-        return new ValueKeySet(super.values(), this);
+        ValueKeySet toreturn =  new ValueKeySet(super.values(), this);
+        return toreturn;
     }
 
 

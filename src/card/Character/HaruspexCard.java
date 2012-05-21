@@ -44,8 +44,8 @@ public class HaruspexCard implements Card {
         List<Card> deckClone = new ArrayList<Card>(deck);
         Collections.shuffle(deckClone);
         Collection<Card> chosen = in.getPlayer().cardChooser("Please Choose one of the following to add to your hand","",1,deckClone);
-        returnValue.setAddToHand(chosen);
-        returnValue.setToRemoveFromDeck(chosen);
+        returnValue.setAddToCurrentPlayersHand(new LinkedList<Card>(chosen));
+        returnValue.setToRemoveFromDeck(new LinkedList<Card>(chosen));
         return returnValue;
     }
 

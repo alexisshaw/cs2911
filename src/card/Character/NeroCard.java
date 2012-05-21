@@ -6,6 +6,8 @@ import Game.CardView;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -48,9 +50,10 @@ public class NeroCard implements Card {
                 "You cannot destroy a card",
                 1,
                 cardsToChooseFrom);
-        toDestroy.add(this);
+        Collection<Card> toDestroyList = new LinkedList<Card>(toDestroy);
+        toDestroyList.add(this);
         CardAction returnValue = new CardAction();
-        returnValue.setDestroyCards(toDestroy);
+        returnValue.setDestroyCards(toDestroyList);
         return returnValue;
     }
 

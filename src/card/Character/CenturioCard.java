@@ -42,7 +42,7 @@ public class CenturioCard implements Card {
     }
 
     public CardAction getCardActivationAction(CardView input) {
-        Collection<Card> opposingCards = input.getOpposingCards(this);
+        Collection<Card> opposingCards = input.getDirectlyOpposingCards(this);
         Collection<Card> toAttackCollection = new HashSet<Card>();
         for(Card c: opposingCards) if(!c.isBuilding()) toAttackCollection.add(c);
         Die BattleDie = input.getBattleDie();

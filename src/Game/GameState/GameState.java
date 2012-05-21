@@ -4,6 +4,7 @@ import Game.*;
 import Game.field.Field;
 import card.*;
 import Game.Player;
+import framework.interfaces.activators.CardSelector;
 
 import java.util.*;
 
@@ -162,7 +163,8 @@ public class GameState {
     public void applyAction(CardAction input, int playerId, Card card){
         if(input.getDestroyCards() != null){
             for(PlayerState p : playerStates){
-                p.getFieldMap().values().removeAll(input.getDestroyCards());
+                Collection<Card> cards = p.getFieldMap().values();
+                cards.removeAll(input.getDestroyCards());
             }
         }
         if(input.getLayCards() != null){
@@ -180,6 +182,9 @@ public class GameState {
         }
         if(input.getPlaceCards() != null){
             playerStates[playerId].getFieldMap().putAll(input.getPlaceCards());
+        }
+        if(input.getAddToCurrentPlayersHand() != null){
+            playerStates[currentPlayerID].getHand().addAll(input.getAddToCurrentPlayersHand());
         }
         if(input.getAddToHand() != null){
             Collection<Card> toAddToHand = input.getAddToHand();
@@ -206,14 +211,14 @@ public class GameState {
                 playerStates[i].setVictoryPoints(playerStates[i].getVictoryPoints() + victoryPointsToChange[i], getCurrentVPPool());
             }
         }
-        
+
         if(input.getMoneyChangeArray() != null){
             int[] moneyToChange = input.getMoneyChangeArray();
             for(int i=0; i< moneyToChange.length; i++){
                 playerStates[i].setMoney(playerStates[i].getMoney() + moneyToChange[i]);
             }
         }
-        
+
         if(input.getDiceModifications() != null){
             for(Map.Entry<Die, Integer> d : input.getDiceModifications().entrySet()){
                 for(PlayerState p : playerStates){

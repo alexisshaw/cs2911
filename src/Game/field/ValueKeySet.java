@@ -16,7 +16,7 @@ import java.util.Iterator;
 public class ValueKeySet implements Collection<Card> {
     Collection<Card> delegate;
     Field field;
-    ValueKeySet(Collection<Card> delegate, Field field){
+    public ValueKeySet(Collection<Card> delegate, Field field){
         this.delegate = delegate;
         this.field = field;
     }
@@ -88,17 +88,22 @@ public class ValueKeySet implements Collection<Card> {
 
     @Override
     public boolean removeAll(Collection<?> objects) {
-        return delegate.removeAll(objects);
+        return removeAll(objects,true);
     }
     public boolean removeAll(Collection<?> objects, boolean toDiscard){
         boolean hasChanged = false;
+
         for(Object o:objects){
+            Disk toRemove = null;
+            boolean areRemoving = false;
             for(Disk d: field.keySet()){
                 if(field.get(d) == o){
                     hasChanged = true;
-                    field.remove(o,toDiscard);
+                    areRemoving = true;
+                    toRemove = d;
                 }
             }
+            if(areRemoving) field.remove(toRemove,toDiscard);
         }
         return hasChanged;
     }

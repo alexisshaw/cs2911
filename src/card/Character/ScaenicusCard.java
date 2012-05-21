@@ -1,19 +1,21 @@
 package card.Character;
 
+import Game.Disk;
 import card.Card;
 import card.CardAction;
 import Game.CardView;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class ScaenicusCard implements Card {
     private Card cloning;
-    @Override
+    /*@Override
     public boolean equals(Object o) {
-        return super.equals(o) || cloning != null && !cloning.getClass().equals(this.getClass()) && cloning.equals(o) ;
-    }
+        return this == o || o == cloning || ((o.getClass() == ScaenicusCard.class)?((ScaenicusCard) o).cloning == this : cloning.equals(o)) ;
+    } */
 
     //returns the name of the card
     public String toString(){
@@ -53,9 +55,28 @@ public class ScaenicusCard implements Card {
         }
         Collection<Card> toClone = in.getPlayer().cardChooser("Please Choose a card whose action you wish to copy", "You cannot copy a card", 1, cardSet );
         cloning = toClone.iterator().next();
-        CardAction returnValue = cloning.getCardActivationAction(in);
+        CardView toReport;
+        if(in.getClass() == InternalScaenicusCardViewProxy.class){
+            toReport = in;
+        } else{
+            toReport = new InternalScaenicusCardViewProxy(in,in.getCardKey(this));
+        }
+        CardAction returnValue = cloning.getCardActivationAction(toReport);
         cloning = null;
         return returnValue;
+    }
+
+    private class InternalScaenicusCardViewProxy extends CardView {
+        Disk locationToReport;
+        InternalScaenicusCardViewProxy(CardView view, Disk location){
+            super(view);
+            locationToReport = location;
+        }
+
+        @Override
+        public Disk getCardKey(Card me) throws NoSuchElementException {
+            return locationToReport;
+        }
     }
 
     //returns description of card

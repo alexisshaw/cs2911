@@ -50,15 +50,9 @@ public class SenatorCard implements Card {
 
         //Create and populate the CardAction
         CardAction myAction = new CardAction();
-        int money = 0;
-        for (Card c: Location.values()){
-            money += c.getPrice();
-        }
-        if(input.getMyPlayerView().getMoney(input.getCurrentPlayerID()) >= money){
-            myAction.setDestroyCards(Location.values());
-            myAction.setLayCards(Location);
-            myAction.setMoneyToPay(money);
-        }
+
+        myAction.setDestroyCards(Location.values());
+        myAction.setLayCards(Location);
         return myAction;
     }
 

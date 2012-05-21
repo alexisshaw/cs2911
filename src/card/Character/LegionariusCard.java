@@ -47,7 +47,7 @@ public class LegionariusCard implements Card {
         Disk myIndex = input.getCardKey(this);
         Collection<Card> toAttackCollection = new HashSet<Card>();
         for(int i=0 ; i< input.getMyPlayerView().getNoPlayers();i++){
-            if(input.getMyPlayerView().getField(i).containsKey(myIndex)){
+            if(i != input.getMyPlayerView().getPlayerId() && input.getMyPlayerView().getField(i).containsKey(myIndex)){
                 toAttackCollection.add(input.getMyPlayerView().getField(i).get(myIndex));
             }
         }

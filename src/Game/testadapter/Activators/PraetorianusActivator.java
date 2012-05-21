@@ -71,7 +71,7 @@ public class PraetorianusActivator implements
      */
     @Override
     public void chooseDiceDisc(int diceDisc) {
-        diceDiskHolder = Arrays.asList(new Disk[diceDisc]);
+        diceDiskHolder = Arrays.asList(new Disk(diceDisc));
 
     }
 

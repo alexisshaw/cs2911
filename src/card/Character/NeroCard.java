@@ -51,7 +51,7 @@ public class NeroCard implements Card {
                 1,
                 cardsToChooseFrom);
         Collection<Card> toDestroyList = new LinkedList<Card>(toDestroy);
-        toDestroyList.add(this);
+        toDestroyList.add(in.getMe(this));
         CardAction returnValue = new CardAction();
         returnValue.setDestroyCards(toDestroyList);
         return returnValue;

@@ -26,13 +26,25 @@ public class CardView {
         return cardsToChooseFrom;
     }
 
+    public Card getMe(Card me){
+        Disk d = getCardKey(me);
+        return state.getPlayerState(state.getCurrentPlayerID()).getField().get(d);
+    }
+
     public CardView(GameState state, int playerNo){
         this.state=state;
         this.playerId=playerNo;
     }
+
+    public CardView(CardView in){
+        this.state = in.state;
+        this.playerId = in.playerId;
+    }
+
     public int getCurrentPlayerID(){
         return state.getCurrentPlayerID();
     }
+
     public Disk getCardKey(Card me) throws NoSuchElementException{
         Map<Disk, Card> field = getMyPlayerView().getField(getMyPlayerView().getPlayerId());
         for(Map.Entry<Disk,Card> e: field.entrySet()) if(e.getValue().equals(me)) return e.getKey();

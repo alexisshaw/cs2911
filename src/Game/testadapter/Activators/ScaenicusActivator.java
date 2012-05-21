@@ -114,6 +114,11 @@ public class ScaenicusActivator implements
         boolean hasSentScandicusCardChooserPayload = false;
 
         @Override
+        public PlayerAction getNextActionInteraction() {
+            return subDelegate.getNextActionInteraction();
+        }
+
+        @Override
         public boolean conditionalInteraction(String question, String trueChar, String falseChar) {
             return subDelegate.conditionalInteraction(question, trueChar, falseChar);
         }

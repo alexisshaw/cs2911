@@ -47,7 +47,7 @@ public class SicariusCard  implements Card {
                 1,
                 cardsToChooseFrom);
         List<Card> toDestroyList = new LinkedList<Card>(toDestroy);
-        toDestroyList.add(this);
+        toDestroyList.add(in.getMe(this));
         CardAction returnValue = new CardAction();
         returnValue.setDestroyCards(toDestroyList);
         return returnValue;

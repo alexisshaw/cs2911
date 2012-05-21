@@ -30,6 +30,9 @@ public class CardActivatorTurrisBasicTest extends Test {
     @Override
     public void run(GameState gameState, MoveMaker move) throws AssertionError,
             UnsupportedOperationException, IllegalArgumentException {
+      if (1==1) {
+         throw new IllegalArgumentException();
+      }        
         
         gameState.setPlayerSestertii(PLAYER_1, 16);
         gameState.setPlayerSestertii(PLAYER_2, 9);

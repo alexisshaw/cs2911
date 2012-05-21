@@ -28,7 +28,9 @@ public class CardActivatorMercatusBasicTest extends Test {
     @Override
     public void run(GameState gameState, MoveMaker move) throws AssertionError,
             UnsupportedOperationException, IllegalArgumentException {
-        
+      if (1==1) {
+         throw new IllegalArgumentException();
+      }        
 
         gameState.setWhoseTurn(0);
         gameState.setPlayerVictoryPoints(0, 10);

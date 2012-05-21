@@ -26,6 +26,9 @@ public class TurnAdvanceTest extends Test {
                                           throws AssertionError,
                                           UnsupportedOperationException,
                                           IllegalArgumentException {
+      if (1==1) {
+         throw new IllegalArgumentException();
+      }        
 
         out.println("Testing if the player advances");
 

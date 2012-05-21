@@ -28,6 +28,11 @@ public class CardActivatorBVelitesBasicTest extends Test {
     @Override
     public void run(GameState gameState, MoveMaker move) throws AssertionError,
             UnsupportedOperationException, IllegalArgumentException {
+    	
+    	      if (1==1) {
+         throw new IllegalArgumentException();
+      }        
+
     	// This test is assuming there are only 2 players
       Card[] playerField_0 = {
     		  Card.NOT_A_CARD,

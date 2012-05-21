@@ -62,7 +62,7 @@ public class CardActivatorBasilicaABasicTest extends Test {
       // Lay a forum on the first dice disc and check that sestertii and hand
       // update correctly
       gameState.setActionDice(new int[] {1, 5, 1});
-      
+
       move.placeCard(Card.FORUM, Rules.DICE_DISC_1);
       assert(gameState.getPlayerSestertii(0) == 100 - 5);
       assert(gameState.getPlayerSestertii(1) == 100);
@@ -109,6 +109,7 @@ public class CardActivatorBasilicaABasicTest extends Test {
       // Activate the forum with the 6
       activator = (ForumActivator) move.chooseCardToActivate(2);
       activator.chooseActionDice(6);
+      activator.chooseActivateTemplum(false);
       activator.complete();
 
       // Check that the correct number of VPs were gained (6 for the Forum,

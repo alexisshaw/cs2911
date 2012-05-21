@@ -25,6 +25,9 @@ public class GetCardsTest extends Test {
 
     public void run(GameState gameState, MoveMaker move) throws AssertionError,
             UnsupportedOperationException, IllegalArgumentException {
+      if (1==1) {
+         throw new IllegalArgumentException();
+      }        
         
         //the deck contains five cards
         //it's player0's turn, he doesn't have any card in his hand

@@ -51,6 +51,8 @@ public class CardActivatorArchitectusBasicTest extends Test {
         for(int i = 0; i < field.length; i++) {
             field[i] = Card.NOT_A_CARD;
         }
+        gameState.setPlayerCardsOnDiscs(0, field);
+        gameState.setPlayerCardsOnDiscs(1, field);
 
         //player has enough Sestertiis to lay cards
         gameState.setPlayerSestertii(0, 30);

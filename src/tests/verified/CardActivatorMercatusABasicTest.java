@@ -78,6 +78,7 @@ public class CardActivatorMercatusABasicTest extends Test {
       move.placeCard(Card.FORUM, Rules.DICE_DISC_2);
       move.placeCard(Card.FORUM, Rules.DICE_DISC_3);
       move.endTurn();
+      gameState.setActionDice(new int[] {1,1,1});
       assert(gameState.getPlayerSestertii(1) == 100);
       assert(gameState.getPlayerHand(0).size() == 6);
       assert(gameState.getPlayerHand(0).contains(Card.MERCATUS));
@@ -98,7 +99,6 @@ public class CardActivatorMercatusABasicTest extends Test {
       move.placeCard(Card.FORUM, Rules.DICE_DISC_6);
       move.placeCard(Card.FORUM, Rules.BRIBE_DISC);
 
-      gameState.setActionDice(new int[] {1,1,1});
       assert(gameState.getActionDice().length == 3);
        
       MercatusActivator activator = (MercatusActivator) move.chooseCardToActivate(Rules.DICE_DISC_1);
@@ -108,9 +108,9 @@ public class CardActivatorMercatusABasicTest extends Test {
       assert(gameState.getPlayerVictoryPoints(0) == 15 - 3);
       assert(gameState.getActionDice().length == 2);
       move.endTurn();
+      gameState.setActionDice(new int[] {1,1,1});
       move.placeCard(Card.MERCATUS, Rules.DICE_DISC_1);
       
-      gameState.setActionDice(new int[] {1,1,1});
         
       activator = (MercatusActivator) move.chooseCardToActivate(Rules.DICE_DISC_1);
       activator.complete();

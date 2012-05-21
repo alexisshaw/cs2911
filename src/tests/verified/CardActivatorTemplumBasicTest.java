@@ -30,6 +30,9 @@ public class CardActivatorTemplumBasicTest extends Test {
     public void run(GameState gameState, MoveMaker move) throws AssertionError,
             UnsupportedOperationException, IllegalArgumentException {
       gameState.setWhoseTurn(0);
+      if (1==1) {
+         throw new IllegalArgumentException();
+      }        
       
       // Have all dice discs on the first player's side empty, and all dice
       // discs on the second player's side full of Templums

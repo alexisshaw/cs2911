@@ -7,7 +7,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e56854a-ac3b-4fb4-8655-9cd50f2c7dea" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/BribeDiscTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/BrocksEyesCardActivatorPraetorianusBasicTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorGrimReaperAssassinationTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorKatAndGrimReaperTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorKatWithConsiliariusTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorPraetorianusZTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorTelephoneBoxProperTimeParadoxMeasuresTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorTemplumZTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorVelitesZTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/DeckRefillTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/DropdatabasePlaythroughTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/PlaythroughCharacterTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/ScaenicusExtremeConditionTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/TelephoneBoxKatDestroyedCausesParadoxTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/TelephoneBoxKatOverwrittenCausesParadoxTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/unverified/TelephoneBoxNoEffectWhenSameNameTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CardActivatorAesculapinumBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorAesculapinumBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CardActivatorArchitectusBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorArchitectusBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CardActivatorBVelitesBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorBVelitesBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CardActivatorGrimreaperABasicTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorGrimreaperABasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexAesculapinumTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexAesculapinumTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CardActivatorKatABasicTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorKatABasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CardActivatorTelephoneBoxAesculapinumTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorTelephoneBoxAesculapinumTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CardActivatorTelephoneBoxBackToTheFutureTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorTelephoneBoxBackToTheFutureTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CardActivatorTelephoneBoxTemplumTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorTelephoneBoxTemplumTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CardActivatorTelephoneboxABasicTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorTelephoneboxABasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CardActivatorTurrisBasicBTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorTurrisBasicBTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CardActivatorVelitesBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CardActivatorVelitesBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/CenturiowithKatTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/CenturiowithKatTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/LegionariusWithKatTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/LegionariusWithKatTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/PlaythroughChrisFongTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/PlaythroughChrisFongTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/PlaythroughChrisFongTwoTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/PlaythroughChrisFongTwoTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/ScaenicusInfiniteLoopTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/ScaenicusInfiniteLoopTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/TelephoneBoxBreakingAesculapinumTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/TelephoneBoxBreakingAesculapinumTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/TelephoneBoxCopyNeroAndStillDieTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/TelephoneBoxCopyNeroAndStillDieTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/TelephoneBoxKatTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/TelephoneBoxKatTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/TelephoneBoxLotsOfActivationsTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/TelephoneBoxLotsOfActivationsTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/unverified/TwoTurrisTest.java" afterPath="$PROJECT_DIR$/src/tests/unverified/TwoTurrisTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/CardActivatorBasilicaABasicTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/CardActivatorBasilicaABasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/CardActivatorCenturioBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/CardActivatorCenturioBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/CardActivatorConsulBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/CardActivatorConsulBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/CardActivatorEssedumBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/CardActivatorEssedumBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/CardActivatorForumBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/CardActivatorForumBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/CardActivatorMachinaBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/CardActivatorMachinaBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/CardActivatorMercatusABasicTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/CardActivatorMercatusABasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/CardActivatorMercatusBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/CardActivatorMercatusBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/CardActivatorPraetorianusBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/CardActivatorPraetorianusBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/CardActivatorScaenicusBBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/CardActivatorScaenicusBBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/CardActivatorTemplumBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/CardActivatorTemplumBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/CardActivatorTurrisBasicTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/CardActivatorTurrisBasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/GetCardsTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/GetCardsTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/GetMoneyTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/GetMoneyTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/verified/TurnAdvanceTest.java" afterPath="$PROJECT_DIR$/src/tests/verified/TurnAdvanceTest.java" />
     </list>
     <ignored path="cs2911.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -134,7 +188,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexBasicTest.java" line="90" class="tests.unverified.CardActivatorHaruspexBasicTest" package="tests.unverified">
+      <breakpoint url="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexBasicTest.java" line="91" class="tests.unverified.CardActivatorHaruspexBasicTest" package="tests.unverified">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -221,15 +275,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MercatorActivator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/MercatorActivator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="13" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MercatusActivator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/testadapter/Activators/MercatusActivator.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -262,7 +307,7 @@
       <file leaf-file-name="CardActivatorHaruspexBasicTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexBasicTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="0" selection-start="2362" selection-end="2362" vertical-scroll-proportion="0.0">
+            <state line="94" column="0" selection-start="2469" selection-end="2469" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -279,10 +324,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CardActivatorForumABasicTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CardActivatorForumABasicTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tests/verified/CardActivatorForumABasicTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="0" selection-start="3709" selection-end="3709" vertical-scroll-proportion="4.4059405">
+            <state line="111" column="0" selection-start="3709" selection-end="3709" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardActivatorSenatorBasicTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorSenatorBasicTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="0" selection-start="3029" selection-end="3029" vertical-scroll-proportion="-0.76502734">
               <folding />
             </state>
           </provider>
@@ -318,7 +372,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/card/Character/SenatorCard.java" />
         <option value="$PROJECT_DIR$/src/card/Buildings/BasilicaCard.java" />
         <option value="$PROJECT_DIR$/src/Game/GameOverException.java" />
         <option value="$PROJECT_DIR$/src/Game/field/Field.java" />
@@ -334,6 +387,7 @@
         <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/OnagerActivator.java" />
         <option value="$PROJECT_DIR$/src/Game/testadapter/Activators/LegionariusActivator.java" />
         <option value="$PROJECT_DIR$/src/card/Character/LegionariusCard.java" />
+        <option value="$PROJECT_DIR$/src/tests/unverified/CardActivatorSenatorBasicTest.java" />
       </list>
     </option>
   </component>
@@ -401,6 +455,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs2911" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs2911" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs2911" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs2911" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs2911" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs2911" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unverified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -459,7 +567,7 @@
       <recent name="Game.field" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CardActivatorSenatorBasicTest">
+  <component name="RunManager" selected="JUnit.tests in Cs2911">
     <configuration default="false" name="CardActivatorSenatorBasicTest" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -484,7 +592,13 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -691,7 +805,11 @@
       <created>1337618703146</created>
       <updated>1337618703146</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixes found by working through acceptance tests">
+      <created>1337619215243</created>
+      <updated>1337619215243</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -724,7 +842,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42971247" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5942492" sideWeight="0.8961039" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3115016" sideWeight="0.8961039" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6086262" sideWeight="0.09821428" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -735,8 +853,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31685576" sideWeight="0.23322684" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.76677316" sideWeight="0.8084416" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31685576" sideWeight="0.6884984" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.76677316" sideWeight="0.8084416" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -809,13 +927,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Game/GameState/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="0" selection-start="4276" selection-end="4276" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/CardView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="101" column="0" selection-start="3410" selection-end="3410" vertical-scroll-proportion="0.0">
@@ -892,7 +1003,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorHaruspexBasicTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="0" selection-start="2362" selection-end="2362" vertical-scroll-proportion="0.0">
+        <state line="94" column="0" selection-start="2469" selection-end="2469" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -924,7 +1035,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/verified/CardActivatorForumABasicTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="0" selection-start="3709" selection-end="3709" vertical-scroll-proportion="4.4059405">
+        <state line="111" column="0" selection-start="3709" selection-end="3709" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/unverified/CardActivatorSenatorBasicTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="0" selection-start="3029" selection-end="3029" vertical-scroll-proportion="-0.76502734">
           <folding />
         </state>
       </provider>

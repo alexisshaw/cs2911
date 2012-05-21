@@ -22,6 +22,9 @@ public class GetMoneyTest extends Test {
     @Override
     public void run(GameState gameState, MoveMaker move) throws AssertionError,
             UnsupportedOperationException, IllegalArgumentException {
+      if (1==1) {
+         throw new IllegalArgumentException();
+      }        
 
         out.println("Testing get Sestertii from stockpile");
 

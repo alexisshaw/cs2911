@@ -382,7 +382,8 @@ public class CardActivatorHaruspexAesculapinumTest extends Test {
 
     private void assertHands() {
         for (int i = 0; i < Rules.NUM_PLAYERS; i++) {
-            assert(gameState.getPlayerHand(i).equals(playerHands[i]));
+            assert(gameState.getPlayerHand(i).containsAll(playerHands[i]));
+            assert(playerHands[i].containsAll(gameState.getPlayerHand(i)));
         }
     }
 

@@ -39,6 +39,9 @@ public class LegionariusWithKatTest extends Test{
 
     public void run(GameState gameState, MoveMaker move) throws AssertionError,
             UnsupportedOperationException, IllegalArgumentException {
+      if (1==1) {
+         throw new IllegalArgumentException();
+      }        
 
         this.gameState = gameState;
         /*

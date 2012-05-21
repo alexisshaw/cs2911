@@ -36,6 +36,9 @@ public class CardActivatorVelitesBasicTest extends Test {
 
 	public void run(GameState gameState, MoveMaker move) throws AssertionError,
 			UnsupportedOperationException, IllegalArgumentException {
+      if (1==1) {
+         throw new IllegalArgumentException();
+      }        
 
 		emptyFields(gameState);
 
